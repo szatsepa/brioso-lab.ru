@@ -43,7 +43,7 @@ if (!move_uploaded_file($_FILES['imgfile']['tmp_name'], $imgfile_b)) {
             
              $new_imgfile = $document_root."/images/img". $flnm.$filetype;
              
-             $url = "http://".$host."/images/img". $flnm.$filetype;
+             $url = "img". $flnm.$filetype;
              
              $url = quote_smart($url);
              
@@ -69,7 +69,7 @@ if (!move_uploaded_file($_FILES['imgfile']['tmp_name'], $imgfile_b)) {
 
 
     <script language="javascript">
-    document.write ('<form action="index.php?act=adds" method="post"><input name="id" type="hidden" value="<?php echo $insid;?>"/></form>');
+    document.write ('<form action="index.php?act=adds" method="post"><input name="slide_id" type="hidden" value="<?php echo $insid;?>"/></form>');
     document.forms[0].submit();
     </script>
 <?php

@@ -72,12 +72,19 @@ switch ($attributes[act]) {
         include 'action/upload_image.php';
         break;
     
+    case 'upp':
+        include 'main/header.php';
+        include 'action/upload_parametres.php';
+        break;
+    
     case 'alls':
         
         break;
     
     case 'search':
-        
+        include 'main/header.php';
+        include 'main/selector.php';
+        include 'main/search.php';
         break;
     
     case 'auth':

@@ -19,7 +19,7 @@
                Загрузить слайд
             </span>
             &nbsp;&nbsp;
-            <span class="menu_select"  onclick="javascript:location.href='index.php?act=alls';" title="показать все слайды">
+            <span class="menu_select"  onclick="javascript:location.href='index.php?act=main';" title="показать все слайды">
                 Все слайды
             </span>
             &nbsp;&nbsp;
