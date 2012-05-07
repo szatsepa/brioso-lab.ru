@@ -6,5 +6,6 @@
  */
 ?>
 <div class="downloader">
+    <p align="center">Выберите параметры</p>
     
 </div>
