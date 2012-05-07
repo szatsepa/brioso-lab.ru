@@ -1,0 +1,94 @@
+/* 
+    Document   : style
+    Created on : 02.02.2012, 14:26:00
+    Author     : seroga arcady.1254@gmail.com
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+html, body {
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+ font-family: arial, sans-serif;  	
+ font-size: 10pt;
+}
+div.main{ 
+    width: 100%;
+}
+div.main_0{
+    width: 1004px;
+    height: 768px;
+    margin: 0 auto;
+/*    outline: 1px solid red;*/
+}
+div.selector {
+	background-color:#cccccc;
+	border-top:1px solid #a7a7a7;
+	border-bottom:1px solid white;
+	font-size:4ex;
+	padding: 0 0 0 0;
+        padding-left: 22px;
+/*	margin-top:7px;*/
+	width:98%;
+        height: 32px;
+} 
+span.selector3 {
+	display: inline;
+	position: relative;
+        float: right;
+	margin:auto 27px auto auto;
+	padding-top: 2px;
+	font-size: 1ex;
+/*        outline: 1px solid red;*/
+}
+div.main_menu{
+    position: relative;
+    color: black;
+    float: left;
+/*    outline: 1px solid red;*/
+}
+span.menu_select{
+    position: relative;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+/*    outline: 1px solid blue;*/
+    bottom: 4px;
+}
+div.slide{
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 0;
+    padding-left: 12px;
+    padding-top: 7px;
+}
+div.footer{
+    text-align: center;
+    color: black;
+    position: relative;
+    background-color: #dddddd;
+    width: 1004px;
+    margin: 0 auto;
+}
+div.downloader{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 24px;
+    outline: 1px solid red;
+}
+span.download{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
