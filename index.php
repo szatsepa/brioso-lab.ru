@@ -87,6 +87,13 @@ switch ($attributes[act]) {
         include 'main/search.php';
         break;
     
+    case 'srch':
+        include 'query/search.php';
+        include 'main/header.php';
+        include 'main/selector.php';
+        include 'main/result_search.php';
+        break;
+    
     case 'auth':
         include 'main/header.php';
         include 'query/authentication.php';
