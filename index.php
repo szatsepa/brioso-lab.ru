@@ -50,7 +50,7 @@ if(isset ($_SESSION[id])) {
     include 'query/checkauth.php';
 }
 
-$title = "Алгоритм Кузнецова - самый луччий в мире!";
+$title = "brioso-lab.ru";
 
 switch ($attributes[act]) {
     

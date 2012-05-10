@@ -25,35 +25,93 @@ if(isset($attributes[slide_id])){
     </span>
     <span class="parmeters" style="display: <?php echo $disp;?>;">
         <p align="center"> Задайте параметры</p>
-        <form action="index.php?act=upp" method="post" id="f_param">
+        <form id="params">
+<!--            action="index.php?act=upp" method="post" -->
             <input type="hidden" name="slide_id" value="<?php echo $id;?>"/>
             <table>
                 <tr>
-                    <td colspan="2">
-                        <input name="param_1" placeholder="Параметр 1"/>
-                        <br/>
-            
-                        <br/>
+                    <td height="30"  width="30"colspan="11">
+                        <p>Параметр 1</p>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
-                        <input name="param_2" placeholder="Параметр 2"/>
-                        <br/>
-            
-                        <br/>
+                    <?php
+                    for($i = 0;$i<10;$i++){
+                        
+                        ?>
+                        <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
+                        <?php 
+                        if($i == 0){
+                            echo "<input type='radio' name='p1' value='1' checked/>";
+                        }else{
+                            echo "<input type='radio' name='p1' value='".($i+1)."'/>";
+                        }
+                        ?>
+                    </td>
+                        <?php
+                    }
+                    ?>
+                </tr>
+                <tr>
+                    <td height="30"  width="30"colspan="11">
+                        <p>Параметр 2</p>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input name="param_3" placeholder="Параметр 3"/>
-                        <br/>
-            
-                        <br/>
+                     <?php
+                    for($i = 0;$i<10;$i++){
+                        
+                        ?>
+                        <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
+                        <?php 
+                        if($i == 0){
+                            echo "<input type='radio' name='p2' value='1' checked/>";
+                        }else{
+                            echo "<input type='radio' name='p2' value='".($i+1)."'/>";
+                        }
+                        ?>
                     </td>
-                    <td>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="submit" value="Добавить"/>
+                        <?php
+                    }
+                    ?>
+                </tr>
+                <tr>
+                    <td height="30"  width="30"colspan="11">
+                        <p>Параметр 3</p>
+                    </td>
+                </tr>
+                <tr>
+                     <?php
+                    for($i = 0;$i<10;$i++){
+                        
+                        ?>
+                        <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
+                        <?php 
+                        if($i == 0){
+                            echo "<input type='radio' name='p3' value='1' checked/>";
+                        }else{
+                            echo "<input type='radio' name='p3' value='".($i+1)."'/>";
+                        }
+                        ?>
+                    </td>
+                        <?php
+                    }
+                    ?>
+                </tr>
+                <tr>
+                     <?php
+                    for($i = 0;$i<10;$i++){
+                        
+                        ?>
+                        <td height="30"  width="30">
+                       
+                    </td>
+                        <?php
+                    }
+                    ?>
+                    <td align="right">
+                        &nbsp;&nbsp;
+                        <input style="font-size: 14px;font-weight: bold;color: black;" type="button" value="Добавить"  onclick="javascript:_addParams('params');"/>
                     </td>
                 </tr>
             </table>

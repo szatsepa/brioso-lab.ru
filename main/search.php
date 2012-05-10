@@ -19,34 +19,34 @@
                     </td>
                 </tr>
                 <tr>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_1.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p1" value="1" checked/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_2.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p1" value="2"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_3.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p1" value="3"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_4.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p1" value="4"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_5.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p1" value="5"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_6.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p1" value="6"/> 
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_7.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p1" value="7"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_8.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p1" value="8"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_9.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p1" value="9"/> 
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_10.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p1" value="10"/> 
                     </td>
                     <td height="30">
@@ -59,34 +59,34 @@
                     </td>
                 </tr>
                 <tr>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_1.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p2" value="1" checked/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_2.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p2" value="2"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_3.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p2" value="3"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_4.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p2" value="4"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_5.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p2" value="5"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_6.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p2" value="6"/> 
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_7.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p2" value="7"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_8.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p2" value="8"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_9.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p2" value="9"/> 
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_10.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p2" value="10"/> 
                     </td>
                     <td height="30">
@@ -99,34 +99,34 @@
                     </td>
                 </tr>
                 <tr>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_1.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p3" value="1" checked/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_2.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p3" value="2"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_3.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p3" value="3"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_4.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p3" value="4"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_5.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p3" value="5"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_6.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p3" value="6"/> 
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_7.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p3" value="7"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_8.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p3" value="8"/>
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_9.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p3" value="9"/> 
                     </td>
-                    <td height="30"  width="30"background="http://<?php echo $host;?>/images/btn_10.png">
+                    <td height="30"  width="30" background="http://<?php echo $host;?>/images/bt_bg.png">
                         <input type="radio" name="p3" value="10"/> 
                     </td>
                     <td height="30">
