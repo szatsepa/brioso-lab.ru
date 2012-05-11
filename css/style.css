@@ -101,3 +101,12 @@ span.parmeters{
     font-weight: bold;
     color: black;
 }
+
+.slider {
+background-image: url(hbg.gif);
+background-repeat: repeat-x;   
+}
+.knob {
+position: relative;
+background-image: url(knob.gif);
+}

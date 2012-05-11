@@ -81,6 +81,13 @@ switch ($attributes[act]) {
         
         break;
     
+    case 'exp':
+        include 'query/rlv_search.php';
+        include 'main/header.php';
+        include 'main/selector.php';
+        include 'main/rlv_search.php';
+        break;
+    
     case 'search':
         include 'query/all_slides.php';
         include 'main/header.php';
