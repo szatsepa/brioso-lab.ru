@@ -4,17 +4,33 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+//print_r($slide_array);
+
+$max = count($slide_array)-1;
+
+if($max < 0)$max = 0;
+
+$num = rand(0, $max);
+
+$img = "http://".$host."/images/".$slide_array[$num][name];
+
 ?>
 <div class="downloader">
+    <div style="position: relative;float: left;width: 600px;">
+        <p>
+            <img src="<?php echo $img;?>" alt="Slide"/>
+        </p>
+        
+    </div>
     
-    <div style="position: relative;margin: 0 auto;width: 800px;">
+    <div style="position: relative;float: left;margin: 0 auto;">
         
         <p align="center">Выберите параметры</p>
 
         <form id="params">
             <table>
                 <tr>
-                    <td height="30"  width="30"colspan="11">
+                    <td height="30"  width="30" colspan="11">
                         <p>Параметр 1</p>
                     </td>
                 </tr>

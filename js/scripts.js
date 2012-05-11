@@ -27,9 +27,9 @@ function _goSearch(ID){
 
         if(obj.p3[i].checked == true) var param3 = obj.p3[i].value;  
 
-    }
+    } 
     
-    document.write("<form action='index.php?act=srch' method='post'><input type='hidden' name='p3' value='"+param3+"'/><input type='hidden' name='p2' value='"+param2+"'/><input type='hidden' name='p1' value='"+param1+"'/></form>");
+    document.write("<form action='index.php?act=search' method='post'><input type='hidden' name='p3' value='"+param3+"'/><input type='hidden' name='p2' value='"+param2+"'/><input type='hidden' name='p1' value='"+param1+"'/></form>");
     document.forms[0].submit();
 
 }
