@@ -61,10 +61,16 @@ switch ($attributes[act]) {
         include 'main/main.php';
         break;
     
-    case 'adds':
+    case 'addsu':
         include 'main/header.php';
         include 'main/selector.php';
         include 'main/uploader.php';
+        break;
+    
+    case 'adds':
+        include 'main/header.php';
+        include 'main/selector.php';
+        include 'main/upload_slide.php';
         break;
     
     case 'ups':
@@ -75,6 +81,11 @@ switch ($attributes[act]) {
     case 'upp':
         include 'main/header.php';
         include 'action/upload_parametres.php';
+        break;
+    
+     case 'uppn':
+        include 'main/header.php';
+        include 'action/update_parametres.php';
         break;
     
     case 'alls':

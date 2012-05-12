@@ -103,10 +103,15 @@ span.parmeters{
 }
 
 .slider {
-background-image: url(hbg.gif);
-background-repeat: repeat-x;   
+    border-radius: 5px;
+    background: #E0E0E0;
+    margin: 5px;
 }
 .knob {
-position: relative;
-background-image: url(knob.gif);
+    border-radius: 3px;
+    position: relative;
+    left: 10px;
+    top: -5px;
+    background: blue;
+    cursor: pointer;
 }
