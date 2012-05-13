@@ -14,25 +14,25 @@ if(isset($attributes[slide_id])){
 <div class="downloader">
     <span class="download">
         <p align="center"> Загрузите слайд</p>
-          <form enctype="multipart/form-data" action="index.php?act=ups" method="post">      
+          <form enctype="multipart/form-data" action="index.php?act=upsn" method="post">      
             <input type="hidden" name="MAX_FILE_SIZE" value="1248575"/>        
             <input name="imgfile" size="50" accept="image/*" type="file" required/>
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             <input type="image" name="prelo" id="pld" style="display: none;" src="images/circle.gif" disabled/> 
-            <input type="hidden" name="id" value="<?php echo $sid;?>"/>
+<!--            <input type="hidden" name="id" value="<?php echo $sid;?>"/>-->
             <input type="submit" value="Загрузить изображениe" onclick="javascript:preload('pld');"/>
       </form>
     </span>
     <span class="parmeters" style="display: <?php echo $disp;?>;">
         <p align="center"> Задайте параметры</p>
-        <p>Количество параметров - <input name="count_params" size="4" value="<?php echo $_SESSION[cp];?>" onchange="javascript:document.location.href='index.php?act=addsu&cp='+this.value"/></p>
+        <p>Количество параметров - <input name="count_params" size="4" value="<?php echo $_SESSION[cp];?>" onchange="javascript:document.location.href='index.php?act=addsu&cp='+this.value+'&slide_id=<?php echo $sid;?>'"/></p>
         <form id="params">
             <input type="hidden" name="slide_id" value="<?php echo $sid;?>"/>
-            <div id="sl"></div>
+            <div id="sl0"></div>
             <br />
             <script type="text/javascript">
-var mysl0 = new slider('sl', 420, 0, 15, 1);
-</script>
+                var mysl0 = new slider('sl0', 420, 0, 15, 1);
+            </script>
             <?php
             if(isset($_SESSION[cp])){
                for($i=1;$i<($_SESSION[cp]);$i++){
@@ -77,3 +77,5 @@ mysl2.getValue();
 
 <br /><br />
 </div>
+<?php 
+//unset($_SESSION[cp]);

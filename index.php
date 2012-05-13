@@ -21,7 +21,7 @@ if(!isset($_SESSION)){
 }
 //print_r($_SESSION);
 //echo "<br/>";
-//print_r($attributes);
+
 
 if($_SESSION[auth] != 1)$_SESSION[auth] = 0;
 
@@ -52,6 +52,8 @@ if(isset ($_SESSION[id])) {
 
 $title = "brioso-lab.ru";
 
+//print_r($attributes);
+
 switch ($attributes[act]) {
     
     case 'main':
@@ -61,13 +63,13 @@ switch ($attributes[act]) {
         include 'main/main.php';
         break;
     
-    case 'addsu':
+    case 'adds':
         include 'main/header.php';
         include 'main/selector.php';
         include 'main/uploader.php';
         break;
     
-    case 'adds':
+    case 'addsu':
         include 'main/header.php';
         include 'main/selector.php';
         include 'main/upload_slide.php';
@@ -76,6 +78,11 @@ switch ($attributes[act]) {
     case 'ups':
         include 'main/header.php';
         include 'action/upload_image.php';
+        break;
+    
+    case 'upsn':
+        include 'main/header.php';
+        include 'action/upload_img_w.php';
         break;
     
     case 'upp':
@@ -106,11 +113,25 @@ switch ($attributes[act]) {
         include 'main/search.php';
         break;
     
+    case 'searchn':
+        include 'query/all_slides_w.php';
+        include 'main/header.php';
+        include 'main/selector.php';
+        include 'main/slider_search.php';
+        break;
+    
     case 'srch':
         include 'query/search.php';
         include 'main/header.php';
         include 'main/selector.php';
         include 'main/result_search.php';
+        break;
+    
+       case 'srchn':
+        include 'query/search_w.php';
+        include 'main/header.php';
+        include 'main/selector.php';
+        include 'main/result_search_w.php';
         break;
     
     case 'auth':

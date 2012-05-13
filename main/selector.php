@@ -26,6 +26,10 @@
             <span class="menu_select"  onclick="javascript:location.href='index.php?act=search';" title="поиск слайдов">
                 Поиск
             </span>
+            &nbsp;&nbsp;
+            <span class="menu_select"  onclick="javascript:location.href='index.php?act=searchn';" title="поиск слайдов">
+                Поиск 2
+            </span>
         </form>
     </div>
 <?php 

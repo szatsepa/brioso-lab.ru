@@ -62,7 +62,8 @@ function slider(elemId, sliderWidth, range1, range2, step) {
 			if(step == 0) knob.style.left = x+'px';			
 			else knob.style.left = Math.round(x/(step*point))*step*point+'px';
 		}
-		d.getElementById('info').value = getValue();	// это вывод значения для примера
+//                alert(elemId);
+		d.getElementById(elemId+'_info').value = getValue();	// это вывод значения для примера
 	}
 	function setValue2(x)	// установка по значению
 	{

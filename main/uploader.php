@@ -19,7 +19,7 @@ if(isset($attributes[slide_id])){
             <input name="imgfile" size="50" accept="image/*" type="file" size="20" required/>
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             <input type="image" name="prelo" id="pld" style="display: none;" src="images/circle.gif" disabled/> 
-            <input type="hidden" name="id" value="<?php echo $id;?>"/>
+<!--            <input type="hidden" name="id" value="<?php echo $id;?>"/>-->
             <input type="submit" value="Загрузить изображениe" onclick="javascript:preload('pld');"/>
       </form>
     </span>

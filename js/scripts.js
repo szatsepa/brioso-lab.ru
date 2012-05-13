@@ -62,14 +62,32 @@ function _getParams(i){
     
     var hid = document.getElementById('params');
     
-    for(var n = 0;n < (i-1);n++){
+    for(var n = 0;n < (i);n++){
         var val = 'mysl'+n;
         var obj = eval(val);
         out += obj.getValue();
-        if(n<(i-2))out += '^';
+        if(n<(i-1))out += '^'; 
 
     }
 //    alert("<form action='index.php?act=uppn' method='post'><input type='hidden' name='slide_id' value='"+hid.slide_id.value+"'/><input type='hidden' name='params' value='"+out+"'/></form>");
     document.write("<form action='index.php?act=uppn' method='post'><input type='hidden' name='slide_id' value='"+hid.slide_id.value+"'/><input type='hidden' name='params' value='"+out+"'/></form>");
     document.forms[0].submit();
+}
+function _searchParams(i){
+    
+//    alert(i);
+    
+    var out = "";
+    
+    for(var n = 0;n < (i);n++){
+        var val = 'mysl'+n;
+        var obj = eval(val);
+        out += obj.getValue();
+        if(n<(i-1))out += '^'; 
+
+    }
+//    alert("<form action='index.php?act=srchn' method='post'><input type='hidden' name='params' value='"+out+"'/></form>");
+    document.write("<form action='index.php?act=srchn' method='post'><input type='hidden' name='params' value='"+out+"'/></form>");
+    document.forms[0].submit();
+    
 }
