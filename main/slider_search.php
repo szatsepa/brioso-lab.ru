@@ -29,8 +29,10 @@ $img = "http://".$host."/images/slides/".$slide_array[$num][name];
         <form id="params">
             <div style="position: relative;">
             <div id="sl0" style="float: left;"></div>
-            <script type="text/javascript">  
-                var mysl0 = new slider('sl0', 420, 0, 15, 1);
+            <script type="text/javascript"> 
+                var slider_array = new Array();
+                var mysl0 = new slider('sl0', 420, 0, 15, 1, 'srchn', false);
+                slider_array.push(mysl0);
             </script>
             <div style="position:relative;float: right;">
                 <input class="search" placeholder="0" type="text" size="2" id="sl0_info"/>
@@ -45,13 +47,15 @@ $img = "http://".$host."/images/slides/".$slide_array[$num][name];
                        $_SESSION[cp]=$i;
                        break;                       
                        }
-                   if($i==($_SESSION[cp]-1)){
+                   if($i==($_SESSION[cp]-1)){ 
                        ?>
-                    <div style="position: relative; ">
-                       <div id="sl<?php echo $i;?>"  style="float: left;"></div>
+                    <div style="position: relative; ">  
+                       <div id="sl<?php echo $i;?>"  style="float: left;"></div>  
                        <?php
                        echo "<script type='text/javascript'>
-                                var mysl$i = new slider('sl$i', 420, 0, 15, 1);
+                                var mysl$i = new slider('sl$i', 420, 0, 15, 1, 'srchn', true);
+                               slider_array.push(mysl$i);
+                               mysl$i.setArray(slider_array); 
                              </script>
                            <div style='position:relative;float: right;'>
                                 <input class='search' placeholder='0' type='text'  size='2' id='sl".$i."_info'/>
@@ -62,7 +66,8 @@ $img = "http://".$host."/images/slides/".$slide_array[$num][name];
                        echo "<div style='position: relative; '>
                        <div id='sl$i'  style='float: left;'></div>";
                        echo "<script type='text/javascript'>
-                                var mysl$i = new slider('sl$i', 420, 0, 15, 1);
+                                var mysl$i = new slider('sl$i', 420, 0, 15, 1, 'srchn', false);
+                               slider_array.push(mysl$i);
                              </script>
                            <div style='position:relative;float: right;'>
                                 <input class='search' placeholder='0' type='text'  size='2' id='sl".$i."_info'/>
@@ -74,7 +79,7 @@ $img = "http://".$host."/images/slides/".$slide_array[$num][name];
                }
             }
             ?>
-         <input type="button" class="but" value=" Искать " onclick="javascript:_searchParams(<?php echo $_SESSION[cp];?>);" />   
+<!--         <input type="button" class="but" value=" Искать " onclick="javascript:_searchParams(<?php echo $_SESSION[cp];?>);" />   -->
         </form>
 
      </div>

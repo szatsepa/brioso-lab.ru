@@ -2,10 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-function slider(elemId, sliderWidth, range1, range2, step) {
+function slider(elemId, sliderWidth, range1, range2, step, action, enabl) {
 	var knobWidth = 9;				// ширина и высота бегунка
 	var knobHeight = 24;			// изменяются в зависимости от используемых изображений
 	var sliderHeight = 13;			// высота slider'а
+        var sl_array;
+        var interv = 0;
 	
 	var offsX,tmp;					// вспомагательные переменные
 	var d = document;
@@ -63,6 +65,8 @@ function slider(elemId, sliderWidth, range1, range2, step) {
 			else knob.style.left = Math.round(x/(step*point))*step*point+'px';
 		}
 		d.getElementById(elemId+'_info').value = getValue();	// это вывод значения для примера
+                interv = setInterval(_goNah, 1000);
+//                _goNah();
 	}
 	function setValue2(x)	// установка по значению
 	{
@@ -73,7 +77,27 @@ function slider(elemId, sliderWidth, range1, range2, step) {
 	}
 
 	function getValue() 
-	{return Math.round(parseInt(knob.style.left)/point)+range1;}
+	{
+            return Math.round(parseInt(knob.style.left)/point)+range1;
+        }
+        function setArray(arr){
+            sl_array = arr;
+        }
+        
+        function _goNah(){  
+            clearInterval(interv);
+            if(enabl){
+                    
+                var out = "";
+                
+                for(var i in sl_array){
+                    out += sl_array[i].getValue()+"^";  
+                }
+               
+                document.write("<form action='index.php?act="+action+"' method='post'><input type='hidden' name='params' value='"+out+"'/></form>");
+                document.forms[0].submit();
+            }
+        }
 
 //////////////////////////////// слушатели событий ////////////////////////////////////
 
@@ -112,5 +136,7 @@ function slider(elemId, sliderWidth, range1, range2, step) {
 	// объявляем функции setValue2 и getValue как методы класса
 	this.setValue = setValue2;
 	this.getValue = getValue;
+        this._goNah = _goNah;
+        this.setArray = setArray;
 } // конец класса
 
