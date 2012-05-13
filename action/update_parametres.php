@@ -6,25 +6,26 @@
 
 $id = intval($attributes[slide_id]);
 
-$params = explode('^', $attributes[params]);
+//$params = explode('^', $attributes[params]);  
+  
 
 $str_params = '';
 
 $parameters = quote_smart($attributes[params]);
 
-for($i = 1;$i < (count($params)+1);$i++){
-    
-    $p = $params[$i];
-    
-    $str_params .= "`param_$i`=$p";
-    if($i < (count($params)))$str_params .= ",";
-}
+//for($i = 1;$i < (count($params)+1);$i++){
+//    
+//    $p = $params[$i];
+//    
+//    $str_params .= "`param_$i`=$p";
+//    if($i < (count($params)))$str_params .= ",";
+//}
 
 $query = "UPDATE  `some_items` SET params=$parameters  WHERE id = $id";
 
 $result = mysql_query($query) or die($query);
 
-//echo "<script type='text/javascript'>alert('$query')</script>";
+//echo "$query";
 
 header("location:index.php?act=main");
 ?>

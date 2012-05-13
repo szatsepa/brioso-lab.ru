@@ -65,7 +65,7 @@ function slider(elemId, sliderWidth, range1, range2, step, action, enabl) {
 			else knob.style.left = Math.round(x/(step*point))*step*point+'px';
 		}
 		d.getElementById(elemId+'_info').value = getValue();	// это вывод значения для примера
-                interv = setInterval(_goNah, 1000);
+                interv = setInterval(_goNah, 500);
 //                _goNah();
 	}
 	function setValue2(x)	// установка по значению
@@ -93,8 +93,16 @@ function slider(elemId, sliderWidth, range1, range2, step, action, enabl) {
                 for(var i in sl_array){
                     out += sl_array[i].getValue()+"^";  
                 }
+               var str_out = '';
                
-                document.write("<form action='index.php?act="+action+"' method='post'><input type='hidden' name='params' value='"+out+"'/></form>");
+               if(action == 'srchn'){
+                   str_out="<form action='index.php?act="+action+"' method='post'><input type='hidden' name='params' value='"+out+"'/></form>";
+               }else{
+                   var hid = document.getElementById('params');
+                   str_out = "<form action='index.php?act="+action+"' method='post'><input type='hidden' name='slide_id' value='"+hid.slide_id.value+"'/><input type='hidden' name='params' value='"+out+"'/></form>";
+               }
+//               alert(str_out);
+                document.write(str_out);
                 document.forms[0].submit();
             }
         }
