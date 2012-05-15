@@ -121,3 +121,6 @@ input.search{
     text-align: center;
     color: black;
 }
+input.exp{
+    color: hsl(120,50%,75%);
+}

@@ -21,7 +21,7 @@ $img = "http://".$host."/images/slides/".$slide_array[$num][name];
         
     </div>
     
-    <div style="position: relative;float: left;margin: 0 auto;">
+    <div style="position: relative;float: left;margin: 0 auto;background-color: hsl(120,100%,50%);">
         
         <p align="center">Выберите параметры</p>
         
