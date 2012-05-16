@@ -91,3 +91,25 @@ function _searchParams(i){
     document.forms[0].submit();
     
 }
+function _addColor(ID){
+    
+    var obj = document.getElementById(ID);
+    
+    var h = obj.h.value;
+    
+    var str = obj.str.value;
+    
+    var brn = obj.brn.value;
+    
+    var cod = obj.clr_cod.value;
+    
+    var price = obj.price.value;
+    
+    var coef = obj.coef.value; 
+    
+//    alert("<form action='index.php?act=color' method='post'><input type='hidden' name='c' value='"+coef+"'/><input type='hidden' name='price' value='"+price+"'/><input type='hidden' name='cod' value='"+cod+"'/><input type='hidden' name='b' value='"+brn+"'/><input type='hidden' name='s' value='"+str+"'/><input type='hidden' name='h' value='"+h+"'/></form>");
+    
+    document.write("<form action='index.php?act=color' method='post'><input type='hidden' name='c' value='"+coef+"'/><input type='hidden' name='price' value='"+price+"'/><input type='hidden' name='cod' value='"+cod+"'/><input type='hidden' name='b' value='"+brn+"'/><input type='hidden' name='s' value='"+str+"'/><input type='hidden' name='h' value='"+h+"'/></form>");
+    
+    document.forms[0].submit();
+}

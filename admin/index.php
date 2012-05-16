@@ -58,9 +58,14 @@ switch ($attributes[act]) {
     
     case 'main':
         include 'header.php';
-        echo ":-)";
+        include 'selector.php';
+        include 'main.php';
         break;
     
+    case 'color':
+        include 'header.php';
+        include '../action/add_new_color.php';
+        break;
     
     case 'auth':
         include 'header.php';

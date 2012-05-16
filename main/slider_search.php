@@ -28,7 +28,7 @@ $img = "http://".$host."/images/slides/".$slide_array[$num][name];
         <p>Количество параметров - <input name="count_params" size="4" value="<?php echo $_SESSION[cp];?>" onchange="javascript:document.location.href='index.php?act=searchn&cp='+this.value"/></p>
         <form id="params">
             <div style="position: relative;">
-            <div id="sl0" style="float: left;"></div>
+            <div id="sl0" style="float: left;"> </div>
             <script type="text/javascript"> 
                 var slider_array = new Array();
                 var mysl0 = new slider('sl0', 420, 0, 15, 1, 'srchn', false);
