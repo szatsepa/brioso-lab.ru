@@ -5,7 +5,7 @@
  */
 
 ?>
-<div style="position: relative;width: 1004px;height: 600px;">  
+<div style="position: relative;width: 1004px;height: 543px;">  
     <div id="_colorfield" style="position: relative;width: 980px;height: 190px;background-color: hsl(180,100%,50%);left: 12px;top: 12px;">
         
     </div>

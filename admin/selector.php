@@ -13,24 +13,25 @@
                  echo "$senya";
              ?>
         </div> 
-    <div class="main_menu">
+    <div class="main_menu" style="width: 66%;height: 22px;margin-top: 3px;">     
         <form id="f_menu">
-<!--            <span class="menu_select" onclick="javascript:location.href='index.php?act=adds';" title="Загрузить слайд">
-               Загрузить слайд
-            </span>
-            &nbsp;&nbsp;
-            <span class="menu_select"  onclick="javascript:location.href='index.php?act=main';" title="показать все слайды">
-                Все слайды
-            </span>
-            &nbsp;&nbsp;
-            <span class="menu_select"  onclick="javascript:location.href='index.php?act=search';" title="поиск слайдов">
-                Поиск
-            </span>
-            &nbsp;&nbsp;
-            <span class="menu_select"  onclick="javascript:location.href='index.php?act=searchn';" title="поиск слайдов">
-                Поиск 2
-            </span>-->
-        </form>
+            <table>
+                <tr>
+                    <td>
+                        <input style="color: black;font-weight: bold;" type="button" value="Главная"  onclick="javascript:location.href='index.php?act=main';"/>
+                    </td>
+                    <td>
+                       <input style="color: black;font-weight: bold;" type="button" value="Группы"  onclick="javascript:location.href='index.php?act=group';"/> 
+                    </td>
+                    <td>
+                        <input style="color: black;font-weight: bold;" type="button" value="Типы"  onclick="javascript:location.href='index.php?act=type';"/>
+                    </td>
+                    <td>
+                        <input style="color: black;font-weight: bold;" type="button" value="Качество"  onclick="javascript:location.href='index.php?act=qlty';"/>
+                    </td>
+                </tr>
+            </table>
+        </form> 
     </div>
 <?php 
 

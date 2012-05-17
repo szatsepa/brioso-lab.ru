@@ -62,6 +62,18 @@ switch ($attributes[act]) {
         include 'main.php';
         break;
     
+    case 'group':
+        include 'header.php';
+        include 'selector.php';  
+//        include 'main.php'  
+        break;
+    
+    case 'type':
+        include 'header.php';
+        include 'selector.php'; 
+//        include 'main.php'  
+        break;
+    
     case 'color':
         include 'header.php';
         include '../action/add_new_color.php';
