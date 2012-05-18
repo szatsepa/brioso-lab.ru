@@ -139,3 +139,55 @@ function _groupEdit(ID, gid, nm, ds){
     
     obj.dscr.value = ds;
 }
+function _priselistEdit(arr){
+    
+    document.getElementById('pedit').style.display = "block";
+    
+    document.getElementById('ptable').style.display = 'none';
+    
+    var form = document.getElementById('edit_row');
+    
+    var group_select = form.pgroup;
+    
+    var type_select = form.ptype;
+    
+    var quality_select = form.pqlty;
+    
+    var n = group_select.options.length;
+     
+    for(var i = 0; i <  n;i++){
+        if(arr[4]==group_select.options[i].text){
+            group_select.options[i].selected = true;
+        }else{
+            group_select.options[i].selected = false;
+        }
+    }
+    
+    n = type_select.options.length;
+    
+    for(i = 0; i <  n;i++){
+        if(arr[5]==type_select.options[i].text){
+            type_select.options[i].selected = true;
+        }else{
+            type_select.options[i].selected = false;
+        }
+    }
+        
+    n = quality_select.options.length;
+
+    for(i = 0; i <  n;i++){
+        if(arr[1]==quality_select.options[i].text){
+            quality_select.options[i].selected = true;
+        }else{
+            quality_select.options[i].selected = false;
+        }
+    }
+    
+    form.pname.value = arr[2];
+    
+    form.dscr.value = arr[3];
+    
+    form.pweight.value = arr[6];
+    
+    form.pprice.value = arr[7];
+}

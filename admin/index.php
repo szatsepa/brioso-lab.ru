@@ -129,6 +129,9 @@ switch ($attributes[act]) {
         break;
     
     case 'prc':
+        include '../query/group.php';
+        include '../query/type.php';
+        include '../query/quality.php';
         include '../query/price_list.php';
         include 'header.php';
         include 'selector.php'; 

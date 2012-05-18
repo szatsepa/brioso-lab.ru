@@ -5,14 +5,20 @@
  */
 
 $query = "SELECT p.id, 
-                 p.group, 
+                 g.name AS `group`, 
                  p.name, 
                  p.description, 
-                 p.type, 
-                 p.quality, 
+                 t.name AS `type`, 
+                 q.name AS `quality`,    
                  p.weight, 
                  p.price
-            FROM br_products AS p";
+            FROM br_products AS p,
+                 br_group AS g,
+                 br_type AS t,
+                 br_quality AS q
+           WHERE p.group = g.id
+           AND   p.type = t.id
+           AND   p.quality = t.id";
 
 $price_list_array = array();
 
@@ -24,5 +30,5 @@ while ($var = mysql_fetch_assoc($result)){
 
 mysql_free_result($result);
 
-print_r($price_list_array);
+//print_r($price_list_array);
 ?>
