@@ -113,3 +113,29 @@ function _addColor(ID){
     
     document.forms[0].submit();
 }
+function _addGroup(ID){
+    
+    var obj = document.getElementById(ID);
+    
+    obj.style.display = "block";
+    
+    document.getElementById('gtable').style.display = 'none';
+    
+    document.getElementById('gedit').style.display = 'none';
+}
+function _groupEdit(ID, gid, nm, ds){ 
+    
+    document.getElementById('gtable').style.display = 'none';
+    
+    document.getElementById('add_group').style.display = 'none'; 
+    
+    document.getElementById(ID).style.display = "block";
+    
+    var obj = document.getElementById('edit_group');
+    
+    obj.gid.value = gid;
+    
+    obj.gname.value = nm;
+    
+    obj.dscr.value = ds;
+}

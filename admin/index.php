@@ -63,15 +63,76 @@ switch ($attributes[act]) {
         break;
     
     case 'group':
+        include '../query/group.php';
         include 'header.php';
         include 'selector.php';  
-//        include 'main.php'  
+        include 'group.php';
+        break;
+    
+    case 'addgroup':
+        include 'header.php';
+        include '../action/add_group.php';
+        break;
+    
+    case 'gedit':
+        include 'header.php';
+        include '../action/gedit.php';
+        break;
+    
+    case 'gdel':
+        include 'header.php';
+        include '../action/gedit.php';
         break;
     
     case 'type':
+        include '../query/type.php';
         include 'header.php';
         include 'selector.php'; 
-//        include 'main.php'  
+        include 'type.php';  
+        break;
+    
+    case 'addtype':
+        include 'header.php';
+        include '../action/add_type.php';
+        break;
+    
+    case 'tedit':
+        include 'header.php';
+        include '../action/tedit.php';
+        break; 
+    
+    case 'tdel':
+        include 'header.php';
+        include '../action/tedit.php';
+        break;
+    
+    case 'qlty':
+        include '../query/quality.php';
+        include 'header.php';
+        include 'selector.php'; 
+        include 'quality.php'; 
+        break;
+    
+    case 'addqlty':
+        include 'header.php';
+        include '../action/add_quality.php';
+        break;
+    
+    case 'qedit':
+        include 'header.php';
+        include '../action/qedit.php';
+        break; 
+    
+    case 'qdel':
+        include 'header.php';
+        include '../action/qedit.php';
+        break;
+    
+    case 'prc':
+        include '../query/price_list.php';
+        include 'header.php';
+        include 'selector.php'; 
+        include 'price_list.php'; 
         break;
     
     case 'color':

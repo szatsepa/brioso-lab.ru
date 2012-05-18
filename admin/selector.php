@@ -29,6 +29,9 @@
                     <td>
                         <input style="color: black;font-weight: bold;" type="button" value="Качество"  onclick="javascript:location.href='index.php?act=qlty';"/>
                     </td>
+                    <td>
+                        <input style="color: black;font-weight: bold;" type="button" value="Прайс"  onclick="javascript:location.href='index.php?act=prc';"/>
+                    </td>
                 </tr>
             </table>
         </form> 
