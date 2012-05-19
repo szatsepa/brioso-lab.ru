@@ -17,6 +17,7 @@ header('Content-Type: text/html; charset=utf-8');
         <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen, projection" />
         <script type="text/javascript" src="../js/scripts.js"></script>
         <script type="text/javascript" src="../js/Some_slider.js"></script>
+        <script type="text/javascript" src="../js/img_show.js"></script>
 </head>
     <body onload="">
        <div class="main"> 

@@ -32,6 +32,9 @@
                     <td>
                         <input style="color: black;font-weight: bold;" type="button" value="Товары"  onclick="javascript:location.href='index.php?act=prc';"/>
                     </td>
+                    <td>
+                        <input style="color: black;font-weight: bold;" type="button" value="Изображения"  onclick="javascript:location.href='index.php?act=imgs';"/>
+                    </td>
                 </tr>
             </table>
         </form> 

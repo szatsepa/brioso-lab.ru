@@ -153,6 +153,11 @@ switch ($attributes[act]) {
         include '../action/add_products.php';
         break;
     
+    case 'imgs':
+        include 'header.php';
+        include '../action/images_products.php';
+        break;
+    
     case 'color':
         include 'header.php';
         include '../action/add_new_color.php';
