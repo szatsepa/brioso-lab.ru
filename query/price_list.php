@@ -11,14 +11,16 @@ $query = "SELECT p.id,
                  t.name AS `type`, 
                  q.name AS `quality`,    
                  p.weight, 
-                 p.price
+                 p.price,
+                 p.stars
             FROM br_products AS p,
                  br_group AS g,
                  br_type AS t,
                  br_quality AS q
            WHERE p.group = g.id
            AND   p.type = t.id
-           AND   p.quality = t.id";
+           AND   p.quality = t.id
+           AND   p.removed = 0";
 
 $price_list_array = array();
 

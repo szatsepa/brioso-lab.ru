@@ -138,6 +138,21 @@ switch ($attributes[act]) {
         include 'price_list.php'; 
         break;
     
+    case 'pedit':
+        include 'header.php';
+        include '../action/products_edit.php';
+        break;
+    
+    case 'prdel':
+        include 'header.php';
+        include '../action/products_edit.php';
+        break;
+    
+    case 'addproduct':
+        include 'header.php';
+        include '../action/add_products.php';
+        break;
+    
     case 'color':
         include 'header.php';
         include '../action/add_new_color.php';

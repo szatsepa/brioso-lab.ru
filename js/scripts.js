@@ -145,6 +145,8 @@ function _priselistEdit(arr){
     
     document.getElementById('ptable').style.display = 'none';
     
+    document.getElementById('add_prod').style.display = 'none';
+    
     var form = document.getElementById('edit_row');
     
     var group_select = form.pgroup;
@@ -182,6 +184,9 @@ function _priselistEdit(arr){
             quality_select.options[i].selected = false;
         }
     }
+//    alert(arr[0]);
+    
+    form.pid.value = arr[0];
     
     form.pname.value = arr[2];
     
@@ -190,4 +195,13 @@ function _priselistEdit(arr){
     form.pweight.value = arr[6];
     
     form.pprice.value = arr[7];
+    
+    form.stars.value = arr[8];
+}
+function _addProduct(){
+    document.getElementById('pedit').style.display = "none";
+    
+    document.getElementById('ptable').style.display = 'none';
+    
+    document.getElementById('add_prod').style.display = 'block';
 }
