@@ -24,6 +24,7 @@ TINY.slider=function(){
 		this.x.ai=setInterval(new Function(this.n+'.move(1,1,1)'),this.a*1000)
 	},
 	slide.prototype.move=function(d,a){
+            alert(d);
 		var n=this.c+d;
 		if(this.r){n=d==1?n==this.l?0:n:n<0?this.l-1:n}
 		this.pos(n,a,1)

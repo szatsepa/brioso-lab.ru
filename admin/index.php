@@ -133,10 +133,15 @@ switch ($attributes[act]) {
         include '../query/group.php';
         include '../query/type.php';
         include '../query/quality.php';
-        include '../query/price_list.php';
+        include '../query/products.php';
         include 'header.php';
         include 'selector.php'; 
         include 'products.php'; 
+        break;
+    
+    case 'bind':
+        include 'header.php';
+        include '../action/bind_image.php';
         break;
     
     case 'pedit':

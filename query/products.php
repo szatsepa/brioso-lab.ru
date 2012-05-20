@@ -12,7 +12,8 @@ $query = "SELECT p.id,
                  q.name AS `quality`,    
                  p.weight, 
                  p.price,
-                 p.stars
+                 p.stars,
+                 p.image
             FROM br_products AS p,
                  br_group AS g,
                  br_type AS t,

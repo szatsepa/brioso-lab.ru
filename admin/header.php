@@ -19,7 +19,17 @@ header('Content-Type: text/html; charset=utf-8');
         <script type="text/javascript" src="../js/Some_slider.js"></script>
         <script type="text/javascript" src="../js/img_show.js"></script>
 </head>
-    <body onload="">
+    <?php 
+    if($attributes[act]=='prc'){
+        ?>
+    <body onload="javascript:Load();">
+    <?php
+    }else{
+        ?>
+        <body>
+        <?php
+    }
+    ?>
        <div class="main"> 
         <div class="main_0">
 

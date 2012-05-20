@@ -11,7 +11,8 @@
 <div class="group" style="position: relative;margin-top: 12px;margin-left: 14px;padding-left: 36px;">
     
  <div class="add_product" style="display: none;font-size: 16px;font-weight: bold;color: black;" id="add_prod">
-     <p>Добавить</p>
+     <div style="position:relative;width: 480px;">
+         <p>Добавить</p>
         <form id="form_group" action="index.php?act=addproduct" method="post" required> 
             <input type="hidden" name="pid" value=""/>
             <br/>
@@ -59,7 +60,7 @@
                 ?>
             </select>
             &nbsp;&nbsp;
-            <input type="text" size="5" name="stars" placeholder="Оценка"/>
+            <input type="text" size="5" name="stars" placeholder="Оценка(0/5)"/>
             <br/>
             &nbsp;
             <br/>
@@ -83,6 +84,17 @@
             &nbsp;
             <br/>
         </form>
+ </div>
+<!--    <div class="show" style="padding-top: 6px;background-color: #ccc;position:relative;bottom: 410px;left: 250px;width: 300px;height: 350px;margin: 24px auto;">
+    <p style="text-align: center;color: black;font-size: 14px;font-weight: bold;">Прикрепить изображение</p>
+    <p style="text-align: center;">
+        <input type="image"  src = "" width = "240" height = "240"  id = "image" value="" onClick="javascript:alert('index.php?act=bind&item=<?php echo $value[id];?>&img='+this.value);"/> 
+    </p> 
+    <p style="text-align: center;">
+        <img style="cursor:pointer;" src = "http://brioso-lab.ru/images/left.gif"   onClick = "javascript: left_arrow()" alt="Left"/>
+	<img style="cursor:pointer;" src = "http://brioso-lab.ru/images/right.gif"  onClick = "javascript: right_arrow()" alt="Right"/>
+    </p>
+</div>-->
     </div>
 <div class="table" id="ptable">
         <table border="0">
@@ -114,6 +126,9 @@
                     </td>
                     <td>
                        Цена
+                    </td>
+                    <td>
+                       Изобр.
                     </td>
                     <td>
                        Редактировать 
@@ -161,6 +176,9 @@
                         </td>
                         <td>
                             $value[price]
+                        </td>
+                         <td>
+                            $value[image]
                         </td>";
              ?>
                    
@@ -192,7 +210,7 @@
     </div>
     <div class="row_visio" style="display: none;font-size: 16px;font-weight: bold;color: black;" id="pedit">
         
-        <div style="position:relative;width: 480px;outline: 1px solid red;">
+        <div style="position:relative;width: 480px;">
         <p>Редактировать</p>
         <form id="edit_row" action="index.php?act=pedit" method="post">
             <input type="hidden" name="pid" value=""/>
@@ -241,7 +259,7 @@
                 ?>
             </select>
             &nbsp;&nbsp;
-            <input type="text" size="5" name="stars" placeholder="Оценка"/>
+            <input type="text" size="5" name="stars" placeholder="Оценка(0-5)"/>
             <br/>
             &nbsp;
             <br/>
@@ -262,55 +280,76 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="submit" value="Изменить"/>  
             <br/>
-            &nbsp;
+            &nbsp; 
             <br/>
-        </form>
+        </form> 
         </div> 
-                <div id="wrapper" style="outline: 1px solid black;">
-	<div id="container">
-		<div class="sliderbutton" id="slideleft" onclick="slideshow.move(-1)"></div>
-		<div id="slider">
-			<ul>
-                            <?php 
-                            foreach ($imgs_array as $value) {
-                                ?>
-                                <li>
-                                    <input type="image" src="http://brioso-lab.ru/images/items/<?php echo $value[name];?>" width="240" height="240" alt="Image" onClick="javascript:alert('ID image is <?php echo $value[id];?>');"/>
-                                </li>
-                                <?php
-                            }
-                            ?>
-                        </ul>
-		</div>
-		<div class="sliderbutton" id="slideright" onclick="slideshow.move(1)"></div>
-		<ul id="pagination" class="pagination">
-                    <?php 
-                    $n = 0;
-                            foreach ($imgs_array as $value) {
-                                ?>
-                                <li onclick="slideshow.pos(<?php echo $n;?>)"></li>
-                                <?php
-                                $n++;
-                            }
-                            ?>
-		</ul>
-	</div>
+<div class="show" style="padding-top: 6px;background-color: #ccc;position:relative;bottom: 410px;left: 250px;width: 300px;height: 350px;margin: 24px auto;"> 
+    <form id="img_show">
+        <input type="hidden" name="pid" value=""/>
+        <p style="text-align: center;color: black;font-size: 14px;font-weight: bold;">Прикрепить изображение</p>
+        <p style="text-align: center;">
+            <input type="image"  src = "" width = "240" height = "240"  id = "image" value="" onClick="javascript:alert();"/> 
+        </p> 
+        <p style="text-align: center;">
+            <img style="cursor:pointer;" src = "http://brioso-lab.ru/images/left.gif"   onClick = "javascript: left_arrow()" alt="Left"/>
+            <img style="cursor:pointer;" src = "http://brioso-lab.ru/images/right.gif"  onClick = "javascript: right_arrow()" alt="Right"/>
+        </p>
+    </form>
 </div>
     </div>
 
 		</div>
+
+
+
 <script type="text/javascript">
-var slideshow=new TINY.slider.slide('slideshow',{
-	id:'slider',
-	auto:0,
-	resume:true,
-	vertical:false,
-	navid:'pagination',
-	activeclass:'current',
-	position:0,
-	rewind:false,
-	elastic:true,
-	left:'slideleft',
-	right:'slideright'
-});
+var mas = new Array(); // массив картинок
+
+<?php
+                foreach ($imgs_array as $value) {
+                    ?>
+                        var tmp_arr = new Array('http://brioso-lab.ru/images/items/<?php echo $value[name];?>','<?php echo $value[id];?>');
+                        mas.push(tmp_arr);
+                    <?
+}
+?>
+    
+var to = 0;  // Счетчик, указывающий на текущую картинки
+
+function right_arrow() // Открытие следующей картинки(движение вправо)
+{
+     var obj = document.getElementById("image");
+     var product = document.getElementById("img_show").pid.value;
+     var out = 'index.php?act=bind&item='+product+'&img=';
+    if (to < mas.length-1) { 
+        to++;
+    }else{
+        to = 0;
+        }
+    obj.src = mas[to][0];
+    obj.value = mas[to][1];
+    
+}
+
+function left_arrow() // Открытие предыдущей картинки(движение влево)
+{
+     var obj = document.getElementById("image");
+     var product = document.getElementById("img_show").pid.value;
+      var out = 'index.php?act=bind&item='+product+'&img=';
+    if (to > 0){ 
+        to--;
+    }else{
+        to = mas.length-1;
+        }
+   obj.src = mas[to][0];
+   obj.value = mas[to][1];
+}
+function Load()   // Ф-ция загрузки "сохраненной" картинки
+{
+    var obj = document.getElementById("image");
+    var product = document.getElementById("img_show").pid.value;
+     obj.src = mas[0][0];
+     obj.value = mas[0][1];
+}
 </script>

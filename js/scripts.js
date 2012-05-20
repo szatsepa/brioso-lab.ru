@@ -147,6 +147,8 @@ function _priselistEdit(arr){
     
     document.getElementById('add_prod').style.display = 'none';
     
+    document.getElementById('img_show').pid.value = arr[0];
+    
     var form = document.getElementById('edit_row');
     
     var group_select = form.pgroup;
