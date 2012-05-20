@@ -141,11 +141,13 @@
             <tbody style="font-size: 14px;">   
                 <?php
                 $n = 1; 
-                foreach ($price_list_array as $value) {
+                foreach ($product_array as $value) {
                                             ?>
-<script type="text/javascript">
-    var price_rows = new Array(<?php echo "'".$value[id]."','".$value[group]."','".$value[name]."','".$value[description]."','".$value[type]."','".$value[quality]."','".$value[weight]."','".$value[price]."','".$value[stars]."'";?>);
-</script> 
+                
+<!--<script type="text/javascript">
+//    var price_rows = new Array(<?php echo "'".$value[id]."','".$value[group]."','".$value[name]."','".$value[description]."','".$value[type]."','".$value[quality]."','".$value[weight]."','".$value[price]."','".$value[stars]."','".$value[image]."'";?>);
+//alert(price_rows);
+</script> -->
              <?php
 
                     
@@ -183,7 +185,7 @@
              ?>
                    
                        <td>
-                           <a style="text-decoration: underline;" name="" onClick="javascript:_priselistEdit(price_rows);">Редактировать</a>
+                           <a style="text-decoration: underline;" name="" onClick="javascript:_priselistEdit(<?php echo "'".$value[id]."','".$value[group]."','".$value[name]."','".$value[description]."','".$value[type]."','".$value[quality]."','".$value[weight]."','".$value[price]."','".$value[stars]."','".$value[image]."'";?>);">Редактировать</a>
                         </td>
                         <td>
                             <a style="text-decoration: underline;" href="index.php?act=prdel&pid=<?php echo $value[id];?>"  >Удалить</a> 
@@ -283,19 +285,20 @@
             &nbsp; 
             <br/>
         </form> 
-        </div> 
-<div class="show" style="padding-top: 6px;background-color: #ccc;position:relative;bottom: 410px;left: 250px;width: 300px;height: 350px;margin: 24px auto;"> 
-    <form id="img_show">
-        <input type="hidden" name="pid" value=""/>
+        </div>  
+<div class="show" style="padding-top: 6px;background-color: #ccc;position:relative;bottom: 410px;left: 250px;width: 300px;height: 350px;margin: 24px auto;">  
+<!--    document.location='index.php?act=bind'+this.value-->
+<!--    <form id="img_show" method="post"></form>-->
+        <input type="hidden" name="pid" value="" id="product_id"/>
         <p style="text-align: center;color: black;font-size: 14px;font-weight: bold;">Прикрепить изображение</p>
         <p style="text-align: center;">
-            <input type="image"  src = "" width = "240" height = "240"  id = "image" value="" onClick="javascript:alert();"/> 
+            <input type="image"  src = "" width = "240" height = "240"  id = "image" value="" onClick="javascript:document.location.href='index.php?act=bind'+this.value;"/> 
         </p> 
         <p style="text-align: center;">
             <img style="cursor:pointer;" src = "http://brioso-lab.ru/images/left.gif"   onClick = "javascript: left_arrow()" alt="Left"/>
             <img style="cursor:pointer;" src = "http://brioso-lab.ru/images/right.gif"  onClick = "javascript: right_arrow()" alt="Right"/>
         </p>
-    </form>
+    
 </div>
     </div>
 
@@ -320,36 +323,38 @@ var to = 0;  // Счетчик, указывающий на текущую ка�
 function right_arrow() // Открытие следующей картинки(движение вправо)
 {
      var obj = document.getElementById("image");
-     var product = document.getElementById("img_show").pid.value;
-     var out = 'index.php?act=bind&item='+product+'&img=';
+     var product = document.getElementById("product_id").value;
+     var out = '&item='+product+'&img=';
     if (to < mas.length-1) { 
         to++;
     }else{
         to = 0;
         }
     obj.src = mas[to][0];
-    obj.value = mas[to][1];
+    obj.value = out+mas[to][1];
     
 }
 
 function left_arrow() // Открытие предыдущей картинки(движение влево)
 {
      var obj = document.getElementById("image");
-     var product = document.getElementById("img_show").pid.value;
-      var out = 'index.php?act=bind&item='+product+'&img=';
+     var product = document.getElementById("product_id").value;
+      var out = '&item='+product+'&img=';
     if (to > 0){ 
         to--;
     }else{
         to = mas.length-1;
         }
    obj.src = mas[to][0];
-   obj.value = mas[to][1];
+  obj.value = out+mas[to][1]; 
 }
-function Load()   // Ф-ция загрузки "сохраненной" картинки
+function _imgLoad()   // Ф-ция загрузки "сохраненной" картинки
 {
     var obj = document.getElementById("image");
-    var product = document.getElementById("img_show").pid.value;
+    var item = document.getElementById("product_id").value;
+    var out = '&item='+item+'&img=';
      obj.src = mas[0][0];
      obj.value = mas[0][1];
+     obj.value = out+mas[to][1];
 }
 </script>

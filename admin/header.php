@@ -22,7 +22,7 @@ header('Content-Type: text/html; charset=utf-8');
     <?php 
     if($attributes[act]=='prc'){
         ?>
-    <body onload="javascript:Load();">
+    <body onload="">
     <?php
     }else{
         ?>

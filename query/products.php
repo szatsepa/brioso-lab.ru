@@ -23,12 +23,12 @@ $query = "SELECT p.id,
            AND   p.quality = t.id
            AND   p.removed = 0";
 
-$price_list_array = array();
+$product_array = array();
 
 $result = mysql_query($query) or die($query);
 
 while ($var = mysql_fetch_assoc($result)){
-    array_push($price_list_array, $var);
+    array_push($product_array, $var);
 }
 
 mysql_free_result($result);

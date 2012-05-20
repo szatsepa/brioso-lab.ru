@@ -139,7 +139,9 @@ function _groupEdit(ID, gid, nm, ds){
     
     obj.dscr.value = ds;
 }
-function _priselistEdit(arr){
+function _priselistEdit(id,gr,nm,dsc,tp,qlt,wt,prc,st,im){
+    
+//    alert(arr);
     
     document.getElementById('pedit').style.display = "block";
     
@@ -147,9 +149,13 @@ function _priselistEdit(arr){
     
     document.getElementById('add_prod').style.display = 'none';
     
-    document.getElementById('img_show').pid.value = arr[0];
+    document.getElementById('product_id').value = id;
     
-    var form = document.getElementById('edit_row');
+//    alert(document.getElementById('img_show').pid.value);
+    
+    _imgLoad();
+    
+    var form = document.getElementById('edit_row'); 
     
     var group_select = form.pgroup;
     
@@ -160,7 +166,7 @@ function _priselistEdit(arr){
     var n = group_select.options.length;
      
     for(var i = 0; i <  n;i++){
-        if(arr[4]==group_select.options[i].text){
+        if(tp==group_select.options[i].text){
             group_select.options[i].selected = true;
         }else{
             group_select.options[i].selected = false;
@@ -170,7 +176,7 @@ function _priselistEdit(arr){
     n = type_select.options.length;
     
     for(i = 0; i <  n;i++){
-        if(arr[5]==type_select.options[i].text){
+        if(qlt==type_select.options[i].text){
             type_select.options[i].selected = true;
         }else{
             type_select.options[i].selected = false;
@@ -180,7 +186,7 @@ function _priselistEdit(arr){
     n = quality_select.options.length;
 
     for(i = 0; i <  n;i++){
-        if(arr[1]==quality_select.options[i].text){
+        if(gr==quality_select.options[i].text){
             quality_select.options[i].selected = true;
         }else{
             quality_select.options[i].selected = false;
@@ -188,17 +194,17 @@ function _priselistEdit(arr){
     }
 //    alert(arr[0]);
     
-    form.pid.value = arr[0];
+    form.pid.value = id;
     
-    form.pname.value = arr[2];
+    form.pname.value = nm;
     
-    form.dscr.value = arr[3];
+    form.dscr.value = dsc;
     
-    form.pweight.value = arr[6];
+    form.pweight.value = wt;
     
-    form.pprice.value = arr[7];
+    form.pprice.value = prc;
     
-    form.stars.value = arr[8];
+    form.stars.value = st;
 }
 function _addProduct(){
     document.getElementById('pedit').style.display = "none";

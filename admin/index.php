@@ -136,12 +136,13 @@ switch ($attributes[act]) {
         include '../query/products.php';
         include 'header.php';
         include 'selector.php'; 
-        include 'products.php'; 
+        include 'products.php';  
         break;
     
     case 'bind':
         include 'header.php';
-        include '../action/bind_image.php';
+//        print_r($attributes);
+        include '../action/bind_image.php'; 
         break;
     
     case 'pedit':
