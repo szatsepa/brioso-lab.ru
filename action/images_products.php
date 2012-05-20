@@ -3,19 +3,13 @@
 /*
  * 19/5/2012
  */
-$imgfile_b   = $document_root . '/images/' . basename($_FILES['imgfile']['name']);
+print_r($_FILES);
 
-$user_id = intval($_SESSION[id]);
-
-$name_id = intval($attributes[name_id]);
-
-$time = intval($attributes[times]);
-
-$comment = quote_smart($attributes[comment]);
-
-$server = $_SERVER[SERVER_NAME];
+$imgfile_b   = $document_root . '/images/items/' . basename($_FILES['imgfile']['name']);
 
 $size = intval($attributes[MAX_FILE_SIZE]);
+
+//echo "$imgfile_b";
 
 if($size > $_FILES['imgfile']['size']){
     
@@ -25,12 +19,7 @@ if($size > $_FILES['imgfile']['size']){
     
     $filetype = $tmp_arr[1];
     
-    unset ($tmp_arr);
-    
-    $type = 1;
-    
-    if($filetype == 'swf') $type = 2;
-    
+    unset ($tmp_arr);  
        
 if (!move_uploaded_file($_FILES['imgfile']['tmp_name'], $imgfile_b)) {
     ?>
@@ -54,7 +43,7 @@ if (!move_uploaded_file($_FILES['imgfile']['tmp_name'], $imgfile_b)) {
             }
             
             // Переименуем загруженный файл
-            rename ($imgfile_b, $new_imgfile);
+           if (rename ($imgfile_b, $new_imgfile)){
             
             $query = "INSERT INTO br_images (name) VALUES ($url)";
             
@@ -75,7 +64,7 @@ if (!move_uploaded_file($_FILES['imgfile']['tmp_name'], $imgfile_b)) {
     </script>
 <?php
            }
-  } 
+  } }
         
 }  else {
                 ?>

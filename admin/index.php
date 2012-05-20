@@ -129,13 +129,14 @@ switch ($attributes[act]) {
         break;
     
     case 'prc':
+        include '../query/all_images.php';
         include '../query/group.php';
         include '../query/type.php';
         include '../query/quality.php';
         include '../query/price_list.php';
         include 'header.php';
         include 'selector.php'; 
-        include 'price_list.php'; 
+        include 'products.php'; 
         break;
     
     case 'pedit':
@@ -154,6 +155,13 @@ switch ($attributes[act]) {
         break;
     
     case 'imgs':
+        include '../query/all_images.php';
+        include 'header.php';
+        include 'selector.php';
+        include 'all_images.php';
+        break;
+    
+    case 'addimg':
         include 'header.php';
         include '../action/images_products.php';
         break;

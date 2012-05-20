@@ -191,6 +191,8 @@
         </table>
     </div>
     <div class="row_visio" style="display: none;font-size: 16px;font-weight: bold;color: black;" id="pedit">
+        
+        <div style="position:relative;width: 480px;outline: 1px solid red;">
         <p>Редактировать</p>
         <form id="edit_row" action="index.php?act=pedit" method="post">
             <input type="hidden" name="pid" value=""/>
@@ -263,5 +265,52 @@
             &nbsp;
             <br/>
         </form>
-    </div>
+        </div> 
+                <div id="wrapper" style="outline: 1px solid black;">
+	<div id="container">
+		<div class="sliderbutton" id="slideleft" onclick="slideshow.move(-1)"></div>
+		<div id="slider">
+			<ul>
+                            <?php 
+                            foreach ($imgs_array as $value) {
+                                ?>
+                                <li>
+                                    <input type="image" src="http://brioso-lab.ru/images/items/<?php echo $value[name];?>" width="240" height="240" alt="Image" onClick="javascript:alert('ID image is <?php echo $value[id];?>');"/>
+                                </li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
 		</div>
+		<div class="sliderbutton" id="slideright" onclick="slideshow.move(1)"></div>
+		<ul id="pagination" class="pagination">
+                    <?php 
+                    $n = 0;
+                            foreach ($imgs_array as $value) {
+                                ?>
+                                <li onclick="slideshow.pos(<?php echo $n;?>)"></li>
+                                <?php
+                                $n++;
+                            }
+                            ?>
+		</ul>
+	</div>
+</div>
+    </div>
+
+		</div>
+<script type="text/javascript">
+var slideshow=new TINY.slider.slide('slideshow',{
+	id:'slider',
+	auto:0,
+	resume:true,
+	vertical:false,
+	navid:'pagination',
+	activeclass:'current',
+	position:0,
+	rewind:false,
+	elastic:true,
+	left:'slideleft',
+	right:'slideright'
+});
+</script>
