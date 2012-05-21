@@ -85,6 +85,7 @@ switch ($attributes[act]) {
         break;
     
     case 'type':
+        include '../query/images.php'; 
         include '../query/type.php';
         include 'header.php';
         include 'selector.php'; 
@@ -129,7 +130,7 @@ switch ($attributes[act]) {
         break;
     
     case 'prc':
-        include '../query/all_images.php';
+        include '../query/products_images.php';
         include '../query/group.php';
         include '../query/type.php';
         include '../query/quality.php';

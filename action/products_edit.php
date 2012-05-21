@@ -18,6 +18,8 @@ $pqlty = intval($attributes[pqlty]);
 
 $stars = intval($attributes[stars]);
 
+if($stars>5)$stars=5;
+
 $pweight = quote_smart($attributes[pweight]);
 
 $pprice = quote_smart($attributes[pprice]);

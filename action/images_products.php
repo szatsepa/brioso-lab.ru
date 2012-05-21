@@ -3,13 +3,13 @@
 /*
  * 19/5/2012
  */
-print_r($_FILES);
+//print_r($_FILES);
 
 $imgfile_b   = $document_root . '/images/items/' . basename($_FILES['imgfile']['name']);
 
 $size = intval($attributes[MAX_FILE_SIZE]);
 
-//echo "$imgfile_b";
+$type = intval($attributes[type]);
 
 if($size > $_FILES['imgfile']['size']){
     
@@ -45,7 +45,7 @@ if (!move_uploaded_file($_FILES['imgfile']['tmp_name'], $imgfile_b)) {
             // Переименуем загруженный файл
            if (rename ($imgfile_b, $new_imgfile)){
             
-            $query = "INSERT INTO br_images (name) VALUES ($url)";
+            $query = "INSERT INTO br_images (name, type) VALUES ($url, $type)";
             
             $result = mysql_query($query) or die($query);
             

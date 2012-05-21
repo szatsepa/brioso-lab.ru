@@ -107,22 +107,22 @@ function _addColor(ID){
     
     var coef = obj.coef.value; 
     
-//    alert("<form action='index.php?act=color' method='post'><input type='hidden' name='c' value='"+coef+"'/><input type='hidden' name='price' value='"+price+"'/><input type='hidden' name='cod' value='"+cod+"'/><input type='hidden' name='b' value='"+brn+"'/><input type='hidden' name='s' value='"+str+"'/><input type='hidden' name='h' value='"+h+"'/></form>");
-    
     document.write("<form action='index.php?act=color' method='post'><input type='hidden' name='c' value='"+coef+"'/><input type='hidden' name='price' value='"+price+"'/><input type='hidden' name='cod' value='"+cod+"'/><input type='hidden' name='b' value='"+brn+"'/><input type='hidden' name='s' value='"+str+"'/><input type='hidden' name='h' value='"+h+"'/></form>");
     
     document.forms[0].submit();
 }
-function _addGroup(ID){
+function _addGroup(){
     
-    var obj = document.getElementById(ID);
+    _imgtypeLoad();
+    
+    var obj = document.getElementById('add_group');
     
     obj.style.display = "block";
     
     document.getElementById('gtable').style.display = 'none';
     
     document.getElementById('gedit').style.display = 'none';
-}
+    }
 function _groupEdit(ID, gid, nm, ds){ 
     
     document.getElementById('gtable').style.display = 'none';
@@ -207,9 +207,75 @@ function _priselistEdit(id,gr,nm,dsc,tp,qlt,wt,prc,st,im){
     form.stars.value = st;
 }
 function _addProduct(){
+    
+    _imgLoad();
+    
     document.getElementById('pedit').style.display = "none";
     
     document.getElementById('ptable').style.display = 'none';
     
     document.getElementById('add_prod').style.display = 'block';
+}
+function right_arrow() // Открытие следующей картинки(движение вправо)
+{
+     var obj = document.getElementById("image");
+     var product = document.getElementById("product_id").value;
+     var out = '&item='+product+'&img=';
+    if (to < mas.length-1) { 
+        to++;
+    }else{
+        to = 0;
+        }
+    obj.src = mas[to][0];
+    obj.value = out+mas[to][1];
+    im_id = mas[to][1];
+    document.getElementById("image_id").value = im_id;
+    document.getElementById("image_add").src = mas[to][0];
+    
+}
+
+function left_arrow() // Открытие предыдущей картинки(движение влево)
+{
+     var obj = document.getElementById("image");
+     var product = document.getElementById("product_id").value;
+      var out = '&item='+product+'&img=';
+    if (to > 0){ 
+        to--;
+    }else{
+        to = mas.length-1;
+        }
+   obj.src = mas[to][0];
+  obj.value = out+mas[to][1];
+  im_id = mas[to][1];
+  document.getElementById("image_id").value = im_id;
+  document.getElementById("image_add").src = mas[to][0];
+}
+function _imgLoad()   // Ф-ция загрузки "сохраненной" картинки
+{
+//    alert(mas[0][0]);
+    var obj = document.getElementById("image");
+    var item = document.getElementById("product_id").value;
+    var out = '&item='+item+'&img=';
+     obj.src = mas[0][0];
+     obj.value = out+mas[0][1];
+     im_id = mas[0][1];
+     document.getElementById("image_id").value = im_id;
+     document.getElementById("image_add").src = mas[0][0];
+//     alert(document.getElementById("image_add"));
+}
+function setImg(){
+    document.getElementById("image_id").value = im_id;
+}
+function _imgtypeLoad()   // Ф-ция загрузки "сохраненной" картинки
+{
+//    alert(mas[0][0]);
+//    var obj = document.getElementById("image");
+//    var item = document.getElementById("product_id").value;
+//    var out = '&item='+item+'&img=';
+//     obj.src = mas[0][0];
+//     obj.value = out+mas[0][1];
+     im_id = mas[0][1];
+     document.getElementById("image_id").value = im_id;
+     document.getElementById("image_add").src = mas[0][0];
+return false;
 }

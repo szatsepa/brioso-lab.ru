@@ -60,7 +60,7 @@
                 ?>
             </select>
             &nbsp;&nbsp;
-            <input type="text" size="5" name="stars" placeholder="Оценка(0/5)"/>
+            <input type="text" size="9" name="stars" placeholder="Оценка(0/5)" min="0" max="5"/>
             <br/>
             &nbsp;
             <br/>
@@ -83,18 +83,22 @@
             <br/>
             &nbsp;
             <br/>
-        </form>
+        
  </div>
-<!--    <div class="show" style="padding-top: 6px;background-color: #ccc;position:relative;bottom: 410px;left: 250px;width: 300px;height: 350px;margin: 24px auto;">
-    <p style="text-align: center;color: black;font-size: 14px;font-weight: bold;">Прикрепить изображение</p>
-    <p style="text-align: center;">
-        <input type="image"  src = "" width = "240" height = "240"  id = "image" value="" onClick="javascript:alert('index.php?act=bind&item=<?php echo $value[id];?>&img='+this.value);"/> 
-    </p> 
-    <p style="text-align: center;">
-        <img style="cursor:pointer;" src = "http://brioso-lab.ru/images/left.gif"   onClick = "javascript: left_arrow()" alt="Left"/>
-	<img style="cursor:pointer;" src = "http://brioso-lab.ru/images/right.gif"  onClick = "javascript: right_arrow()" alt="Right"/>
-    </p>
-</div>-->
+<div class="show" style="padding-top: 6px;background-color: #ccc;position:relative;bottom: 410px;left: 250px;width: 300px;height: 350px;margin: 24px auto;">  
+
+        <input type="hidden" name="img_id" value="" id="image_id"/>
+        <p style="text-align: center;color: black;font-size: 14px;font-weight: bold;">Прикрепить изображение</p>
+        <p style="text-align: center;">
+            <img style="cursor:pointer;" src = "" width = "240" height = "240"  id = "image_add" onClick="javascript:setImg();" title="Прикрепить изображение к ...."/> 
+        </p> 
+        <p style="text-align: center;">
+            <img style="cursor:pointer;" src = "http://brioso-lab.ru/images/left.gif"   onClick = "javascript: left_arrow()" alt="Left"/>
+            <img style="cursor:pointer;" src = "http://brioso-lab.ru/images/right.gif"  onClick = "javascript: right_arrow()" alt="Right"/>
+        </p>
+    
+</div>
+     </form>
     </div>
 <div class="table" id="ptable">
         <table border="0">
@@ -261,7 +265,7 @@
                 ?>
             </select>
             &nbsp;&nbsp;
-            <input type="text" size="5" name="stars" placeholder="Оценка(0-5)"/>
+            <input type="text" size="5" name="stars" placeholder="Оценка(0-5)" min="0" max="5"/>
             <br/>
             &nbsp;
             <br/>
@@ -287,12 +291,11 @@
         </form> 
         </div>  
 <div class="show" style="padding-top: 6px;background-color: #ccc;position:relative;bottom: 410px;left: 250px;width: 300px;height: 350px;margin: 24px auto;">  
-<!--    document.location='index.php?act=bind'+this.value-->
-<!--    <form id="img_show" method="post"></form>-->
+
         <input type="hidden" name="pid" value="" id="product_id"/>
         <p style="text-align: center;color: black;font-size: 14px;font-weight: bold;">Прикрепить изображение</p>
         <p style="text-align: center;">
-            <input type="image"  src = "" width = "240" height = "240"  id = "image" value="" onClick="javascript:document.location.href='index.php?act=bind'+this.value;"/> 
+            <input type="image"  src = "" width = "240" height = "240"  id = "image" value="" onClick="javascript:document.location.href='index.php?act=bind'+this.value;" title="Прикрепить изображение к ...."/> 
         </p> 
         <p style="text-align: center;">
             <img style="cursor:pointer;" src = "http://brioso-lab.ru/images/left.gif"   onClick = "javascript: left_arrow()" alt="Left"/>
@@ -319,42 +322,7 @@ var mas = new Array(); // массив картинок
 ?>
     
 var to = 0;  // Счетчик, указывающий на текущую картинки
+var im_id = <?php echo $imgs_array[0][id];?>; 
 
-function right_arrow() // Открытие следующей картинки(движение вправо)
-{
-     var obj = document.getElementById("image");
-     var product = document.getElementById("product_id").value;
-     var out = '&item='+product+'&img=';
-    if (to < mas.length-1) { 
-        to++;
-    }else{
-        to = 0;
-        }
-    obj.src = mas[to][0];
-    obj.value = out+mas[to][1];
-    
-}
 
-function left_arrow() // Открытие предыдущей картинки(движение влево)
-{
-     var obj = document.getElementById("image");
-     var product = document.getElementById("product_id").value;
-      var out = '&item='+product+'&img=';
-    if (to > 0){ 
-        to--;
-    }else{
-        to = mas.length-1;
-        }
-   obj.src = mas[to][0];
-  obj.value = out+mas[to][1]; 
-}
-function _imgLoad()   // Ф-ция загрузки "сохраненной" картинки
-{
-    var obj = document.getElementById("image");
-    var item = document.getElementById("product_id").value;
-    var out = '&item='+item+'&img=';
-     obj.src = mas[0][0];
-     obj.value = mas[0][1];
-     obj.value = out+mas[to][1];
-}
 </script>

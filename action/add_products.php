@@ -20,7 +20,9 @@ $pweight = quote_smart($attributes[pweight]);
 
 $pprice = quote_smart($attributes[pprice]);
 
-$query = "INSERT INTO `br_products` (`group`,`name`,`description`,`type`,`quality`,`weight`,`price`,`stars`) VALUES ($pgroup,$pname,$dscr,$ptype,$pqlty,$pweight,$pprice,$stars)";
+$image = intval($attributes[img_id]);
+
+$query = "INSERT INTO `br_products` (`group`,`name`,`description`,`type`,`quality`,`weight`,`price`,`stars`, `image`) VALUES ($pgroup,$pname,$dscr,$ptype,$pqlty,$pweight,$pprice,$stars,$image)";
 
 $result = mysql_query($query) or die($query);
 
