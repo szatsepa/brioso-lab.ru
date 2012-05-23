@@ -268,12 +268,7 @@ function setImg(){
 }
 function _imgtypeLoad()   // Ф-ция загрузки "сохраненной" картинки
 {
-//    alert(mas[0][0]);
-//    var obj = document.getElementById("image");
-//    var item = document.getElementById("product_id").value;
-//    var out = '&item='+item+'&img=';
-//     obj.src = mas[0][0];
-//     obj.value = out+mas[0][1];
+
      im_id = mas[0][1];
      document.getElementById("image_id").value = im_id;
      document.getElementById("image_add").src = mas[0][0];
