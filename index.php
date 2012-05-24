@@ -57,9 +57,10 @@ $title = "brioso-lab.ru";
 switch ($attributes[act]) {
     
     case 'main':
-        include 'query/all_slides.php';
+        $title = "brioso-lab.ru-создай цвет!";
+        include 'query/prices.php';
         include 'main/header.php';
-        include 'main/selector.php';
+        include 'main/subheader.php';
         include 'main/main.php';
         break;
     

@@ -16,8 +16,19 @@ header('Content-Type: text/html; charset=utf-8');
         <link rel="icon" href="../favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen, projection" />
         <script type="text/javascript" src="../js/scripts.js"></script>
+        <?php
+        if($attributes[act] == 'main'){  }
+            ?>
+        <link href="../res/screen.css" rel="stylesheet" type="text/css" />
+
+        <script src="../res/jquery-1.4.4.min.js" type="text/javascript"></script>
+        <script src="../res/jquery-ui-1.8.6.custom.min.js" type="text/javascript"></script>
+        <script src="../res/main.js" type="text/javascript"></script>
         <script type="text/javascript" src="../js/Some_slider.js"></script>
         <script type="text/javascript" src="../js/img_show.js"></script>
+        <?php
+        
+          ?>
 </head>
     <?php 
     if($attributes[act]=='prc'){

@@ -53,8 +53,10 @@ span.selector3 {
 }
 div.main_menu{
     position: relative;
+    width: 1008px;
+    height: 104px;
     color: black;
-    float: left;
+/*    float: left;*/
 /*    outline: 1px solid red;*/
 }
 span.menu_select{
@@ -64,6 +66,14 @@ span.menu_select{
     font-weight: bold;
 /*    outline: 1px solid blue;*/
     bottom: 4px;
+}
+a.subhead{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+a.subhead hover{
+    color: #f0f;
 }
 div.slide{
     position: relative;
@@ -140,7 +150,7 @@ input.exp{
     color: hsl(120,50%,75%);
 }
 /*slider style*/
-p {line-height:1.4; margin-bottom:12px} 
+/*p {line-height:1.4; margin-bottom:12px} 
 #wrapper {width:344px; margin:20px auto}
 #container {position:relative; background:#fff; padding:2px; height:240px;}
 .sliderbutton {float:left; width:25px; height:240px; cursor:pointer;outline: 1px solid blue;}
@@ -153,4 +163,4 @@ p {line-height:1.4; margin-bottom:12px}
 #slider li {float:left; width:240px; height:240px;outline: 1px solid green;}
 .pagination {position:absolute; top:40px; right:61px; list-style:none; height:25px}
 .pagination li {float:left; cursor:pointer; height:8px; width:8px; background:#cfc; margin:0 4px 0 0; border:1px solid #fff}
-.pagination li:hover, li.current {background:#ff0}urrent {background:#f0f}
+.pagination li:hover, li.current {background:#ff0}urrent {background:#f0f}*/

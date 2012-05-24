@@ -1,0 +1,93 @@
+/*body {
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}*/
+
+img {
+	border:0;
+}
+
+div.wrapper {
+	width:96%;
+        margin: 0 auto;
+	overflow:hidden;
+	position:relative;
+	zoom:1;
+}
+
+#gallery {
+	overflow:hidden;
+	zoom:1;
+}
+
+/*#gallery:after {
+	content: '.';
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+} */
+
+#gallery div.container {
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+
+#gallery ul {
+	overflow:hidden;
+	list-style:none;
+	margin:0;
+	padding:0;
+	white-space:nowrap;
+	width:100%;
+}
+
+#gallery ul li {
+	display:inline;
+}
+
+#gallery ul li img {
+	vertical-align:top;
+}
+
+#gallery div.nav {
+	float:left;
+	height:150px;
+	width:40px;
+}
+
+#gallery div.prev {
+	margin-left: -100%;
+        cursor:pointer; 
+}
+
+#gallery div.next {
+	margin-left: -40px;
+        cursor:pointer; 
+}
+
+#gallery div.nav a {
+	display:block;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	text-indent:-1000px;
+
+	opacity:0.5;
+	filter: alpha(opacity = 50);
+}
+
+#gallery div.prev a {
+	background:url('http://brioso-lab.ru/images/prev.png') no-repeat center center #eee;
+}
+
+#gallery div.next a {
+	background:url('http://brioso-lab.ru/images/next.png') no-repeat center center #eee;
+}
+
+#gallery div.nav a:hover {
+	background-color:#ddd;
+
+	opacity:0.7;
+	filter: alpha(opacity = 70);
+}

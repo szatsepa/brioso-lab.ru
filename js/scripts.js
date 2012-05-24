@@ -192,8 +192,7 @@ function _priselistEdit(id,gr,nm,dsc,tp,qlt,wt,prc,st,im){
             quality_select.options[i].selected = false;
         }
     }
-//    alert(arr[0]);
-    
+
     form.pid.value = id;
     
     form.pname.value = nm;

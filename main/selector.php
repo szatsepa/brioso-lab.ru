@@ -13,8 +13,8 @@
                  echo "$senya";
              ?>
         </div> 
-    <div class="main_menu">
-        <form id="f_menu">
+    <div class="main_menu" style="background-image: url('http://brioso-lab.ru/images/header_bg.png');">
+<!--        <form id="f_menu">
             <span class="menu_select" onclick="javascript:location.href='index.php?act=adds';" title="Загрузить слайд">
                Загрузить слайд
             </span>
@@ -30,7 +30,7 @@
             <span class="menu_select"  onclick="javascript:location.href='index.php?act=searchn';" title="поиск слайдов">
                 Поиск 2
             </span>
-        </form>
+        </form>-->
     </div>
 <?php 
 

@@ -20,7 +20,8 @@ class User{
                          u.name, 
                          u.email, 
                          u.phone, 
-                         u.key_code
+                         u.key_code,
+                         u.status
                  FROM users AS u   
                  WHERE u.id = $id AND u.activ = 1";
         
