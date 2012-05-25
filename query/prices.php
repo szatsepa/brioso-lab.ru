@@ -12,7 +12,9 @@ $query = "SELECT p.id AS price,
                  pl.name, 
                  pl.volume,  
                  pl.price,
-                 i.name AS img
+                 i.name AS img,
+                 pl.property,
+                 pl.degree
             FROM price AS p, 
                  pricelist AS pl,
                  image_items AS i
@@ -26,10 +28,9 @@ $result = mysql_query($query) or die($query);
 
 $items_array = array();
 
-while ($var = mysql_fetch_assoc($result)){
+while ($var = mysql_fetch_assoc($result)) {
     array_push($items_array, $var);
 }
 
 mysql_free_result($result);
-
 ?>

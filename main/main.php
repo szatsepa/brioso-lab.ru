@@ -3,7 +3,7 @@
 /*
  * created by arcady.1254@gmail.com  7/5/2012
  */
-//include './action/resize.php';
+print_r($items_array[0]); 
 ?>
 <div style="position: relative;width: 1004px;height: 393px;">  
     <div id="_colorfield" style="position: relative;width: 600px;height: 190px;background-color: hsl(185,100%,50%);left: 12px;top: 12px;">
@@ -40,12 +40,12 @@
                     mysl2.setValue(50);
                 </script>
         </div>
-        <div style="position: relative;left: 580px;">
+        <div style="font-size: 12px;color: black;position: relative;left: 530px;width: 400px;height: 390px;bottom: 22px;outline: 1px solid red;">
             <input type="hidden" name="h" id="hue"/>
             <input type="hidden" name="str" id="saturation"/>
             <input type="hidden" name="brn" id="brightness"/>
             <div style="position: relative;">
-<!--                <input type="text" name="clr_cod" size="42" placeholder="наименование"/>-->
+                <input id="paint" type="text" name="clr_cod" size="36" placeholder="наименование" value="<?php echo $items_array[0][name];?>"/>
             </div>
             <div style="position: relative;top: 12px;">
 <!--                <input type="text" name="price" size="42" placeholder="цена"/>-->
@@ -63,15 +63,13 @@
     <div id="gallery">
         <div class="container">
             <ul>
-                <li><img src="http://brioso-lab.ru/images/items/1.png"/></li>
-                <li><img src="http://brioso-lab.ru/images/items/2.png"/></li>
-                <li><img src="http://brioso-lab.ru/images/items/3.png"/></li>
-                <li><img src="http://brioso-lab.ru/images/items/4.png"/></li>
-                <li><img src="http://brioso-lab.ru/images/items/5.png"/></li>
-                <li><img src="http://brioso-lab.ru/images/items/6.png"/></li>
-                <li><img src="http://brioso-lab.ru/images/items/7.png"/></li>
-
-
+                <?php
+                foreach ($items_array as $value) {
+                    $img = $value[img];
+                    echo "<li><img src='http://brioso-lab.ru/images/items/$img'/></li>";
+                    
+                }
+                ?>
             </ul>
         </div>
         <div class="nav prev"><a name="#" title="назад">назад</a></div>

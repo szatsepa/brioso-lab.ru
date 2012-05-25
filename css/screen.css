@@ -7,7 +7,7 @@ img {
 }
 
 div.wrapper {
-	width:96%;
+	width:94%;
         margin: 0 auto;
 	overflow:hidden;
 	position:relative;
@@ -40,6 +40,7 @@ div.wrapper {
 	padding:0;
 	white-space:nowrap;
 	width:100%;
+/*        text-indent:-1000px;*/
 }
 
 #gallery ul li {
@@ -48,17 +49,19 @@ div.wrapper {
 
 #gallery ul li img {
 	vertical-align:top;
+        cursor:pointer; 
 }
 
 #gallery div.nav {
 	float:left;
-	height:150px;
+	height:270px;
 	width:40px;
 }
 
 #gallery div.prev {
-	margin-left: -100%;
+	margin-left: -100%; 
         cursor:pointer; 
+    font-family: Arial,Helvetica,sans-serif;
 }
 
 #gallery div.next {
@@ -73,8 +76,8 @@ div.wrapper {
 	overflow:hidden;
 	text-indent:-1000px;
 
-	opacity:0.5;
-	filter: alpha(opacity = 50);
+	opacity:0;
+	filter: alpha(opacity = 0);
 }
 
 #gallery div.prev a {
