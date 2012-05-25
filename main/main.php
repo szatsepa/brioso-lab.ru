@@ -3,14 +3,14 @@
 /*
  * created by arcady.1254@gmail.com  7/5/2012
  */
-print_r($items_array[0]); 
+//print_r($items_array[0]); 
 ?>
-<div style="position: relative;width: 1004px;height: 393px;">  
-    <div id="_colorfield" style="position: relative;width: 600px;height: 190px;background-color: hsl(185,100%,50%);left: 12px;top: 12px;">
+<div style="position: relative;width: 1004px;height: 493px;">  
+    <div id="_colorfield" style="position: relative;width: 1004px;height: 190px;background-color: hsl(185,100%,50%);left: 12px;top: 12px;">
         
     </div>
     <form id="color_saturation">
-        <div style="position: relative;width: 600px;top: 24px;left: 12px;display: none;">
+        <div style="position: relative;width: 460px;top: 24px;left: 12px;display: none;">
             <input type="text" size="46" name="clr_name" placeholder="Название" id="_info"/>
         </div>
         <div style="position: relative;top: 48px;left: 12px;">
@@ -40,24 +40,52 @@ print_r($items_array[0]);
                     mysl2.setValue(50);
                 </script>
         </div>
-        <div style="font-size: 12px;color: black;position: relative;left: 530px;width: 400px;height: 390px;bottom: 22px;outline: 1px solid red;">
+        <div style="font-size: 16px;color: black;position: relative;left: 530px;width: 400px;height: 200px;bottom: 22px;">
             <input type="hidden" name="h" id="hue"/>
             <input type="hidden" name="str" id="saturation"/>
             <input type="hidden" name="brn" id="brightness"/>
-            <div style="position: relative;">
-                <input id="paint" type="text" name="clr_cod" size="36" placeholder="наименование" value="<?php echo $items_array[0][name];?>"/>
+            <div style="position: relative;width: 400px;height: 40px;"> 
+                <p id="paint">
+                    
+                    <?php echo "<strong>".$items_array[0][price_name]."</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;".$items_array[0]['property']."<br/>".$items_array[0][name]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                    
+                    $stars = $items_array[0][degree];
+                    for ($i = 0; $i < 5;$i++) {
+                        
+                    if($stars>$i){  
+                           echo '<img src="http://brioso-lab.ru/images/star_y.png"/>';
+                        }else{
+                           echo '<img src="http://brioso-lab.ru/images/star_w.png"/>'; 
+                        }
+                        
+                    }
+                    ?>
+                </p>
             </div>
-            <div style="position: relative;top: 12px;">
-<!--                <input type="text" name="price" size="42" placeholder="цена"/>-->
+            <div style="position: relative;top: 12px;width: 400px;height: 160px;">
+                <div style="position: relative;float: left;">
+                    <img src="http://brioso-lab.ru/images/items/b_1.jpg" width="135" alt="1"/>
+                </div>
+                <div id="litres" style="position: relative;float: left;top: 8px;">
+                    <input type="number" size="6" min="0" max="100" step="1" value="1" id="addliters"/>            
+                </div>
+                <div style="height: 20px;width: 16px;padding-left: 5px;padding-top: 9px;position: relative;float: left;top: 8px;font-size: 12px;font-weight: bold;">
+                    л
+                </div>
+                <div id="cost" style="position: relative;width: 122px;height: 18px;left: 130px;top: -60px;">
+                    <img src="http://brioso-lab.ru/images/p_0.png" alt="0"/>
+                    <img src="http://brioso-lab.ru/images/p_0.png" alt="0"/>
+                    <img src="http://brioso-lab.ru/images/p_0.png" alt="0"/>
+                    <img src="http://brioso-lab.ru/images/p_0.png" alt="0"/>
+                    <img src="http://brioso-lab.ru/images/p_0.png" alt="0"/>
+                    <img src="http://brioso-lab.ru/images/p_0.png" alt="0"/>
+                </div>
             </div>
-            <div style="position: relative;top: 24px;">
-<!--                <input type="text" name="coef" size="42" placeholder="коефициент растворения"/>-->
-            </div>
-        </div>
-        <div style="position: relative;left: 698px;top: 88px;">
-<!--            <input type="button" value="Отправить" onclick="javascript:alert('AGGA!!');"/>-->
-        </div>
+        
    </form> 
+    </div>
 </div>
 <div class="wrapper">
     <div id="gallery">
