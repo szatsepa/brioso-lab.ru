@@ -73,7 +73,7 @@
                         }
                         
                     }
-                    ?>
+                    ?> 
                 </p>
             </div>
             <div style="position: relative;top: 12px;width: 400px;height: 160px;">
@@ -102,13 +102,13 @@
 </div>
 <div class="wrapper">
     <div id="gallery">
-        <div class="container">
+        <div class="container"> 
             <ul>
                 <?php
                 foreach ($items_array as $key => $value) {
                     $img = $value[img];
                     
-                    echo "<li><img src='http://brioso-lab.ru/images/items/$img' alt='$key' value='$key'/></li>";
+                    echo "<li id='$key'><img src='http://brioso-lab.ru/images/items/$img' alt='$key' value='$key'/></li>";
                     
                 }
                 ?>
