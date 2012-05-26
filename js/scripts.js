@@ -273,3 +273,7 @@ function _imgtypeLoad()   // Ф-ция загрузки "сохраненной"
      document.getElementById("image_add").src = mas[0][0];
 return false;
 }
+//function setItem(obj){
+//    var num = parseInt(obj.alt);
+//    alert(items_array[num]['name']);
+//    }

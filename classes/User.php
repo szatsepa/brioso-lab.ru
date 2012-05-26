@@ -29,6 +29,18 @@ class User{
         
         $result = mysql_query($query) or die ($query);
         
+        if(!$result){
+            $query = "SELECT u.id,
+                         u.surname, 
+                         u.name, 
+                         u.email, 
+                         u.phone
+                 FROM customers AS u   
+                 WHERE u.id = $id AND u.activ = 1";
+            
+            $result = mysql_query($query) or die ($query);
+        }
+        
         $row = mysql_fetch_assoc($result);
         
         $this->id = $row[id];

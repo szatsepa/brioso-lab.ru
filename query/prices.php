@@ -4,7 +4,7 @@
  * created by arcady.1254@gmail.com 7/5/2012
  */
 
-$query = "SELECT p.id AS price,
+$query = "SELECT p.id AS price_id,
                  p.name AS price_name,
                  pl.id AS item, 
                  pl.artikul, 
@@ -14,7 +14,8 @@ $query = "SELECT p.id AS price,
                  pl.price,
                  i.name AS img,
                  pl.property,
-                 pl.degree
+                 pl.degree,
+                 pl.top
             FROM price AS p, 
                  pricelist AS pl,
                  image_items AS i

@@ -5,6 +5,18 @@
  */
 //print_r($items_array[0]); 
 ?>
+<script type="text/javascript">
+    var items_array = new Array();
+    <?php
+    foreach ($items_array as $value) {
+        ?>
+            items_array.push({price_id:"<?php echo "$value[price_id]";?>",price_name:"<?php echo "$value[price_name]";?>",item:"<?php echo "$value[item]";?>",name:"<?php echo "$value[name]";?>",volume:"<?php echo "$value[volume]";?>",price:"<?php echo "$value[price]";?>",img:"<?php echo "$value[img]";?>",prop:"<?php echo "$value[property]";?>",degree:"<?php echo "$value[degree]";?>",top:"<?php echo "$value[top]";?>",artikul:"<?php echo "$value[artikul]";?>",barcode:"<?php echo "$value[barcode]";?>"});
+
+        <?php
+    }
+    ?>
+        
+</script>
 <div style="position: relative;width: 1004px;height: 493px;">  
     <div id="_colorfield" style="position: relative;width: 1004px;height: 190px;background-color: hsl(185,100%,50%);left: 12px;top: 12px;">
         
@@ -69,35 +81,38 @@
                     <img src="http://brioso-lab.ru/images/items/b_1.jpg" width="135" alt="1"/>
                 </div>
                 <div id="litres" style="position: relative;float: left;top: 8px;">
-                    <input type="number" size="6" min="0" max="100" step="1" value="1" id="addliters"/>            
+                    <input type="number" size="6" min="0" max="10000" step="1" value="1" price="<?php echo $items_array[0][price];?>" id="volume"/>            
                 </div>
-                <div style="height: 20px;width: 16px;padding-left: 5px;padding-top: 9px;position: relative;float: left;top: 8px;font-size: 12px;font-weight: bold;">
+                <div id="L" style="height: 20px;width: 16px;padding-left: 5px;padding-top: 9px;position: relative;float: left;top: 8px;font-size: 12px;font-weight: bold;">
                     л
                 </div>
-                <div id="cost" style="position: relative;width: 122px;height: 18px;left: 130px;top: -60px;">
-                    <img src="http://brioso-lab.ru/images/p_0.png" alt="0"/>
-                    <img src="http://brioso-lab.ru/images/p_0.png" alt="0"/>
-                    <img src="http://brioso-lab.ru/images/p_0.png" alt="0"/>
-                    <img src="http://brioso-lab.ru/images/p_0.png" alt="0"/>
-                    <img src="http://brioso-lab.ru/images/p_0.png" alt="0"/>
-                    <img src="http://brioso-lab.ru/images/p_0.png" alt="0"/>
+                <div id="cost" style="position: relative;width: 132px;height: 18px;left: 130px;top: -60px;">
+                    <?php
+                    for($i=4;$i>-1;$i--){
+                        echo "<div style='float: left;'><img id='r_$i' src='http://brioso-lab.ru/images/p_0.png' alt='0'/></div>";
+                    }
+                    ?>
+                    <div style='float: left;padding-left: 3px;padding-top: 6px;'><img id='rub' src='http://brioso-lab.ru/images/rub.png' alt='0'/></div>
+                </div>
+                <div style="position: relative;margin-left: 126px;margin-bottom: 64px;width: 90px;height: 22px;">
+                    <input type="button" id="c_order" value="В корзину"/>
                 </div>
             </div>
-        
-   </form> 
-    </div>
+     </div>
 </div>
 <div class="wrapper">
     <div id="gallery">
         <div class="container">
             <ul>
                 <?php
-                foreach ($items_array as $value) {
+                foreach ($items_array as $key => $value) {
                     $img = $value[img];
-                    echo "<li><img src='http://brioso-lab.ru/images/items/$img'/></li>";
+                    
+                    echo "<li><img src='http://brioso-lab.ru/images/items/$img' alt='$key' value='$key'/></li>";
                     
                 }
                 ?>
+                
             </ul>
         </div>
         <div class="nav prev"><a name="#" title="назад">назад</a></div>
