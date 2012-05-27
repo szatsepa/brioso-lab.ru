@@ -17,6 +17,7 @@
     ?>
         
 </script>
+<div id="content">
 <div style="position: relative;width: 1004px;height: 493px;">  
     <div id="_colorfield" style="position: relative;width: 1004px;height: 190px;background-color: hsl(185,100%,50%);left: 12px;top: 12px;">
         
@@ -128,3 +129,4 @@
     </div>
 </div>
 <div style="position: relative;width: 1009px;height: 47px;"></div>
+</div>
