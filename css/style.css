@@ -149,18 +149,73 @@ input.search{
 input.exp{
     color: hsl(120,50%,75%);
 }
-/*slider style*/
-/*p {line-height:1.4; margin-bottom:12px} 
-#wrapper {width:344px; margin:20px auto}
-#container {position:relative; background:#fff; padding:2px; height:240px;}
-.sliderbutton {float:left; width:25px; height:240px; cursor:pointer;outline: 1px solid blue;}
-#slideleft {background:url(images/icons.gif) -50px -265px no-repeat}
-#slideleft:hover {background-position:-0 -265px}
-#slideright {background:url(images/icons.gif) 0 90px no-repeat}
-#slideright:hover {background-position:-50px 90px}
-#slider {float:left; position:relative; overflow:auto; width:290px; height:240px;outline: 1px solid red;}
-#slider ul {position:absolute; list-style:none; top:0; left:0}
-#slider li {float:left; width:240px; height:240px;outline: 1px solid green;}
-.pagination {position:absolute; top:40px; right:61px; list-style:none; height:25px}
-.pagination li {float:left; cursor:pointer; height:8px; width:8px; background:#cfc; margin:0 4px 0 0; border:1px solid #fff}
-.pagination li:hover, li.current {background:#ff0}urrent {background:#f0f}*/
+/*login dialog box*/
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+  
+#boxes .window {
+  position:fixed;
+  left:0;
+  top:0;
+  width:440px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+}
+
+#boxes #dialog {
+  width:375px; 
+  height:203px;
+  padding:10px;
+  background-color:#ffffff;
+}
+
+#boxes #dialog1 {
+  width:375px; 
+  height:203px;
+}
+
+#dialog1 .d-header {
+  background:url('../images/login-header.png') no-repeat 0 0 transparent; 
+  width:375px; 
+  height:150px;
+}
+
+#dialog1 .d-header input {
+  position:relative;
+  top:60px;
+  left:100px;
+  border:3px solid #cccccc;
+  height:22px;
+  width:200px;
+  font-size:15px;
+  padding:5px;
+  margin-top:4px;
+}
+
+#dialog1 .d-blank {
+  float:left;
+  background:url('../images/login-blank.png') no-repeat 0 0 transparent; 
+  width:267px; 
+  height:53px;
+}
+
+#dialog1 .d-login {
+  float:left;
+  width:108px; 
+  height:53px;
+}
+
+#boxes #dialog2 {
+  background:url('../images/notice.png') no-repeat 0 0 transparent; 
+  width:326px; 
+  height:229px;
+  padding:50px 0 20px 25px;
+}

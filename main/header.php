@@ -18,9 +18,9 @@ header('Content-Type: text/html; charset=utf-8');
         <link href="/css/screen.css" rel="stylesheet" type="text/css" />
         <link href="/css/webforms2.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="/js/scripts.js"></script>
-        <script type="text/javascript" src="/js/webforms2.js"></script>
+<!--        <script type="text/javascript" src="/js/webforms2.js"></script>
         <script type="text/javascript" src="/js/webforms2-p.js"></script>
-        <script type="text/javascript" src="/js/modernizr.custom.12840.js"></script>
+        <script type="text/javascript" src="/js/modernizr.custom.12840.js"></script>-->
         <script type="text/javascript" src="/js/Some_slider.js"></script>
         <script src="/js/jquery-1.4.4.min.js" type="text/javascript"></script>
         <script src="/js/jquery-ui-1.8.6.custom.min.js" type="text/javascript"></script>

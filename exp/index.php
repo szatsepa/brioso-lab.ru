@@ -8,7 +8,7 @@
 
 include '../query/connect.php';
 
-$query = "SELECT * FROM br_images";
+$query = "SELECT id, name FROM image_items"; 
 
 $imgs_array = array();
 

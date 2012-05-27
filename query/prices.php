@@ -15,7 +15,8 @@ $query = "SELECT p.id AS price_id,
                  i.name AS img,
                  pl.property,
                  pl.degree,
-                 pl.top
+                 pl.top,
+                 CONCAT('b_',i.name) AS img_item
             FROM price AS p, 
                  pricelist AS pl,
                  image_items AS i
