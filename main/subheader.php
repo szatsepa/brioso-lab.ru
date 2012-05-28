@@ -4,24 +4,37 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
+$login = "block";
+$customer = "none";
+if(isset($user)){
+    $login = "none";
+    $customer = "block";
+}
+//print_r($user);
+$user_name = $user->data[name]." ".$user->data[surname]; 
+if(!$user->data[name])$user_name = $user->data[email];
 ?>
 <div class="main_menu" style="position: relative;width: 1010px;height: 108px;background-image: url('http://brioso-lab.ru/images/header_bg.png');">
     <div style="position: relative;float: left;width: 160px;height: 27px;top: 1px;margin-left: 518px;font-size: 16px;">
         <p>tel. 999-55-22 <br/><small>круглосуточно</small></p>
     </div>
-    <div style="position: relative;float: left;width: 120px;top: 16px;">
+    <div style="display: <?php echo $login;?>;margin-left: -120px;margin-top:72px;position: relative;float: left;width: 120px;">
         <input style="font-size: 14px;color: black;" type="button" id="entry" value="Войти" name="index"/>
     </div>
-    <div style="position: relative;float: left;width: 140px;height: 104px;margin-left: 174px;top: -20px;">
+    <div id="customer" style="display: <?php echo $customer;?>;margin-left: -320px;margin-top:48px;position: relative;float: left;width: 420px;">
+        <span id="user" style="font-size: 14px;color: black;text-align: center;">
+            <p><a style="color: black;" href='index.php?act=logout' title="Выйти?"><?php echo $user_name;?></a></p>
+        </span>
+    </div>
+    <div style="position: relative;float: left;width: 140px;height: 104px;margin-left: 834px;margin-top: -94px">
         <p>
             <a href="index.php?act=cart" style="font-size: 16px;color: black;">Корзина</a>
          </p>
          <p id="count">
-             Товаров - 2
+             Товаров - <?php echo $pos;?>
          </p>
          <p id="count">
-             На сумму - 1254 р.
+             На сумму - <?php echo $cart_summ;?> р.
          </p>
     </div>
     
@@ -64,36 +77,37 @@
         <div id="wr" class="wr" style="margin: 12px auto;">
             <div id="indicator">
             </div>
+            <form id="reg_up" action="index.php?act=reg" method="post">
             <div class='loginBlock' id="signup" style="display: none">
                 <label for="email">Email:</label> <input id="email" type="text" class='textinput' />
                 <label for="password">Пароль:</label> <input id="password" type="password" class='textinput' />
-                <label for="passwordAgain">Пароль еще раз:</label> <input id="passwordAgain" type="password"
-                    class='textinput' />
+                <label for="passwordAgain">Пароль еще раз:</label> <input id="passwordAgain" type="password" class='textinput' />
                 <div id="error0" class="error displaynone">
                 </div>
                 <div class='buttonDiv'>
-                    <input id="registerButton" type="button" value="Зарегистрироваться" onclick="SignUp()" /></div>
+                    <input id="registerButton" type="button" value="Зарегистрироваться" onclick="javascript:SignUp()" /></div>
                     
                 <div class='additional'>
                     <a name="remind">Вспомнить пароль</a> 
                     <a name="index">Войти</a>
                 </div>
-                
-                
-            </div>
-            <div class='loginBlock' id="signin"  style="display: none">
+             </div>   
+                <div class='loginBlock' id="signin"  style="display: none">
                 <label for="email">Email:</label> <input id="loginEmail" type="text" class='textinput' />
                 <label for="password">Пароль:</label> <input id="loginPass" type="password" class='textinput' />
-                <div id="error1" class="error displaynone">
+                    <div id="error1" class="error displaynone">
+                    </div>
+                    <div class='buttonDiv'>
+                        <input id="loginButton" type="button" value="Войти" onClick="javascript:SignIn();"/>
+                    </div>
+                    <div class='additional'>
+                        <a name="remind">Вспомнить пароль</a> 
+                        <a name="signup">Зарегистрироваться</a>
+                    </div>
                 </div>
-                <div class='buttonDiv'>
-                    <input id="loginButton" type="button" value="Войти" onclick="SignIn()" />
-                </div>
-                <div class='additional'>
-                    <a name="remind">Вспомнить пароль</a> 
-                    <a name="signup">Зарегистрироваться</a>
-                </div>
-            </div>
+                <div id="result"></div> 
+            
+            
             <div class='loginBlock' id="remindPass" style="display: none">
                 <div class="description">
                     Чтобы вспомнить пароль, вспомните для начала хотя бы email.
@@ -104,7 +118,7 @@
                 <div id="message0" class="message displaynone">
                 </div>
                 <div class='buttonDiv'>
-                    <input id="remindButton" type="button" value="Выслать пароль" onclick="RemindPassword()" /></div>
+                    <input id="remindButton" type="button" value="Выслать пароль" onclick="RemindPassword();" /></div>
                 <div class='additional'>
                     <a name="index">Войти</a> 
                     <a name="signup">Зарегистрироваться</a></div>

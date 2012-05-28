@@ -13,40 +13,59 @@ if(isset ($attributes[ismail]) && $attributes[ismail] == 1){
     
 $code = quote_smart($attributes[code]);
 
-        $query = "SELECT id FROM users WHERE key_code = $code AND activ = 1";
-        
-        $result = mysql_query($query) or die($query);
+$email = quote_smart($attributes[email]);
+
+$who = "customer";
+
+$query = "SELECT id FROM customers WHERE code = $code AND email = $email AND activ = 1";
+
+       $result = mysql_query($query) or die($query);
         
          $num_rows = mysql_num_rows($result);
          
-         if($num_rows != 0){
+         if($num_rows == 0){
+             
+             $query = "SELECT id FROM users WHERE code = $code AND email = $email AND activ = 1";
+             
+             $result = mysql_query($query) or die($query);             
         
-                 $row = mysql_fetch_row($result);
+             $num_rows = mysql_num_rows($result);
+             
+             $who = "users";
+             
+         }
+             
+             if($num_rows != 0){
+        
+                 $row = mysql_fetch_row($result); 
     
                      $_SESSION['id'] = $row[0];
          
                      $_SESSION['auth'] = 1;
                      
+                     if($who == 'customer')$_SESSION['auth'] = 2;
+                     
                      setcookie("di", $_SESSION['id'], time()+(3600*12));
+                     setcookie("who", $_SESSION['auth'], time()+(3600*12));
                
-//  echo $query;                   
-               
+//  echo $query;  
+                     
 ?>
 
 
     <script language="javascript">
 //        alert(<?php echo $query;?>);
-    document.write ('<form action="index.php?act=main" method="post"><input type="hidden" name="id" value="<?php echo $row[0];?>"/></form>');
+    document.write ('<form action="index.php?act=main&who=<?php echo $who;?>" method="post"><input type="hidden" name="id" value="<?php echo $row[0];?>"/></form>');
     document.forms[0].submit();
     </script>
     
     <?php 
-    }else{
+             }else{
         
      $lo = logout();   
     ?>
 <script language="javascript">   
-    document.location.href = "http://altforex.ru/index.php?act=main";
+    document.location.href = "index.php?act=main";
 </script>    
     <?php } 
     
@@ -57,6 +76,7 @@ $code = quote_smart($attributes[code]);
         unset($_SESSION[id]);
         unset ($_SESSION[auth]);
         unset($_COOKIE[di]);
+        setcookie("di", '', time()-(3600));
         return NULL;   
   }
   

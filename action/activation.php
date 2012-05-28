@@ -3,9 +3,13 @@
 /*
  * created by arcady.1254@gmail.com 20/4/2012
  */
- $pwd = quote_smart($attributes[pwd]);
+ $code = quote_smart($attributes[code]);
  
- $query = "UPDATE users SET activ = 1 WHERE key_code = $pwd";
+ $id = intval($attributes[id]);
+ 
+ $query = "UPDATE customer SET activ = 1 WHERE code = $code";
  
  mysql_query($query) or die ($query);
+ 
+ header("location:index.php?act=main");
 ?>

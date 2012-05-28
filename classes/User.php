@@ -13,24 +13,24 @@ class User{
         $this->data = array();
     }
     
-    function setUser($id){  
+    function setUser($id){ 
         
-        $query = "SELECT u.id,
-                         u.surname, 
-                         u.name, 
-                         u.email, 
-                         u.phone, 
-                         u.key_code,
-                         u.status
-                 FROM users AS u   
-                 WHERE u.id = $id AND u.activ = 1";
+        if($_SESSION[auth] == 1){
+            
+            $who = 'admin';
         
-//        echo "$query<br/>";
-        
-        $result = mysql_query($query) or die ($query);
-        
-        if(!$result){
             $query = "SELECT u.id,
+                            u.surname, 
+                            u.name, 
+                            u.email, 
+                            u.phone, 
+                            u.status
+                    FROM users AS u   
+                    WHERE u.id = $id AND u.activ = 1";
+            
+        }  else if ($_SESSION[auth]==2) {
+            
+             $query = "SELECT u.id,
                          u.surname, 
                          u.name, 
                          u.email, 
@@ -39,8 +39,13 @@ class User{
                  WHERE u.id = $id AND u.activ = 1";
             
             $result = mysql_query($query) or die ($query);
+            
+            $who = 'customer';
+            
         }
         
+        $result = mysql_query($query) or die ($query);
+
         $row = mysql_fetch_assoc($result);
         
         $this->id = $row[id];

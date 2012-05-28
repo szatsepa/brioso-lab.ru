@@ -10,22 +10,25 @@ if(!isset ($user)){
     
     $user = new User();
 
-if (isset($_SESSION[auth]) and !isset($attributes[out])) {
+if (isset($_SESSION[auth])) {
 	
     $user_id = $_SESSION[id];
     
-       if($_SESSION[auth] == 1){
+       if($_SESSION[auth] != 0){
            
-           $user->setUser($user_id);
+            $user->setUser($user_id);
 
        }
      
     }
 
     if(!($user->data[id])){
-        $_SESSION[auth] = 0;
+        unset($_SESSION[auth]);
         unset($_SESSION[id]);
         unset($_COOKIE[di]); 
+        unset($_COOKIE[who]);
+        setcookie("di", '', time()-(3600));
+        setcookie("who", '', time()-(3600));
     }
 }
 ?>

@@ -20,44 +20,26 @@ if(!isset($_SESSION)){
     session_start();    
 }
 //print_r($_SESSION);
-//echo "<br/>";
-
-
-if($_SESSION[auth] != 1)$_SESSION[auth] = 0;
-
-
-if(isset($attributes[id])){
-         
-   $_SESSION[id] = $attributes[id];
-   
-   $_SESSION[auth] = 1;
-         
-}
 
 if(isset($attributes[di]) && !isset ($_SESSION[auth]) && $attributes[di] != ''){
          
    $_SESSION[id] = $attributes[di];
    
-   $_SESSION[auth] = 1;
+   $_SESSION[auth] = $attributes[who];
          
 }
 
- if(isset ($attributes[pwd])){
-            include 'action/activation.php';
-        }
-//print_r($_SESSION);
 if(isset ($_SESSION[id])) {
     include 'query/checkauth.php';
 }
 
 $title = "brioso-lab.ru";
 
-//print_r($attributes);
-
 switch ($attributes[act]) {
     
     case 'main':
-        $title = "brioso-lab.ru-создай цвет!";
+        $title .= "-создай цвет!";
+        include 'query/cart.php';
         include 'query/prices.php';
         include 'main/header.php';
         include 'main/subheader.php';
@@ -128,7 +110,7 @@ switch ($attributes[act]) {
         include 'main/result_search.php';
         break;
     
-       case 'srchn':
+   case 'srchn':
         include 'query/search_w.php';
         include 'main/header.php';
         include 'main/selector.php';
@@ -138,6 +120,15 @@ switch ($attributes[act]) {
     case 'auth':
         include 'main/header.php';
         include 'query/authentication.php';
+        break;
+    
+    case 'reg':
+        include 'main/header.php';
+        include 'action/registration.php';
+        break;
+    
+    case 'activation':
+        include 'action/activation.php';
         break;
     
     case "logout":

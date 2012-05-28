@@ -4,8 +4,6 @@ unset ($attributes);
 
 unset($_SESSION[auth]);
 
-unset($_SESSION[user]);
-
 unset ($_SESSION[id]);
 
 setcookie("di", '', time()-(3600));
@@ -14,8 +12,9 @@ session_unset();
 
 session_destroy();
 
+header("location:index.php?act=main"); 
+
 ?>
- <script language="javascript">
-    document.write ('<form action="http://<?php echo $host;?>" method="post"></form>');
-    document.forms[0].submit();
-</script>
+<!-- <script language="javascript">
+    document.location.href="index.php?act=main";
+</script>-->

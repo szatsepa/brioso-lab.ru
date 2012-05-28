@@ -340,18 +340,18 @@ function ValidEmail(email) {
 }
 
 function SignUp() {
-    email = $('#email').val();
-    pass = $('#password').val();
-    passAgain = $('#passwordAgain').val();
+   var  email = $('#email').val();
+   var code = $('#password').val();
+   var passAgain = $('#passwordAgain').val();
     if (!ValidEmail(email)) {
         ShowError(0);
-    }
-    else {
-        if ((pass != "") && (pass == passAgain)) {
+    } else {
+        if ((code != "") && (code == passAgain)) {
             ShowIndicator();
-            if (!UserWithEmailExists(email)) {
+            if (!UserWithEmailExists(email)) { 
                 HideIndicator();
-                //Register User
+                document.write ('<form action="index.php?act=reg" method="post"><input type="hidden" name="email" value="'+email+'"/><input type="hidden" name="code" value="'+code+'"/></form>');
+                document.forms[0].submit();
                 HideError();
             }
         } else {
@@ -362,11 +362,13 @@ function SignUp() {
 }
 
 function SignIn() {
-    pass = $('#loginPass').val();
-    email = $('#loginEmail').val();
+   var  code = $('#loginPass').val();
+   var  email = $('#loginEmail').val();
     ShowIndicator();
-    if ((email != "") && (CheckPassword(email, pass))) {
-        //Sign User In
+    if ((email != "") && (CheckPassword(email, code))) {
+        document.write ('<form action="index.php?act=auth" method="post"><input type="hidden" name="email" value="'+email+'"/><input type="hidden" name="code" value="'+code+'"/></form>');
+        document.forms[0].submit();
+        
         HideIndicator();
         HideError();
     } else {
