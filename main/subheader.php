@@ -26,7 +26,7 @@ if(!$user->data[name])$user_name = $user->data[email];
             <p><a style="color: black;" href='index.php?act=logout' title="Выйти?"><?php echo $user_name;?></a></p>
         </span>
     </div>
-    <div style="position: relative;float: left;width: 140px;height: 104px;margin-left: 834px;margin-top: -94px">
+    <div style="display: <?php echo $customer;?>;position: relative;float: left;width: 140px;height: 104px;margin-left: 834px;margin-top: -94px">
         <p>
             <a href="index.php?act=cart" style="font-size: 16px;color: black;">Корзина</a>
          </p>

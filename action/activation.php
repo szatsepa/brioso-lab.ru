@@ -7,7 +7,7 @@
  
  $id = intval($attributes[id]);
  
- $query = "UPDATE customer SET activ = 1 WHERE code = $code";
+ $query = "UPDATE customers SET activ = 1 WHERE code = $code";
  
  mysql_query($query) or die ($query);
  

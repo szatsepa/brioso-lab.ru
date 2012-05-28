@@ -55,7 +55,7 @@ $query = "SELECT id FROM customers WHERE code = $code AND email = $email AND act
 
     <script language="javascript">
 //        alert(<?php echo $query;?>);
-    document.write ('<form action="index.php?act=main&who=<?php echo $who;?>" method="post"><input type="hidden" name="id" value="<?php echo $row[0];?>"/></form>');
+    document.write ('<form action="index.php?act=main" method="post"><input type="hidden" name="id" value="<?php echo $row[0];?>"/></form>');
     document.forms[0].submit();
     </script>
     
