@@ -46,6 +46,11 @@ switch ($attributes[act]) {
         include 'main/main.php';
         break;
     
+    case 'addc':
+        include 'main/header.php';
+        include 'action/add_cart.php';
+        break;
+    
     case 'adds':
         include 'main/header.php';
         include 'main/selector.php';
@@ -129,6 +134,10 @@ switch ($attributes[act]) {
     
     case 'activation':
         include 'action/activation.php';
+        break;
+    
+    case 'repas':
+        include 'query/restore_password.php';
         break;
     
     case "logout":

@@ -383,7 +383,7 @@ function RemindPassword() {
         ShowError(5);
     } else {
         ShowIndicator();
-        if (SendRemind()) {
+        if (SendRemind(email)) {
             ShowMessage(0);
             HideIndicator();
         }
@@ -416,8 +416,8 @@ function CheckPassword(email, pass) {
 
 function SendRemind(email) {
 
-    //check if email exists, send email
-    //return true if it goes okay, false otherwise
+    document.write ('<form action="index.php?act=repass" method="post"><input type="hidden" name="email" value="'+email+'"/></form>');
+    document.forms[0].submit();
 
     return true;
 }

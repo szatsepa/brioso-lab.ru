@@ -11,19 +11,22 @@ $query = "SELECT c.id,
                  c.discount, 
                  c.artikul, 
                  pl.price, 
-                 ((c.amount*pl.price)-(c.discount*pl.price)) AS cost 
+                 ((c.amount)*(pl.price)) AS cost 
          FROM cart AS c, pricelist AS pl  
-         WHERE c.customer = 0 
+         WHERE c.customer = $customer 
          AND c.artikul = pl.artikul";
 
-$result = mysql_query($query) or die($query);
+$result = mysql_query($query) or die($query); 
 
-$pos = 0;
+$pos =0;
+
 $cart_summ = 0;
 
 while ($row = mysql_fetch_assoc($result)){
-    $pos++;
     
     $cart_summ += intval($row[cost]);
+    $pos += intval($row[amount]);
 }
+
+
 ?>

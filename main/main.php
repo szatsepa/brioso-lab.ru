@@ -3,9 +3,12 @@
 /*
  * created by arcady.1254@gmail.com  7/5/2012
  */
-//print_r($items_array[0]); 
+//print_r($items_array[3]); 
 ?>
 <script type="text/javascript">
+    
+    var auth = parseInt(<?php echo $_SESSION[auth];?>);
+   
     var items_array = new Array();
     <?php
     foreach ($items_array as $value) {
@@ -53,10 +56,14 @@
                     mysl2.setValue(50);
                 </script>
         </div>
+<!--    right pahel ====================================-->
         <div style="font-size: 16px;color: black;position: relative;left: 465px;width: 520px;height: 240px;bottom: 22px;">
-            <input type="hidden" name="h" id="hue"/>
-            <input type="hidden" name="str" id="saturation"/>
-            <input type="hidden" name="brn" id="brightness"/>
+            <input type="hidden" name="h" id="hue" value="0"/>
+            <input type="hidden" name="str" id="saturation" value="100"/>
+            <input type="hidden" name="brn" id="brightness" value="50"/>
+            <input type="hidden" name="item_id" id="item_id" value=""/>
+            <input type="hidden" name="price_id" id="price_id" value=""/>
+            <input type="hidden" name="artikul" id="artikul" value=""/>
             <div style="position: relative;float: left;width: 395px;height: 28px;"> 
                 <p id="price_name" style="font-size: 16px;font-weight: bold;"><?php echo $items_array[0][price_name];?></p>
             </div>
@@ -104,11 +111,14 @@
                     <p id="how_meny" style="text-align: center;font-size: 14px;font-weight: normal;cursor: pointer;color: black;">Сколько краски мне нужно?</p>
                 </div>
                 <div style="position: relative;margin: 22px 22px auto;width: 132px;height: 22px;">
-                    <p style="text-align: center"><input style="font-size: 14px;font-weight: bold;color: black;" type="button" id="c_order" value="В корзину"/></p>
+                    <p style="text-align: center">
+                        <input style="font-size: 14px;font-weight: bold;color: black;" type="button" id="c_order" value="В корзину"/>
+                    </p>
                 </div>
             </div>
      </div>
 </div>
+<!--    tnd right panel ==================================-->
 <div class="wrapper">
     <div id="gallery">
         <div class="container"> 
