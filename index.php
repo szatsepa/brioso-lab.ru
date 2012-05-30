@@ -46,6 +46,15 @@ switch ($attributes[act]) {
         include 'main/main.php';
         break;
     
+    case 'groups':
+        $title .= "-выбери группу!";
+        include 'query/cart.php';
+        include 'query/group.php';
+        include 'main/header.php';
+        include 'main/subheader.php';
+        include 'main/groups.php';
+        break;
+    
     case 'addc':
         include 'main/header.php';
         include 'action/add_cart.php';

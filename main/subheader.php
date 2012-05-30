@@ -43,11 +43,11 @@ if(!$user->data[name])$user_name = $user->data[email];
     <table>
         <tr>
             <td>
-                <a class="subhead" href="index.php?act=main">Создай цвет</a>
+                <a class="subhead" href="index.php?act=groups">Группы</a>
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>
             <td>
-                <a class="subhead"  href="">Как это работает</a>
+                <a class="subhead"  href="index.php?act=main">Создай цвет</a>
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>
             <td>

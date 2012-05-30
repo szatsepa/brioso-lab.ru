@@ -14,20 +14,19 @@ header('Content-Type: text/html; charset=utf-8');
         <meta name="description" content="" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        
         <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection" />
-        <link href="/css/screen.css" rel="stylesheet" type="text/css" />
-        <link href="../css/vrStyle.css" rel="stylesheet" type="text/css" />
-<!--        <link href="/css/webforms2.css" rel="stylesheet" type="text/css" />-->
-        <script type="text/javascript" src="/js/scripts.js"></script>
+        <link rel="stylesheet" href="/css/screen.css" type="text/css" />
+        <link rel="stylesheet" href="../css/vrStyle.css" type="text/css" />
+        <link rel="stylesheet" href="<?php echo "../css/$attributes[act].css";?>" type="text/css" />
+        
         <script type="text/javascript" src="/js/jquery.easing.min.1.3.js"></script>
-<!--       <script type="text/javascript" src="/js/webforms2-p.js"></script>
-        <script type="text/javascript" src="/js/modernizr.custom.12840.js"></script>-->
-        <script type="text/javascript" src="/js/Some_slider.js"></script>
-        <script src="/js/jquery-1.4.4.min.js" type="text/javascript"></script>
-        <script src="/js/jquery-ui-1.8.6.custom.min.js" type="text/javascript"></script>
-        <script src="/js/main.js" type="text/javascript"></script>
-<!--        <script type="text/javascript" src="../js/Some_slider.js"></script>
-        <script type="text/javascript" src="../js/img_show.js"></script>-->
+        <script type="text/javascript" src="/js/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" src="/js/jquery-ui-1.8.6.custom.min.js"></script>
+        <script type="text/javascript" src="/js/color_select.js"></script>
+        <script type="text/javascript" src="/js/scripts.js"></script>
+        <script type="text/javascript" src="/js/<?php echo $attributes[act];?>.js"></script>
+        <script type="text/javascript" src="/js/my_request.js"></script>
 </head>
     <body onload="">
        <div class="main"> 

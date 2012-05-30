@@ -1,6 +1,5 @@
 /* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * three sliders 30/5/2012
  */
 function slider(elemId, sliderWidth, range1, range2, step, cl_name, position) {
 	var knobWidth = 9;				// ширина и высота бегунка
@@ -51,11 +50,7 @@ function slider(elemId, sliderWidth, range1, range2, step, cl_name, position) {
 		knob.addEventListener("mouseup", endCoord, true);	
 		slider.addEventListener("mouseup", endCoord, true);	
 	}
-        
 
-
-
-// далее подробно не описываю, кто захочет - разберется
 //////////////////// функции установки/получения значения //////////////////////////
 
 	function setValue(x)	// установка по пикселям
