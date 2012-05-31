@@ -88,7 +88,9 @@
                 </p>   
             </div> 
             <div style="position: relative;float: left;width: 150px;height: 150px;">
-                <p style="text-align: center;"><img id="item_image" src="" width="135" alt="1"/></p>
+                <p style="text-align: center;">
+                    <img id="item_image" src="" width="135" alt="1"/>
+                </p>
             </div>
             <div style="position: relative;float: left;width: 370px;height: 150px;">
                 <div id="litres" style="position: relative;float: left;width: 130px;height: 30px;text-align: center">

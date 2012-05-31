@@ -19,7 +19,7 @@ if(!isset($_SESSION)){
 
     session_start();    
 }
-//print_r($_SESSION);
+//print_r($attributes);
 
 if(isset($attributes[di]) && !isset ($_SESSION[auth]) && $attributes[di] != ''){
          
@@ -49,7 +49,7 @@ switch ($attributes[act]) {
     case 'groups':
         $title .= "-выбери группу!";
         include 'query/cart.php';
-        include 'query/group.php';
+//        include 'query/group.php';
         include 'main/header.php';
         include 'main/subheader.php';
         include 'main/groups.php';
@@ -155,6 +155,10 @@ switch ($attributes[act]) {
  
      case 'statistics':
          include 'action/statistics.php';
+         break;
+     
+     case 'info':
+         phpinfo();
          break;
      
     default :

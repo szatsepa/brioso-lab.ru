@@ -17,7 +17,7 @@ header('Content-Type: text/html; charset=utf-8');
         
         <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection" />
         <link rel="stylesheet" href="/css/screen.css" type="text/css" />
-        <link rel="stylesheet" href="../css/vrStyle.css" type="text/css" />
+        <link rel="stylesheet" href="../css/user_forms.css" type="text/css" />
         <link rel="stylesheet" href="<?php echo "../css/$attributes[act].css";?>" type="text/css" />
         
         <script type="text/javascript" src="/js/jquery.easing.min.1.3.js"></script>

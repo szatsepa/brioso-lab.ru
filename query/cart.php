@@ -5,6 +5,8 @@
  */
 
 $customer = intval($_SESSION[id]);
+//$customer = intval($_POST[id]);
+
 
 $query = "SELECT c.id, 
                  c.amount, 
@@ -28,5 +30,7 @@ while ($row = mysql_fetch_assoc($result)){
     $pos += intval($row[amount]);
 }
 
-
+//$my_cart = array('amount'=>$pos,'cost'=>$cart_summ);
+//
+//echo json_encode($my_cart);
 ?>

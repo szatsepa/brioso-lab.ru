@@ -6,6 +6,7 @@
     margin: auto;
     margin-top: 12px;
     width: 380px;
+    height: 400px;
     overflow: hidden;
 }
 #vrWrapper .wr
@@ -18,7 +19,7 @@
     border: solid 1px Silver;
     text-align: center;
     margin: 20px 40px;
-    background: #fafafa url('../images/bg.jpg') repeat-x left -1px;
+    background: #fafafa url('http://brioso-lab.ru/images/bg.jpg') repeat-x left -1px;
     padding: 20px;
     float: left;
 }
@@ -65,7 +66,7 @@
     position: absolute;
     right: 43px;
     top: 25px;
-    background: url(../images/ajax-loader.gif) left top no-repeat;
+    background: url(http://brioso-lab.ru/images/ajax-loader.gif) left top no-repeat;
 }
 .buttonDiv
 {

@@ -4,6 +4,18 @@
  * 30.5.2012
  */
 ?>
-<div style="position: relative;width: 1000px;height: 768px;margin: 22px auto;">
-    <p style="text-align: center;"><input type="button" id="exp_btn" value="PROVERKA"/></p>
+<div id="content">
+    <div style="position: relative;width: 1004px;height: 333px;">
+        <div id="gimage" style="position: relative;float: left;width: 280px;height: 280px;margin-left: 42px;">
+            <img src="" id="group_image" alt="" style="cursor: pointer;"/>
+        </div>
+        <div id="com" style="position: relative;margin-left: 326px;width: 480px;height: 280px;font-size: 16px;font-weight: bold;padding-left: 22px;padding-top: 8px;">
+            <p id="p_content"></p>
+        </div>
+    </div>
+    <div id="select_group" style="position: relative; width: 800px;margin: 0 auto;text-align: center;">
+        <p>
+            <input type="button" id="go_paint" value="Выбрать краску" style="cursor: pointer;"/>
+        </p>
+    </div>
 </div>

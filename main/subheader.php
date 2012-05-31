@@ -77,7 +77,7 @@ if(!$user->data[name])$user_name = $user->data[email];
         <div id="wr" class="wr" style="margin: 12px auto;">
             <div id="indicator">
             </div>
-            <form id="reg_up" action="index.php?act=reg" method="post">
+
             <div class='loginBlock' id="signup" style="display: none">
                 <label for="email">Email:</label> <input id="email" type="text" class='textinput' />
                 <label for="password">Пароль:</label> <input id="password" type="password" class='textinput' />

@@ -1,7 +1,9 @@
 /* 
  * created by arcady.1254@gmail.com 10/2/2012
  */
-
+var blocks = new Array("#signup","#signin","#remindPass");
+var cur = 1;
+        
 function preload(id){
     
         var obj = document.getElementById(id);
@@ -275,7 +277,7 @@ return false;
 }
 //block entry================
 
-
+    
 
 // --------
 //  ERRORS
@@ -287,7 +289,7 @@ er[2] = "Пользователь с таким email'ом уже зарегис
 er[3] = "Не угадали пароль. Или email. Попробуйте еще раз"; //1
 er[4] = "Пользователя с таким email'oм у нас еще нету"; //2
 er[5] = "Неправильный формат email'a"; //2
-
+        
 function HideError() {
     $('.error').hide();
 }
@@ -297,13 +299,13 @@ function ShowError(code) {
         case 0:
             $('#error0').html(er[0]).slideDown();
             $('#email').select().focus();
-            break;
+                        break;
         case 1:
             $('#error0').html(er[1]).slideDown();
-            break;
+                        break;
         case 2:
             $('#error0').html(er[2]).slideDown();
-            break;
+                        break;
         case 3:
             $('#error1').html(er[3]).slideDown();
             break;
@@ -315,8 +317,8 @@ function ShowError(code) {
             break;
     }
 }
-
-
+            
+            
 // ----------
 //  MESSAGES
 // ----------
@@ -331,14 +333,14 @@ function ShowMessage(code) {
         case 0:
             $('#message0').html(m[0]).slideDown();
             break;
-    }
+        }
 }
-
+       
 function ValidEmail(email) {
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     return reg.test(email)
 }
-
+            
 function SignUp() {
    var  email = $('#email').val();
    var code = $('#password').val();
@@ -360,7 +362,7 @@ function SignUp() {
         }
     }
 }
-
+        
 function SignIn() {
    var  code = $('#loginPass').val();
    var  email = $('#loginEmail').val();
@@ -376,7 +378,7 @@ function SignIn() {
         HideIndicator();
     }
 }
-
+        
 function RemindPassword() {
     var email = $('#remindEmail').val();
     if (!ValidEmail(email)) {
@@ -393,14 +395,14 @@ function RemindPassword() {
         }
     }
 }
-
+        
 function ShowIndicator() {
     $('#indicator').show();
-}
+    }
 
 function HideIndicator() {
     $('#indicator').hide();
-}
+    }
 
 function UserWithEmailExists(email) {
     //check if user with such email exists
@@ -415,9 +417,12 @@ function CheckPassword(email, pass) {
 }
 
 function SendRemind(email) {
-
-    document.write ('<form action="index.php?act=repass" method="post"><input type="hidden" name="email" value="'+email+'"/></form>');
-    document.forms[0].submit();
-
+    
+    $.ajax({
+                url: 'http://brioso-lab.ru/index.php?act=data',             // указываем URL и
+                type : "post",                     // тип загружаемых данных
+                dataType: "text",
+                data: "email="+email+""
+        });
     return true;
 }

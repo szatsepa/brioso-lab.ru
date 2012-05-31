@@ -3,6 +3,7 @@
 /*
  * created by arcady.1254@gmail.com 7/5/2012
  */
+$pid = intval($attributes[pid]);
 
 $query = "SELECT p.id AS price_id,
                  p.name AS price_name,
@@ -24,7 +25,8 @@ $query = "SELECT p.id AS price_id,
              AND p.id = pl.pricelist
              AND pl.barcode = i.barcode
              AND i.type = 1
-             AND pl.code2 = 1";
+             AND pl.code2 = 1
+             AND p.id = $pid";
 
 $result = mysql_query($query) or die($query);
 
