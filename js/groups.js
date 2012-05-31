@@ -31,6 +31,9 @@ $(document).ready(function () {
                       
                       $("#p_content").text(groups_array[0]['comment']);
                       
+                      $("#prev").attr("src", "http://brioso-lab.ru/images/prev.png");
+                      
+                      $("#next").attr("src", "http://brioso-lab.ru/images/next.png");
                  }
                 
         });
@@ -115,14 +118,56 @@ $(document).ready(function () {
   var i = 0;
         
         $("#group_image").mousedown(function(){
-            i++;
+            i ++;
             if(i==groups_array.length){
                 i = 0;
+            }
+            if(i<0){
+                i = (groups_array.length-1);
             }
             $("#group_image").attr('src', 'http://brioso-lab.ru/images/items/'+groups_array[i]['img']);
             $("#group_image").attr('alt', groups_array[i]['price_id']);           
             $("#p_content").text(groups_array[i]['comment']);
         });
+        
+        $("#next").mousedown(function(){
+            i ++;
+            if(i==groups_array.length){
+                i = 0;
+            }
+            if(i<0){
+                i = (groups_array.length-1);
+            }
+            $("#group_image").attr('src', 'http://brioso-lab.ru/images/items/'+groups_array[i]['img']);
+            $("#group_image").attr('alt', groups_array[i]['price_id']);           
+            $("#p_content").text(groups_array[i]['comment']);
+        });
+        $("#prev").mousedown(function(){
+            i --;
+            if(i==groups_array.length){
+                i = 0;
+            }
+            if(i<0){
+                i = (groups_array.length-1);
+            }
+            $("#group_image").attr('src', 'http://brioso-lab.ru/images/items/'+groups_array[i]['img']);
+            $("#group_image").attr('alt', groups_array[i]['price_id']);           
+            $("#p_content").text(groups_array[i]['comment']);
+        });
+        
+        function cgangePrice(n){
+            i += n;
+            if(i==groups_array.length){
+                i = 0;
+            }
+            if(i<0){
+                i = (groups_array.length-1);
+            }
+            $("#group_image").attr('src', 'http://brioso-lab.ru/images/items/'+groups_array[i]['img']);
+            $("#group_image").attr('alt', groups_array[i]['price_id']);           
+            $("#p_content").text(groups_array[i]['comment']);
+            
+        }
         
         $("#go_paint").mousedown(function(){
             var pid = $("#group_image").attr('alt');

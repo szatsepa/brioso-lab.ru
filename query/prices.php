@@ -5,6 +5,8 @@
  */
 $pid = intval($attributes[pid]);
 
+if(!$pid or $pid == 0)$pid=1;
+
 $query = "SELECT p.id AS price_id,
                  p.name AS price_name,
                  pl.id AS item, 
