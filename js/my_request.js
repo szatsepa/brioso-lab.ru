@@ -30,5 +30,4 @@ function getHTTPRequestObject() {
   return xmlHttpRequest;
 }
  
-var httpRequester = getHTTPRequestObject(); /* Когда страница
-                            загрузилась, создаем xml http объект */
+var httpRequester = getHTTPRequestObject(); /* Когда страница загрузилась, создаем xml http объект */

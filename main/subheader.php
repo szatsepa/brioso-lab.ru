@@ -28,7 +28,7 @@ if(!$user->data[name])$user_name = $user->data[email];
     </div>
     <div style="display: <?php echo $customer;?>;position: relative;float: left;width: 140px;height: 104px;margin-left: 834px;margin-top: -94px">
         <p>
-            <a href="index.php?act=cart" style="font-size: 16px;color: black;">Корзина</a>
+            <a href="index.php?act=cart" style="font-size: 16px;color: black;font-weight: bold;">Корзина</a>
          </p>
          <p id="count">
              Товаров - <?php echo $pos;?>
@@ -69,6 +69,10 @@ if(!$user->data[name])$user_name = $user->data[email];
             <td>
                 <a class="subhead"  href="">Доставка</a>
             </td>
+<!--            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>
+                <a class="subhead"  href="index.php?act=cab">Кабинет</a>
+            </td>-->
         </tr>
     </table>
 
@@ -125,3 +129,23 @@ if(!$user->data[name])$user_name = $user->data[email];
             </div>
         </div>
     </div>
+<script type="text/javascript">
+      $("#loginPass").keydown(function(event){
+           
+           if(event.keyCode==13) {
+               SignIn();
+           }
+        });
+         $("#password").keydown(function(event){
+           
+           if(event.keyCode==13) {
+               SignUp();
+           }
+        });
+         $("#remindEmail").keydown(function(event){
+           
+           if(event.keyCode==13) {
+               RemindPassword();
+           }
+        });
+</script>

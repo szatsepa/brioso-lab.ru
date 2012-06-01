@@ -40,10 +40,12 @@ $(document).ready(function () {
     }
     //        dialog login box ==============================================
         $('#entry').click(function(e) {
+            e.preventDefault();
             $("#entry").css({'visibility': 'hidden'});
             $("#vrWrapper").css({'display': 'block'});
             $(blocks[1]).css({'display': 'block'});
             $("#content").css({'display':'none'});
+            $('#loginEmail').focus();
 
         });
         
@@ -70,37 +72,16 @@ $(document).ready(function () {
 
             }
 
-            $(blocks[x]).css({'display': 'block'});  
-            
+            $(blocks[x]).css({'display': 'block'}); 
+            if(x==0){
+               $('#email').focus();  
+            }else if(x==1){
+               $('#loginEmail').focus(); 
+            }else{
+               $('#remindEmail').focus();  
+            }
+    });      
 
-    });
-        
-        $('#loginEmail').focus();
-        
-        
-    function GoTo(num) {
-        margin = num * 382;
-        $('#wr').animate(
-            {marginLeft: -margin}, 800, 'easeInOutBack', function() {
-                switch (num) {
-                    case 0:
-                        $('#email').focus();
-                        break;
-                    case 1:
-                        $('#loginEmail').focus();
-                        break;
-                    case 2:
-                        $('#remindEmail').focus();
-                        break;
-                };
-                $(blocks[cur]).css({'visibility': 'hidden'});
-                cur = num;
-            });
-    }
-
-    function WriteLine(x) {
-        $('#info').append('<p>' + x + '</p');
-    }
 // = images of group
 
         
@@ -174,6 +155,7 @@ $(document).ready(function () {
 //            AHTUNG!!! временная затычка
             document.location.href="index.php?act=main&pid=1";
 //            document.location.href="index.php?act=main&pid="+pid;
+//            $.post('http://brioso-lab.ru/index.php?act=main',{pid:1});
         });
 
 });

@@ -9,7 +9,9 @@ $item = intval($attributes[item]);
 
 $price_id = intval($attributes[price_id]);
 
-$discount = intval($attributes[discount]);
+$discount = 0;
+
+if(!isset($attributes[discount]))$discount = intval($attributes[discount]);
 
 $volume = intval($attributes[vl]);
 
@@ -19,7 +21,7 @@ $s = intval($attributes[s]);
 
 $h = intval($attributes[h]);
 
-if(!isset($discount) or !$discount)$discount = 0;
+
 
             
 $query   = "UPDATE cart 
@@ -45,7 +47,8 @@ $query = "INSERT INTO cart (
                         h,
                         s,
                         b,
-                        customer)
+                        customer,
+                        time)
                         VALUES
                         (
                         $volume,
@@ -54,7 +57,8 @@ $query = "INSERT INTO cart (
                         $h,
                         $s,
                         $b,
-                        $id)";
+                        $id,
+                        now())";
 
 $result = mysql_query($query) or die($query);
 

@@ -3,6 +3,29 @@
  */
 var blocks = new Array("#signup","#signin","#remindPass");
 var cur = 1;
+//var user_id = 0;
+//
+//function setUser(id){
+//    
+//   user_id = parseInt(id); 
+//   Cart(user_id);
+//}
+//
+//function Cart(id){
+//    
+//    
+//    $.ajax({
+//    
+//        url: 'http://brioso-lab.ru/query/q_cart.php',
+//        type: 'post',
+//        dataType: 'json',
+//        data: {user_id:id},
+//        success:function(data){
+//           cart = data; 
+//           alert(data['session_id']+"; "+data['user']);
+//        }
+//    });   
+//}
         
 function preload(id){
     
@@ -425,4 +448,22 @@ function SendRemind(email) {
                 data: "email="+email+""
         });
     return true;
+}
+function dataLoader(path,tp, dT, obj){
+    
+    var mURL = path;
+    
+//    alert(obj);
+    $.ajax({
+                url: mURL,             // указываем URL и
+                type : tp,                     // тип загружаемых данных
+                dataType: dT,
+                data: obj,
+                success:function(data){
+                    document.location.reload();
+                },
+                error:function(data){
+                    
+                }
+        });   
 }

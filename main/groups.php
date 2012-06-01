@@ -18,13 +18,13 @@
                 <img src="" id="next" alt="" style="cursor: pointer;"/>
             </p>
         </div>
-        <div id="com" style="position: relative;margin-left: 326px;width: 480px;height: 280px;font-size: 16px;font-weight: bold;padding-left: 22px;padding-top: 8px;">
+        <div id="com" style="position: relative;margin-left: 326px;width: 480px;height: 280px;font-size: 16px;font-weight: bold;color: black;padding-left: 22px;padding-top: 8px;">
             <p id="p_content"></p>
         </div>
     </div>
     <div id="select_group" style="position: relative; width: 800px;margin: 0 auto;text-align: center;">
         <p>
-            <input type="button" id="go_paint" value="Выбрать краску" style="cursor: pointer;"/>
+            <input type="button" id="go_paint" value="Выбрать краску" style="cursor: pointer;color: black;font-weight: bold;"/>
         </p>
     </div>
 </div>

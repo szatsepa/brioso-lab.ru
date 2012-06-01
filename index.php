@@ -49,10 +49,19 @@ switch ($attributes[act]) {
     case 'groups':
         $title .= "-выбери группу!";
         include 'query/cart.php';
-//        include 'query/group.php';
         include 'main/header.php';
         include 'main/subheader.php';
         include 'main/groups.php';
+        break;
+    
+    case 'cart':
+        $title .= "-корзина!";
+        if(!isset($_SESSION[auth]))header ("location:index.php");
+        include 'query/cart.php';
+        include 'query/q_cart.php';
+        include 'main/header.php';
+        include 'main/subheader.php';
+        include 'main/chambers.php';
         break;
     
     case 'addc':
