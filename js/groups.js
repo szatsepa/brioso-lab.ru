@@ -157,6 +157,25 @@ $(document).ready(function () {
 //            document.location.href="index.php?act=main&pid="+pid;
 //            $.post('http://brioso-lab.ru/index.php?act=main',{pid:1});
         });
+        
+      $("#loginPass").keydown(function(event){
+           
+           if(event.keyCode==13) {
+               SignIn();
+           }
+        });
+         $("#password").keydown(function(event){
+           
+           if(event.keyCode==13) {
+               SignUp();
+           }
+        });
+         $("#remindEmail").keydown(function(event){
+           
+           if(event.keyCode==13) {
+               RemindPassword();
+           }
+        });        
 
 });
 

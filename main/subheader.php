@@ -30,10 +30,10 @@ if(!$user->data[name])$user_name = $user->data[email];
         <p>
             <a href="index.php?act=cart" style="font-size: 16px;color: black;font-weight: bold;">Корзина</a>
          </p>
-         <p id="count">
+         <p id="amount">
              Товаров - <?php echo $pos;?>
          </p>
-         <p id="count">
+         <p id="summ">
              На сумму - <?php echo $cart_summ;?> р.
          </p>
     </div>
@@ -92,8 +92,8 @@ if(!$user->data[name])$user_name = $user->data[email];
                     <input id="registerButton" type="button" value="Зарегистрироваться" onclick="javascript:SignUp()" /></div>
                     
                 <div class='additional'>
-                    <a name="remind">Вспомнить пароль</a> 
-                    <a name="index">Войти</a>
+                    <a name="remind"  style="text-decoration: underline;cursor: pointer;">Вспомнить пароль</a> 
+                    <a name="index"  style="text-decoration: underline;cursor: pointer;">Войти</a>
                 </div>
              </div>   
                 <div class='loginBlock' id="signin"  style="display: none">
@@ -105,8 +105,8 @@ if(!$user->data[name])$user_name = $user->data[email];
                         <input id="loginButton" type="button" value="Войти" onClick="javascript:SignIn();"/>
                     </div>
                     <div class='additional'>
-                        <a name="remind">Вспомнить пароль</a> 
-                        <a name="signup">Зарегистрироваться</a>
+                        <a name="remind"  style="text-decoration: underline;cursor: pointer;">Вспомнить пароль</a> 
+                        <a name="signup"  style="text-decoration: underline;cursor: pointer;">Зарегистрироваться</a>
                     </div>
                 </div>
                 <div id="result"></div> 
@@ -124,14 +124,14 @@ if(!$user->data[name])$user_name = $user->data[email];
                 <div class='buttonDiv'>
                     <input id="remindButton" type="button" value="Выслать пароль" onclick="RemindPassword();" /></div>
                 <div class='additional'>
-                    <a name="index">Войти</a> 
-                    <a name="signup">Зарегистрироваться</a></div>
+                    <a name="index" style="text-decoration: underline;cursor: pointer;">Войти</a> 
+                    <a name="signup" style="text-decoration: underline;cursor: pointer;">Зарегистрироваться</a></div>
             </div>
         </div>
     </div>
 <script type="text/javascript">
       $("#loginPass").keydown(function(event){
-           
+
            if(event.keyCode==13) {
                SignIn();
            }

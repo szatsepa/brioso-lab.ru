@@ -14,9 +14,6 @@ session_unset();
 
 session_destroy();
 
-header("location:index.php?act=main"); 
+header("location:index.php"); 
 
 ?>
-<!-- <script language="javascript">
-    document.location.href="index.php?act=main";
-</script>-->

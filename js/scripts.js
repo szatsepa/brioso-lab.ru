@@ -3,29 +3,6 @@
  */
 var blocks = new Array("#signup","#signin","#remindPass");
 var cur = 1;
-//var user_id = 0;
-//
-//function setUser(id){
-//    
-//   user_id = parseInt(id); 
-//   Cart(user_id);
-//}
-//
-//function Cart(id){
-//    
-//    
-//    $.ajax({
-//    
-//        url: 'http://brioso-lab.ru/query/q_cart.php',
-//        type: 'post',
-//        dataType: 'json',
-//        data: {user_id:id},
-//        success:function(data){
-//           cart = data; 
-//           alert(data['session_id']+"; "+data['user']);
-//        }
-//    });   
-//}
         
 function preload(id){
     
@@ -391,7 +368,8 @@ function SignIn() {
    var  email = $('#loginEmail').val();
     ShowIndicator();
     if ((email != "") && (CheckPassword(email, code))) {
-        document.write ('<form action="index.php?act=auth" method="post"><input type="hidden" name="email" value="'+email+'"/><input type="hidden" name="code" value="'+code+'"/></form>');
+        var where = document.location.search;
+        document.write ('<form action="index.php?act=auth" method="post"><input type="hidden" name="srch" value="'+where+'"/><input type="hidden" name="email" value="'+email+'"/><input type="hidden" name="code" value="'+code+'"/></form>');
         document.forms[0].submit();
         
         HideIndicator();
@@ -467,3 +445,51 @@ function dataLoader(path,tp, dT, obj){
                 }
         });   
 }
+function toChange(str){
+    var obj = document.getElementById(str);
+    obj.style.display = 'block';
+}
+function saveChange(ID){
+    var obj = document.getElementById("form_"+ID);
+    var cart_id = obj.cart_id.value;
+    var volume = obj.volume.value;
+    var id = ID;
+
+    $.ajax({
+                url: 'http://brioso-lab.ru/action/change_cart.php',             // указываем URL и
+                type : 'post',                     // тип загружаемых данных
+                dataType: 'json',
+                data: '&cart_id='+cart_id+'&volume='+volume+"&user_id="+user_id,
+                success:function(data){
+//                    alert(data[1]);
+                    document.getElementById('vol_'+id).textContent =data[0]['amount'];
+                    document.getElementById('cost_'+id).textContent =data[0]['cost'];
+                    document.getElementById('amount').textContent = "Товаров - "+data[1]['summ_amount'];
+                    document.getElementById('summ').textContent = "На сумму - "+data[1]['summ_cost']+" р.";
+                    document.getElementById("chng_"+id).style.display = 'none';                      
+                },
+                error:function(data){
+                    
+                }
+        });
+}
+// block entry for keydown =============
+//      $("#loginPass").keydown(function(event){
+//           
+//           if(event.keyCode==13) {
+//               SignIn();
+//           }
+//        });
+//         $("#password").keydown(function(event){
+//           
+//           if(event.keyCode==13) {
+//               SignUp();
+//           }
+//        });
+//         $("#remindEmail").keydown(function(event){
+//           
+//           if(event.keyCode==13) {
+//               RemindPassword();
+//           }
+//        });
+//========================================

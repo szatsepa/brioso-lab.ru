@@ -8,6 +8,8 @@
 <script type="text/javascript">
     
     var auth = parseInt(<?php echo $_SESSION[auth];?>);
+    
+    user_id = parseInt(<?php echo $_SESSION[id];?>);
    
     var items_array = new Array();
     <?php
@@ -106,13 +108,13 @@
                     }
                     ?>  
                     <div style='float: left;margin-top: 6px;margin-left: 4px;'>  
-                        <img id='rub' src='http://brioso-lab.ru/images/rub.png' alt='0'/>
+                        <img id='rub' src='http://brioso-lab.ru/images/rub.png' alt='0'/>  
                     </div>
                 </div>
                 <div style="float: left;width: 210px; margin-left: 42px">
                     <p id="how_meny" style="text-align: center;font-size: 14px;font-weight: normal;cursor: pointer;color: black;">Сколько краски мне нужно?</p>
                 </div>
-                <div style="position: relative;margin: 22px 22px auto;width: 132px;height: 22px;">
+                <div style="position: relative;margin: 22px 22px auto;width: 132px;height: 22px;cursor: pointer;">
                     <p style="text-align: center">
                         <input style="font-size: 14px;font-weight: bold;color: black;" type="button" id="c_order" value="В корзину"/>
                     </p>

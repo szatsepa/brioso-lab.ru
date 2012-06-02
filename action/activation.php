@@ -11,5 +11,5 @@
  
  mysql_query($query) or die ($query);
  
- header("location:index.php?act=main");
+ header("location:index.php");
 ?>

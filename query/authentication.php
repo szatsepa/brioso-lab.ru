@@ -11,6 +11,8 @@ if(isset ($attributes[ismail]) && $attributes[ismail] == 1){
 
 }else{
     
+$where = $attributes[srch];    
+    
 $code = quote_smart($attributes[code]);
 
 $email = quote_smart($attributes[email]);
@@ -55,7 +57,7 @@ $query = "SELECT id FROM customers WHERE code = $code AND email = $email AND act
 
     <script language="javascript">
 //        alert(<?php echo $query;?>);
-    document.write ('<form action="index.php?act=groups" method="post"><input type="hidden" name="id" value="<?php echo $row[0];?>"/></form>');
+    document.write ('<form action="index.php<?php echo $where;?>" method="post"><input type="hidden" name="id" value="<?php echo $row[0];?>"/></form>');
     document.forms[0].submit();
     </script>
     
@@ -65,7 +67,7 @@ $query = "SELECT id FROM customers WHERE code = $code AND email = $email AND act
      $lo = logout();   
     ?>
 <script language="javascript">   
-    document.location.href = "index.php?act=main";
+    document.location.href = "index.php<?php echo $where;?>";
 </script>    
     <?php } 
     
