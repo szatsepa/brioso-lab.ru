@@ -99,7 +99,7 @@
                     <p id="vol"><input style="font-size:14px;color: black;" type="number" size="12" min="0" max="10000" step="1" value="1" price="<?php echo $items_array[0][price];?>" id="volume"/>&nbsp;л</p>
                 </div>
                 <div style="float: left;width: 120px;margin-left: 52px;margin-top: 8px;"> 
-                    <p id="calk" style="text-align: center;font-size: 16px;font-weight: bold;cursor: pointer;color: black;">Калькулятор</p>
+                    <p id="calk" style="text-align: center;font-size: 16px;font-weight: bold;cursor: pointer;color: black;text-decoration: underline;">Калькулятор</p>
                 </div>
                 <div id="cost" style="position: relative;width: 132px;height: 28px;margin-top: 52px;padding-left: 22px;">
                     <?php
@@ -108,16 +108,16 @@
                     }
                     ?>  
                     <div style='float: left;margin-top: 6px;margin-left: 4px;'>  
-                        <img id='rub' src='http://brioso-lab.ru/images/rub.png' alt='0'/>  
+                        <img id='rub' src='http://brioso-lab.ru/images/rub.png' alt='p.'/>   
                     </div>
                 </div>
                 <div style="float: left;width: 210px; margin-left: 42px">
-                    <p id="how_meny" style="text-align: center;font-size: 14px;font-weight: normal;cursor: pointer;color: black;">Сколько краски мне нужно?</p>
+                    <p id="how_meny" style="text-align: center;font-size: 14px;font-weight: normal;cursor: pointer;color: black;text-decoration: underline">Сколько краски мне нужно?</p>
                 </div>
-                <div style="position: relative;margin: 22px 22px auto;width: 132px;height: 22px;cursor: pointer;">
-                    <p style="text-align: center">
-                        <input style="font-size: 14px;font-weight: bold;color: black;" type="button" id="c_order" value="В корзину"/>
-                    </p>
+                <div style="position: relative;margin: 22px 22px auto;width: 132px;height: 22px;">
+                    <p style="text-align: center;cursor: pointer;font-size: 16px;font-weight: bold;color: black;text-decoration: underline;" id="c_order" >В корзину</p>
+<!--                        <input style="cursor: pointer;font-size: 14px;font-weight: bold;color: black;" type="button" id="c_order" value="В корзину"/>-->
+                    
                 </div>
             </div>
      </div>

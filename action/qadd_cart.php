@@ -25,22 +25,6 @@ $h = intval($_POST[h]);
 
 
 
-            
-$query   = "UPDATE cart 
-                        SET amount   = (amount + $volume),
-                            discount = $discount,
-                            time         = now()
-                        WHERE artikul    = '$_POST[artikul]'
-                         AND  customer    = $id";            
-
-
-
-$query_try = mysql_query($query) or die($query);
-
-
-	
-	// Таких записей нет, делаем простой INSERT
-if (mysql_affected_rows() == 0) {
 
 $query = "INSERT INTO cart (
                         amount,
@@ -64,7 +48,7 @@ $query = "INSERT INTO cart (
 
 $result = mysql_query($query) or die($query);
 
-}
+
 
 $query = "UPDATE pricelist 
 	  SET amount = (`amount` - $volume) 
