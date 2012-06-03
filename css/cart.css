@@ -1,0 +1,108 @@
+/* 
+    Document   : chambers
+    Created on : 03.06.2012, 20:47:31
+    Author     : serjoga
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+div.cart{
+    position: relative;
+    width: 860px;
+    height: 275px;
+    margin: 0 auto;
+}
+div.cart_img{
+    position: relative;
+    float: left;
+    width: 215px;
+    height: 220px
+}
+div.c_name{
+    position: relative;
+    float: left;
+    width: 555px;
+    height: 32px;
+    margin-left: 12px;
+    text-align: center;
+}
+p.c_name{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+div.c_com{
+    position: relative;
+    float: left;
+    width: 395px;
+    height: 212px;
+    margin-left: 12px;
+    margin-top: 12px;
+    text-align: left;
+}
+p.c_com{
+    "font-size: 14px;
+    font-weight: normal;
+    color: black;
+}
+div.c_hidden{
+    display: none;
+    position: relative;
+    width: 320px;
+    height: 100px;
+    margin: 40px auto;
+    text-align: right;
+}
+input.c_hidden{
+    font-size:14px;
+    color: black;
+}
+div.c_hsb{
+    display: block;
+    position: relative;
+    width: 320px;
+    height: 40px;
+    margin: 40px auto;
+}
+div.amount{
+    position: relative;
+    float: left;
+    width: 45px;
+    height: 121px;
+    margin-left: 4px;
+    margin-top: 12px;
+    padding-top: 89px;
+    text-align: center;
+}
+p.amount{
+    font-size: 14px;
+    font-weight: normal;
+    color: black;
+}
+div.count{
+    position: relative;
+    float: left;
+    width: 85px;
+    height: 121px;
+    margin-left: 4px;
+    margin-top: 12px;
+    padding-top: 89px;
+    text-align: center;
+}
+div.c_change{
+    position: relative;
+    float: left;
+    width: 75px;
+    height: 121px;
+    margin-left: 4px;
+    margin-top: 12px;
+    padding-top: 89px;
+    text-align: center;
+}
+a.c_change{
+    font-size: 14px;
+    font-weight: normal;
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+}

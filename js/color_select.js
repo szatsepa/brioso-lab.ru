@@ -1,7 +1,7 @@
 /* 
  * three sliders 30/5/2012
  */
-function slider(elemId, sliderWidth, range1, range2, step, cl_name, position) {
+function slider(elemId, sliderWidth, range1, range2, step, cl_name) {
 	var knobWidth = 9;				// ширина и высота бегунка
 	var knobHeight = 24;			// изменяются в зависимости от используемых изображений
 	var sliderHeight = 13;			// высота slider'а
@@ -50,6 +50,8 @@ function slider(elemId, sliderWidth, range1, range2, step, cl_name, position) {
 		knob.addEventListener("mouseup", endCoord, true);	
 		slider.addEventListener("mouseup", endCoord, true);	
 	}
+        
+//        setValue(position);
 
 //////////////////// функции установки/получения значения //////////////////////////
 

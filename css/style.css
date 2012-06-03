@@ -91,6 +91,9 @@ div.footer{
     width: 1004px;
     margin: 0 auto;
 }
+a.footer{
+    color: black;
+}
 div.downloader{
     position: relative;
     width: 100%;

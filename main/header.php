@@ -16,7 +16,6 @@ header('Content-Type: text/html; charset=utf-8');
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         
         <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection" />
-        <link rel="stylesheet" href="/css/screen.css" type="text/css" />
         <link rel="stylesheet" href="../css/user_forms.css" type="text/css" />
         <link rel="stylesheet" href="<?php echo "../css/$attributes[act].css";?>" type="text/css" />
         

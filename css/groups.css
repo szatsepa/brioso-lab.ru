@@ -1,0 +1,53 @@
+/* 
+    Document   : groups
+    Created on : 03.06.2012, 20:33:13
+    Author     : serjoga
+    Description:
+        Purpose of the stylesheet follows.
+*/
+div.slider_group{
+    position: relative;
+    width: 1004px;
+    height: 333px;
+}
+#gimage{
+    position: relative;
+    float: left;
+    width: 280px;
+    height: 280px;
+    margin-left: 42px;
+}
+img.img_next{
+    cursor: pointer;
+}
+#img_scroll{
+    position: relative;
+    float: left;
+    width: 280px;
+    height: 20px;
+    margin-left: -342px;
+    margin-top: 212px;
+    text-align: center;
+}
+#com{
+    position: relative;
+    margin-left: 326px;
+    width: 480px;
+    height: 280px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    padding-left: 22px;
+    padding-top: 8px;
+}
+#select_group{
+    position: relative; 
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+#go_paint{
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+}

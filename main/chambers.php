@@ -13,34 +13,34 @@ $summ_list = 0.00;
     $n = 0;
     foreach ($cart_array as $value) {
         ?>
-    <div style="position: relative;width: 860px;height: 275px;margin: 0 auto;">
+    <div class="cart">
        <form id="<?php echo "form_$n";?>">
-            <div style="position: relative;float: left;width: 215px;height: 220px">
+            <div class="cart_img">
                 <img id="<?php echo $value[artikul];?>" src="http://brioso-lab.ru/images/items/<?php echo $value[img];?>" alt="<?php echo $value[id];?>"/>
             </div>
-            <div style="position: relative;float: left;width: 555px;height: 32px;margin-left: 12px;text-align: center;">
-                <p style="font-size: 16px;font-weight: bold;color: black;"><?php echo $value[name];?></p>
+            <div class="c_name">
+                <p class="c_name"><?php echo $value[name];?></p>
             </div>
-            <div style="position: relative;float: left;width: 395px;height: 212px;margin-left: 12px;margin-top: 12px;text-align: left;" >
-                <p style="font-size: 14px;font-weight: normal;color: black;"><?php echo $value[comment];?></p>
-            <div id="<?php echo "chng_$n";?>" style="display: none;position: relative;width: 320px;height: 100px;margin: 40px auto;text-align: right;">
+            <div class="c_com" >
+                <p class="c_com"><?php echo $value[comment];?></p>
+            <div id="<?php echo "chng_$n";?>" class="c_hidden">
 
                     <input type="hidden" name="cart_id" value="<?php echo $value[id];?>" id="cart_id"/>
-                    <p id="vol"><input name="volume" style="font-size:14px;color: black;" type="number" size="12" min="0" max="10000" step="1" value="<?php echo $value[amount];?>" price="" id="volume"/>&nbsp;л</p> 
-                    <p id="chng_vol"><input style="font-size:14px;color: black;font-weight: bold;" type="button" value="Сохранить" id="change" name="<?php echo $value[id];?>" onClick="javascript:saveChange('<?php echo "$n";?>')"/></p> 
+                    <p id="vol"><input class="c_hidden" name="volume" type="number" size="12" min="0" max="10000" step="1" value="<?php echo $value[amount];?>" price="" id="volume"/>&nbsp;л</p> 
+                    <p id="chng_vol"><input class="c_hidden" style="font-weight: bold;" type="button" value="Сохранить" id="change" name="<?php echo $value[id];?>" onClick="javascript:saveChange('<?php echo "$n";?>')"/></p> 
 
             </div>
-            <div id="<?php echo "color_$n";?>" style="display: block;position: relative;width: 320px;height: 40px;margin: 40px auto;background-color: hsl(<?php echo "$value[h],$value[s]%,$value[b]%";?>);">
+            <div id="<?php echo "color_$n";?>" class="c_hsb" style="background-color: hsl(<?php echo "$value[h],$value[s]%,$value[b]%";?>);">
             </div>    
             </div>
-            <div style="position: relative;float: left;width: 45px;height: 121px;margin-left: 4px;margin-top: 12px;padding-top: 89px;text-align: center;">
-                <p id="<?php echo "vol_$n";?>" style="font-size: 14px;font-weight: normal;color: black;"><?php echo $value[amount];?></p>
+            <div class="amount">
+                <p id="<?php echo "vol_$n";?>" class="amount"><?php echo $value[amount];?></p>
             </div>
-            <div style="position: relative;float: left;width: 85px;height: 121px;margin-left: 4px;margin-top: 12px;padding-top: 89px;text-align: center;">
-                <p id="<?php echo "cost_$n";?>" style="font-size: 14px;font-weight: normal;color: black;"><?php echo $value[cost];$summ_list += $value[cost];?></p>
+            <div class="count">
+                <p class="amount" id="<?php echo "cost_$n";?>"><?php echo $value[cost];$summ_list += $value[cost];?></p>
             </div>
-            <div style="position: relative;float: left;width: 75px;height: 121px;margin-left: 4px;margin-top: 12px;padding-top: 89px;text-align: center;">
-                <p><a name="" style="font-size: 14px;font-weight: normal;color: black;text-decoration: underline;cursor: pointer;" onClick="javascript:toChange('<?php echo "$n";?>');">Изменить</a></p>
+            <div class="c_change">
+                <p><a class="c_change" name="" onClick="javascript:toChange('<?php echo "$n";?>');">Изменить</a></p>
             </div>
        </form>
     </div>
