@@ -19,7 +19,10 @@ $query = "SELECT a.artikul,
                     p.comment,
                     gp.name AS img,
                     (a.price*b.amount) AS cost,
-                    p.id AS price_id
+                    p.id AS price_id,
+                    b.h,
+                    b.s,
+                    b.b
              FROM pricelist a, cart b, price p,image_items gp
              WHERE a.artikul = b.artikul
                AND a.pricelist = b.price_id

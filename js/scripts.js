@@ -379,6 +379,36 @@ function SignIn() {
         HideIndicator();
     }
 }
+
+function authUser(){
+        var  code = $('#loginPass').val();
+        var  email = $('#loginEmail').val();
+        
+        ShowIndicator();
+        if ((email != "") && (CheckPassword(email, code))) {
+            $.ajax({
+                url: 'http://brioso-lab.ru/query/jauth.php',
+                type: 'post',
+                dataType: 'json',
+                data: '&code='+code+'&email='+email,
+                success:function(data){
+                    $("#vrWrapper").css({'display': 'none'});
+                    $("#content").css({'display':'block'});
+                    $("#my_cart").css({'display':'block'});
+                    $("#amount").text('Товаров - '+data['cart']['summ_amount']);
+                    $("#summ").text('На сумму - '+data['cart']['summ_cost']+' p.');
+                    $("#customer").css({'display':'block'});
+                    $("#a_user").text(data['user']['email']);
+                   
+                }
+            });
+            HideIndicator();
+            HideError();
+        } else {
+            ShowError(3);
+            HideIndicator();
+        }
+    }
         
 function RemindPassword() {
     var email = $('#remindEmail').val();
@@ -445,9 +475,10 @@ function dataLoader(path,tp, dT, obj){
                 }
         });   
 }
-function toChange(str){
-    var obj = document.getElementById(str);
+function toChange(num){
+    var obj = document.getElementById('chng_'+num);
     obj.style.display = 'block';
+    document.getElementById('color_'+num).style.display = 'none';
 }
 function saveChange(ID){
     var obj = document.getElementById("form_"+ID);
@@ -466,7 +497,8 @@ function saveChange(ID){
                     document.getElementById('cost_'+id).textContent =data[0]['cost'];
                     document.getElementById('amount').textContent = "Товаров - "+data[1]['summ_amount'];
                     document.getElementById('summ').textContent = "На сумму - "+data[1]['summ_cost']+" р.";
-                    document.getElementById("chng_"+id).style.display = 'none';                      
+                    document.getElementById("chng_"+id).style.display = 'none';
+                    document.getElementById('color_'+id).style.display = 'block';
                 },
                 error:function(data){
                     

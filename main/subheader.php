@@ -23,10 +23,10 @@ if(!$user->data[name])$user_name = $user->data[email];
     </div>
     <div id="customer" style="display: <?php echo $customer;?>;margin-left: -320px;margin-top:48px;position: relative;float: left;width: 420px;">
         <span id="user" style="font-size: 14px;color: black;text-align: center;">
-            <p><a style="color: black;" href='index.php?act=logout' title="Выйти?"><?php echo $user_name;?></a></p>
+            <p><a id="a_user" style="color: black;" href='index.php?act=logout' title="Выйти?"><?php echo $user_name;?></a></p>
         </span>
     </div>
-    <div style="display: <?php echo $customer;?>;position: relative;float: left;width: 140px;height: 104px;margin-left: 834px;margin-top: -94px">
+    <div id="my_cart" style="display: <?php echo $customer;?>;position: relative;float: left;width: 140px;height: 104px;margin-left: 834px;margin-top: -94px">
         <p>
             <a href="index.php?act=cart" style="font-size: 16px;color: black;font-weight: bold;">Корзина</a>
          </p>
@@ -97,12 +97,12 @@ if(!$user->data[name])$user_name = $user->data[email];
                 </div>
              </div>   
                 <div class='loginBlock' id="signin"  style="display: none">
-                <label for="email">Email:</label> <input id="loginEmail" type="text" class='textinput' />
-                <label for="password">Пароль:</label> <input id="loginPass" type="password" class='textinput' />
+                <label for="email">Email:</label> <input id="loginEmail" type="text" class='textinput'/>
+                <label for="password">Пароль:</label> <input id="loginPass" type="password" class='textinput'/>
                     <div id="error1" class="error displaynone">
                     </div>
                     <div class='buttonDiv'>
-                        <input id="loginButton" type="button" value="Войти" onClick="javascript:SignIn();"/>
+                        <input id="loginButton" type="button" value="Войти" onClick="javascript:authUser();"/>
                     </div>
                     <div class='additional'>
                         <a name="remind"  style="text-decoration: underline;cursor: pointer;">Вспомнить пароль</a> 
@@ -133,7 +133,7 @@ if(!$user->data[name])$user_name = $user->data[email];
       $("#loginPass").keydown(function(event){
 
            if(event.keyCode==13) {
-               SignIn();
+               authUser();
            }
         });
          $("#password").keydown(function(event){

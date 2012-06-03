@@ -19,7 +19,7 @@ if(!isset($_SESSION)){
 
     session_start();    
 }
-//print_r($attributes);
+//print_r($_SESSION);
 
 if(isset($attributes[di]) && !isset ($_SESSION[auth]) && $attributes[di] != ''){
          

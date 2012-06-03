@@ -30,6 +30,8 @@ $summ_list = 0.00;
                     <p id="chng_vol"><input style="font-size:14px;color: black;font-weight: bold;" type="button" value="Сохранить" id="change" name="<?php echo $value[id];?>" onClick="javascript:saveChange('<?php echo "$n";?>')"/></p> 
 
             </div>
+            <div id="<?php echo "color_$n";?>" style="display: block;position: relative;width: 320px;height: 40px;margin: 40px auto;background-color: hsl(<?php echo "$value[h],$value[s]%,$value[b]%";?>);">
+            </div>    
             </div>
             <div style="position: relative;float: left;width: 45px;height: 121px;margin-left: 4px;margin-top: 12px;padding-top: 89px;text-align: center;">
                 <p id="<?php echo "vol_$n";?>" style="font-size: 14px;font-weight: normal;color: black;"><?php echo $value[amount];?></p>
@@ -38,7 +40,7 @@ $summ_list = 0.00;
                 <p id="<?php echo "cost_$n";?>" style="font-size: 14px;font-weight: normal;color: black;"><?php echo $value[cost];$summ_list += $value[cost];?></p>
             </div>
             <div style="position: relative;float: left;width: 75px;height: 121px;margin-left: 4px;margin-top: 12px;padding-top: 89px;text-align: center;">
-                <p><a name="" style="font-size: 14px;font-weight: normal;color: black;text-decoration: underline;cursor: pointer;" onClick="javascript:toChange('<?php echo "chng_$n";?>');">Изменить</a></p>
+                <p><a name="" style="font-size: 14px;font-weight: normal;color: black;text-decoration: underline;cursor: pointer;" onClick="javascript:toChange('<?php echo "$n";?>');">Изменить</a></p>
             </div>
        </form>
     </div>
