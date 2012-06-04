@@ -69,7 +69,7 @@ function slider(elemId, sliderWidth, range1, range2, step, cl_name) {
                 
                 out += 'hsl('+sl_array[0].getValue()+","+sl_array[1].getValue()+"%,"+sl_array[2].getValue()+"%)";
                 
-                d.getElementById('_info').value = out;
+//                d.getElementById('_info').value = out;
                 
 		d.getElementById('_colorfield').style.backgroundColor = out;	// это вывод значения для примера                    
                 

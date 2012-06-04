@@ -32,5 +32,5 @@ $query = "INSERT INTO statistics
 
 $act_stat = mysql_query($query) or die($query);
 
-header("location:index.php?act=groups"); 
+header("location:index.php?act=main"); 
 ?>

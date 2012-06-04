@@ -7,9 +7,11 @@ include '../query/connect.php';
 
 $id = intval($_POST[user_id]);
 
+if(!$id)$id=$_SESSION[id];
+
 $item = intval($_POST[item]);
 
-$price_id = intval($_POST[price_id]);
+$price_id = intval($_POST[pid]);
 
 $discount = 0;
 
@@ -23,6 +25,7 @@ $s = intval($_POST[s]);
 
 $h = intval($_POST[h]);
 
+$artikul = $_POST[artikul];
 
 
 
@@ -38,7 +41,7 @@ $query = "INSERT INTO cart (
                         VALUES
                         (
                         $volume,
-                        '$_POST[artikul]',
+                        '$artikul',
                         $price_id,
                         $h,
                         $s,
@@ -47,7 +50,6 @@ $query = "INSERT INTO cart (
                         now())";
 
 $result = mysql_query($query) or die($query);
-
 
 
 $query = "UPDATE pricelist 
@@ -83,16 +85,15 @@ $query = "SELECT  SUM(b.amount) AS summ_amount,
                    SUM(a.price*b.amount) AS summ_cost
              FROM pricelist a, cart b
              WHERE a.artikul = b.artikul
-               AND a.pricelist = b.price_id
                AND b.customer=$id";
 
 $result = mysql_query($query) or die($query);
 
 $row = mysql_fetch_assoc($result);
 
-//array_push($data_array, $row);
+$row[pid] = $price_id; 
 
 echo json_encode($row);
 
-mysql_close();
+mysql_close(); 
 ?>

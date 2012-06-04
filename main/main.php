@@ -54,7 +54,7 @@
                         eval(elem_array[i]).setArray(elem_array);
                     }
 
-                    mysl2.setValue(63);
+                    mysl2.setValue(82);
                 </script>
         </div>
 <!--    right pahel ====================================-->
@@ -63,7 +63,7 @@
             <input type="hidden" name="str" id="saturation" value="100"/>
             <input type="hidden" name="brn" id="brightness" value="50"/>
             <input type="hidden" name="item_id" id="item_id" value=""/>
-            <input type="hidden" name="price_id" id="price_id" value=""/>
+            <input type="hidden" name="price_id" id="price_id" value="1"/>
             <input type="hidden" name="artikul" id="artikul" value=""/>
             <div class="item"> 
                 <p id="price_name" style="font-size: 16px;font-weight: bold;"><?php echo $items_array[0][price_name];?></p>
@@ -96,7 +96,7 @@
             <div class="select">
                 <div id="litres">
                     <p id="vol">
-                        <input id="_vol" type="number" size="12" min="0" max="10000" step="1" value="1" price="<?php echo $items_array[0][price];?>" id="volume"/>&nbsp;л
+                        <input  id="volume" type="number" size="12" min="0" max="10000" step="1" value="1" price="<?php echo $items_array[0][price];?>"/>&nbsp;л
                     </p>
                 </div>
                 <div class="calk"> 
@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <div id="cuestion">
-                    <p id="how_meny">Сколько краски мне нужно?</p>
+                    <p id="how_meny" style="text-align: left;">Сколько краски мне нужно?</p>
                 </div>
                 <div id="oncart">
                     <p id="c_order" >В корзину</p>
