@@ -106,3 +106,33 @@ a.c_change{
     text-decoration: underline;
     cursor: pointer;
 }
+#itogo{
+    position: relative;
+    width: 860px;
+    height: 65px;
+    margin: 6px auto;
+    text-align: right;
+    padding-right: 86px;
+}
+#in_itogo{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+#order{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#order_form{
+    display: none;
+    position: relative;
+    width: 860px;
+/*    height: 430px;*/
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
