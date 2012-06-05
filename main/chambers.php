@@ -6,7 +6,7 @@
 $summ_list = 0.00;
 ?>
 <script type="text/javascript">
-    user_id = <?php echo $_SESSION[id];?>;
+    var user_id = <?php echo $_SESSION[id];?>;
     var my_cart = new Array();
 </script>
 <div id="content">
@@ -111,7 +111,7 @@ $summ_list = 0.00;
             </p>
         </div>
         <div id="o_email">
-            <p><label>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input id="email" type="text" name="joppa" value="ЖОППА" size="72"/></p>
+            <p><label>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input id="act_email" type="text" value="" size="72"/></p>
         </div>
         <div id="o_phone">
             <p>
@@ -120,7 +120,7 @@ $summ_list = 0.00;
         </div>
         <div id="o_comm">
             <p>
-                <label>Пожелания:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><textarea id="comment" cols="72" rows="6"></textarea>
+                <label>Пожелания:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><textarea id="act_comment" cols="72" rows="6"></textarea>
             </p>
         </div>
         <div id="o_order" style="width:520px;margin-top: 12px;">

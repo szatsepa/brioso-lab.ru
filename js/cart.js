@@ -10,13 +10,13 @@ $(document).ready(function(){
 		setTimeout( arguments.callee, 200 );
 		return;
 	}
-        var user_id = 0;
-
-        function setUser(id){
-
-        user_id = parseInt(id); 
-        Cart(user_id);
-        }
+//        var user_id = 0;
+//
+//        function setUser(id){
+//
+//        user_id = parseInt(id); 
+//            Cart(user_id);
+//        }
         
         $("#order").mouseover(function(){
             $("#order").css('color', 'blueviolet');
@@ -36,9 +36,7 @@ $(document).ready(function(){
             $("#to_order").css('color', 'black');
         });
         $("#to_order").mousedown(function(){
-//            saveOrder();
-            var email = $("#email").attr('name'); 
-            alert(email);
+            saveOrder();           
         });
         
         function createOrder(){
@@ -58,15 +56,20 @@ $(document).ready(function(){
         }
         
         function saveOrder(){
-            var email = $("#email").val();
-            var order = {email:email,shipment:null};
-//            for(var i in my_cart){ 
-//                
-//                for(var ii in my_cart[i]){ 
-//                    str += ii+";\n";
-//                }
-//            }
-//            alert(order['email']);
+            var cart = my_cart;
+            $.ajax({
+                url: 'http://brioso-lab.ru/action/j_add_order.php',
+                type: 'post',
+                dataType:'json',
+                data:{cart:cart,user_id:user_id,email:$("#act_email").val(),shipment:$("#shipment").val(),phone:$("#phone").val(),comment:document.getElementById('act_comment').value},
+                success:function(data){
+                    var str = '';
+                    for(var i in data){
+                        str += i+"; ";
+                    }
+                    alert(str);
+                }
+            });
         }
         
         
