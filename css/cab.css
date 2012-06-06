@@ -1,0 +1,128 @@
+/* 
+    Document   : cab
+    Created on : 06.06.2012, 18:03:42
+    Author     : serjoga
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+table.cart {
+    width:92%;
+}
+
+th.cart {
+        font: 12pt Arial;
+        color: #330000;
+        font-weight: bold;
+        text-align: left;
+}
+
+td.cart {
+        font: 11pt Arial;
+        font-style: italic;
+        color: #330000;
+        padding-bottom : 2px;
+        padding-left : 5px;
+        padding-right : 5px;
+        padding-top : 2px;
+}
+span.edit {
+        background-color:#ccccff;
+        font-size: 8pt;
+        margin-left: 3px;
+        margin-right: 0px;
+        padding-left: 3px;
+        padding-right: 3px;
+        padding-top: 1px;
+        padding-bottom: 2px;    
+}      
+
+span.edit2 {
+        background-color:#ffe6cc;
+        font-size: 8pt;
+        margin-left: 3px;
+        margin-right: 0px;
+        padding-left: 3px;
+        padding-right: 3px;
+        padding-top: 1px;
+        padding-bottom: 2px;    
+}      
+
+span.edit3 {
+        background-color: #98ff33;
+        font-size: 8pt;
+        margin-left: 3px;
+        margin-right: 0px;
+        padding-left: 3px;
+        padding-right: 3px;
+        padding-top: 1px;
+        padding-bottom: 2px;    
+}      
+
+span.edit4 {
+        background-color: #cc3300;
+        color:white;
+        font-size: 8pt;
+        margin-left: 3px;
+        margin-right: 0px;
+        padding-left: 3px;
+        padding-right: 3px;
+        padding-top: 1px;
+        padding-bottom: 2px;    
+}      
+
+span.edit5 {
+        background-color: #556b2f;
+        color:white;
+        font-size: 8pt;
+        margin-left: 3px;
+        margin-right: 0px;
+        padding-left: 3px;
+        padding-right: 3px;
+        padding-top: 1px;
+        padding-bottom: 2px;    
+}
+a.help  {
+	 text-decoration: none;
+	 color:#BB0D72;
+	 font-size: 14pt;
+}
+p.order{
+    font: 22px Arial;
+    color: #BB0D72;
+}
+table.btp{
+    font: 8px Arial;
+    color: #330000;
+}
+tr.btp{
+   font: 8px Arial;
+    color: #330000; 
+}
+td.btp{
+   font: 8px Arial;
+    color: #330000; 
+}
+input.submit2 {
+    font-family: Arial;
+    color: #FFFFFF; 
+	font-size: 12pt;
+        font-style: italic;
+	width:180px; 
+	position:relative;
+        background-color: #990033;
+        border: 2px solid #990033;
+}
+#order_form{
+/*    display: none;*/
+    position: relative;
+    width: 860px;
+/*    height: 430px;*/
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}

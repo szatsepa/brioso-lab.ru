@@ -18,18 +18,29 @@ $n = 0;
 $str = '';
 
 foreach ($cart as $value) {
-    $str = "INSERT INTO orders_items (order, customer,artikul,price_id,amount,discount,name,price)
-        VALUES ($order,$customer,'$value[artikul]',$value[price_id],$value[amount],0,'$value[name]',$value[price])";
     
-    $result = mysql_query($str);
+    $hsb = "($value[h],$value[s]%,$value[b]%)";
     
-    if($result){
+    $str = "INSERT INTO `orders_items` (`order`, customer,artikul,price_id,amount,name,price,hsb)
+        VALUES ($order,$customer,'$value[artikul]',$value[price_id],$value[amount],'$value[name]','$value[price]','$hsb')";
+    
+    mysql_query($str);
+    
+    $cnt = mysql_affected_rows();
+    
+    if($cnt){
+        
         $query = "DELETE FROM cart WHERE artikul='$value[artikul]' AND customer = $customer";
-        $n++;
+
+        mysql_query($query);
     }
+
+        
+    $n++;
+    
 }
 
-$response = array('out'=>$n,'str'=>$str);
+$response = array('out'=>$n,'str'=>$query);
 
 echo json_encode($response);
 

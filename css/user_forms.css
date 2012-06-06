@@ -1,10 +1,10 @@
 
 #vrWrapper
 {
-    display: none;
+/*    display: none;*/
     position: relative;
     margin: auto;
-    margin-top: 12px;
+    margin-top: 42px;
     width: 380px;
     height: 400px;
     overflow: hidden;
@@ -60,7 +60,7 @@
 }
 #indicator
 {
-    display: none;
+/*    display: none;*/
     width: 16px;
     height: 16px;
     position: absolute;
@@ -98,6 +98,7 @@
 #wr
 {
     margin-left: -382px;
+    margin: 12px auto;
 }
 .goHome
 {

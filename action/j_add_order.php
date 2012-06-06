@@ -28,7 +28,7 @@ $order = mysql_insert_id();
 
 //$order = 1;
 
-$response = array('query'=>$query,'order'=>$order);
+$response = array('z_id'=>$order);
 
 echo json_encode($response);
 

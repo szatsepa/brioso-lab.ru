@@ -30,32 +30,12 @@
 
         <div class="scroll_c" style="top: 48px;">
                 <div id="sl0" style=""></div>
-                <script type="text/javascript"> 
-                var mysl0 = new slider('sl0', 360, 0, 360, 10, 'slider_1');
-//                исходные установки цвета здесь и далее
-                mysl0.setValue(275);
-                </script>
         </div>
         <div class="scroll_c" style="top: 68px;">
                 <div id="sl1" style=""></div>
-                <script type="text/javascript"> 
-                    var mysl1 = new slider('sl1', 360, 0, 100, 1, 'slider_2');
-                    mysl1.setValue(75);
-                </script>
         </div>
         <div class="scroll_c" style="top: 88px;">
                 <div id="sl2" style=""></div>
-                <script type="text/javascript"> 
-                    var mysl2 = new slider('sl2', 360, 0, 100, 1, 'slider_3');
-
-                    var elem_array = new Array(mysl0,mysl1,mysl2);
-
-                    for(var i in elem_array){
-                        eval(elem_array[i]).setArray(elem_array);
-                    }
-
-                    mysl2.setValue(82);
-                </script>
         </div>
 <!--    right pahel ====================================-->
         <div class="_right">
@@ -143,3 +123,19 @@
 </div>
 <div class="any_f"></div>
 </div>
+<script type="text/javascript"> 
+    var mysl0 = new slider('sl0', 360, 0, 360, 10, 'slider_1');
+    //                исходные установки цвета здесь и далее
+    mysl0.setValue(275);
+    var mysl1 = new slider('sl1', 360, 0, 100, 1, 'slider_2');
+    mysl1.setValue(75);
+    var mysl2 = new slider('sl2', 360, 0, 100, 1, 'slider_3');
+
+    var elem_array = new Array(mysl0,mysl1,mysl2);
+
+    for(var i in elem_array){
+        eval(elem_array[i]).setArray(elem_array);
+    }
+
+    mysl2.setValue(82);
+</script>

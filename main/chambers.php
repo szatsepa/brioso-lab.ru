@@ -130,9 +130,7 @@ $summ_list = 0.00;
         </div>
      </div>
     <div id="o_order" style="width:100%;height:24px;">
-<!--            <p id="to_order" style="text-align: right;font-size: 18px;font-weght:bold;color: black;text-decoration:underline;cursor:pointer;">
-                Заказать
-            </p>-->
+
         </div>
     
 </div>

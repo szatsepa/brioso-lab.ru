@@ -69,10 +69,10 @@ if(!$user->data[name])$user_name = $user->data[email];
             <td>
                 <a class="subhead"  href="">Доставка</a>
             </td>
-<!--            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
             <td>
                 <a class="subhead"  href="index.php?act=cab">Кабинет</a>
-            </td>-->
+            </td>
         </tr>
     </table>
 
@@ -82,7 +82,7 @@ if(!$user->data[name])$user_name = $user->data[email];
             <div id="indicator">
             </div>
 
-            <div class='loginBlock' id="signup" style="display: none">
+            <div class='loginBlock' id="signup">
                 <label for="email">Email:</label> <input id="email" type="text" class='textinput' />
                 <label for="password">Пароль:</label> <input id="password" type="password" class='textinput' />
                 <label for="passwordAgain">Пароль еще раз:</label> <input id="passwordAgain" type="password" class='textinput' />
@@ -92,11 +92,11 @@ if(!$user->data[name])$user_name = $user->data[email];
                     <input id="registerButton" type="button" value="Зарегистрироваться" onclick="javascript:SignUp()" /></div>
                     
                 <div class='additional'>
-                    <a name="remind"  style="text-decoration: underline;cursor: pointer;">Вспомнить пароль</a> 
-                    <a name="index"  style="text-decoration: underline;cursor: pointer;">Войти</a>
+                    <a name="" id="rem_r" style="text-decoration: underline;cursor: pointer;">Вспомнить пароль</a> 
+                    <a name="" id="log_r" style="text-decoration: underline;cursor: pointer;">Войти</a>
                 </div>
              </div>   
-                <div class='loginBlock' id="signin"  style="display: none">
+                <div class='loginBlock' id="signin">
                 <label for="email">Email:</label> <input id="loginEmail" type="text" class='textinput'/>
                 <label for="password">Пароль:</label> <input id="loginPass" type="password" class='textinput'/>
                     <div id="error1" class="error displaynone">
@@ -105,14 +105,14 @@ if(!$user->data[name])$user_name = $user->data[email];
                         <input id="loginButton" type="button" value="Войти" onClick="javascript:authUser();"/>
                     </div>
                     <div class='additional'>
-                        <a name="remind"  style="text-decoration: underline;cursor: pointer;">Вспомнить пароль</a> 
-                        <a name="signup"  style="text-decoration: underline;cursor: pointer;">Зарегистрироваться</a>
+                        <a name="" id="rem_l"  style="text-decoration: underline;cursor: pointer;">Вспомнить пароль</a> 
+                        <a name="" id="reg_l" style="text-decoration: underline;cursor: pointer;">Зарегистрироваться</a>
                     </div>
                 </div>
                 <div id="result"></div> 
             
             
-            <div class='loginBlock' id="remindPass" style="display: none">
+            <div class='loginBlock' id="remindPass">
                 <div class="description">
                     Чтобы вспомнить пароль, вспомните для начала хотя бы email.
                 </div>
@@ -124,28 +124,11 @@ if(!$user->data[name])$user_name = $user->data[email];
                 <div class='buttonDiv'>
                     <input id="remindButton" type="button" value="Выслать пароль" onclick="RemindPassword();" /></div>
                 <div class='additional'>
-                    <a name="index" style="text-decoration: underline;cursor: pointer;">Войти</a> 
-                    <a name="signup" style="text-decoration: underline;cursor: pointer;">Зарегистрироваться</a></div>
+                    <a name="" id="log_rm" style="text-decoration: underline;cursor: pointer;">Войти</a> 
+                    <a name="" id="reg_rm" style="text-decoration: underline;cursor: pointer;">Зарегистрироваться</a></div>
             </div>
         </div>
     </div>
 <script type="text/javascript">
-      $("#loginPass").keydown(function(event){
 
-           if(event.keyCode==13) {
-               authUser();
-           }
-        });
-         $("#password").keydown(function(event){
-           
-           if(event.keyCode==13) {
-               SignUp();
-           }
-        });
-         $("#remindEmail").keydown(function(event){
-           
-           if(event.keyCode==13) {
-               RemindPassword();
-           }
-        });
 </script>

@@ -63,6 +63,17 @@ switch ($attributes[act]) {
         include 'main/subheader.php';
         include 'main/chambers.php';
         break;
+        
+   case 'cab':
+       $title .= "-мой кабинет!";
+       include 'query/cart.php';
+       include 'query/my_orders.php';
+       include 'query/my_cart.php';
+       include 'query/orders_of_week.php';
+       include 'main/header.php';
+       include 'main/subheader.php';
+       include 'main/cab.php';
+       break;
     
     case 'addc':
         include 'main/header.php';

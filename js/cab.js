@@ -1,29 +1,20 @@
 /* 
- * 1/6/2012
+ * 6/6/2012
  */
-
 $(document).ready(function(){
     
-    var month = new Array('- 01 -','- 02 -','- 03 -','- 04 -','- 05 -','- 06 -','- 07 -','- 08 -','- 09 -','- 10 -','- 11 -','- 12 -')
-    
-        if (document.readyState != "complete"){
+    if (document.readyState != "complete"){
 		setTimeout( arguments.callee, 200 );
 		return;
 	}
-
-        
-        $("#order").mouseover(function(){
-            $("#order").css('color', 'blueviolet');
+    $("#order_form").hide(); 
+    
+    $("#createOrder").mousedown(function(){
+        $("#content").slideUp(500,function(){
+            $("#order_form").slideDown(500);
         });
-        $("#order").mouseout(function(){
-            $("#order").css('color', 'black');
-        });
-        $("#order").mousedown(function(){
-            $("#content").css('display', 'none');
-            createOrder();
-        });
-        
-        $("#to_order").mouseover(function(){
+    });
+     $("#to_order").mouseover(function(){
             $("#to_order").css('color', 'blueviolet');
         });
         $("#to_order").mouseout(function(){
@@ -78,8 +69,9 @@ $(document).ready(function(){
                 }
             });
         }
-        
-//        $('div').css('outline', '1px solid blue');
-
+            
+    
+//    
+    
 });
 
