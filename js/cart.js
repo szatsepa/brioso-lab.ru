@@ -36,7 +36,8 @@ $(document).ready(function(){
             $("#to_order").css('color', 'black');
         });
         $("#to_order").mousedown(function(){
-            saveOrder();           
+            saveOrder();
+
         });
         
         function createOrder(){
@@ -56,22 +57,34 @@ $(document).ready(function(){
         }
         
         function saveOrder(){
-            var cart = my_cart;
+            var customer = user_id;
             $.ajax({
                 url: 'http://brioso-lab.ru/action/j_add_order.php',
                 type: 'post',
                 dataType:'json',
-                data:{cart:cart,user_id:user_id,email:$("#act_email").val(),shipment:$("#shipment").val(),phone:$("#phone").val(),comment:document.getElementById('act_comment').value},
+                data:{customer:customer,email:$("#act_email").val(),shipment:$("#shipment").val(),phone:$("#phone").val(),comment:document.getElementById('act_comment').value},
                 success:function(data){
-                    var str = '';
-                    for(var i in data){
-                        str += i+"; ";
-                    }
-                    alert(str);
+                    var order = data['order'];
+                    if(confirm("ord="+order+" "+data['query'])){
+                      itemAddOrder(order); 
+                  }
                 }
             });
         }
-        
+        function itemAddOrder(order){
+            var cart = my_cart;
+            var ord = order;
+            var customer = user_id;
+            $.ajax({
+               url: 'http://brioso-lab.ru/action/j_add_orders_item.php',
+                type: 'post',
+                dataType:'json', 
+                data:{cart:cart,order:ord,customer:customer},
+                success:function(data){
+                    alert(data['str']);
+                }
+            });
+        }
         
 //        $('div').css('outline', '1px solid blue');
 
