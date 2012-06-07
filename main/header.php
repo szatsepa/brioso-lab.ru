@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
- echo '<?xml version="1.0" encoding="utf-8"?>';
+ echo '<?xml version="1.0" encoding="utf-8"?>'; 
  ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -25,7 +25,7 @@ header('Content-Type: text/html; charset=utf-8');
         <script type="text/javascript" src="/js/color_select.js"></script>
         <script type="text/javascript" src="/js/scripts.js"></script>
         <script type="text/javascript" src="/js/my_request.js"></script>
-        <script type="text/javascript" src="/js/header.js"></script>
+        
         <script type="text/javascript" src="/js/<?php echo $attributes[act];?>.js"></script>
 </head>
     <body onload="">

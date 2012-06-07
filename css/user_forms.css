@@ -107,3 +107,7 @@
     top: 10px;
     left: 10px;
 }
+#a_user{
+    color: black;
+    cursor: pointer;
+}

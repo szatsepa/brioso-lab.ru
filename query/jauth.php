@@ -22,70 +22,81 @@ $email = quote_smart($_POST[email]);
 
 $who = "customer";
 
+$num_rows = 0;
+
+$out = array();
+
 $query = "SELECT id FROM customers WHERE code = $code AND email = $email AND activ = 1";
 
-       $result = mysql_query($query) or die($query);
-        
-         $num_rows = mysql_num_rows($result);
-         
-        if($num_rows == 0){
+$result = mysql_query($query) or die($query);
 
-            $query = "SELECT id FROM users WHERE code = $code AND email = $email AND activ = 1";
+$num_rows = mysql_num_rows($result);
 
-            $result = mysql_query($query) or die($query);             
+if($num_rows == 0){
 
-            $num_rows = mysql_num_rows($result);
+    $query = "SELECT id FROM users WHERE code = $code AND email = $email AND activ = 1";
 
-            $who = "users";
+    $result = mysql_query($query) or die($query);             
 
-        }
+    $num_rows = mysql_num_rows($result);
+
+    $who = "users";
+
+}
              
-        if($num_rows != 0){
+if($num_rows != 0){
 
-            $row = mysql_fetch_row($result); 
+    $row = mysql_fetch_row($result); 
 
-            $_SESSION['id'] = $row[0];
+    $_SESSION['id'] = $row[0];
 
-            $_SESSION['auth'] = 1;
+    $_SESSION['auth'] = 1;
 
-            if($who == 'customer')$_SESSION['auth'] = 2;
+    if($who == 'customer')$_SESSION['auth'] = 2;
 
-            setcookie("di", $_SESSION['id'], time()+(3600*12));
-            setcookie("who", $_SESSION['auth'], time()+(3600*12));
-            
-            $user = new User();
-            
-            $user->setUser($row[0]);
-            
-            $id = $row[0];
-            
-            $query = "SELECT  SUM(b.amount) AS summ_amount,
-                   SUM(a.price*b.amount) AS summ_cost
-             FROM pricelist a, cart b
-             WHERE a.artikul = b.artikul
-               AND a.pricelist = b.price_id
-               AND b.customer=$id";
+    setcookie("di", $_SESSION['id'], time()+(3600*12));
+    setcookie("who", $_SESSION['auth'], time()+(3600*12));
 
-            $result = mysql_query($query) or die($query);
+    $user = new User();
 
-            $row = mysql_fetch_assoc($result);
-            
-            $out = array('user'=>$user->data,'cart'=>$row);
-            
-            echo json_encode($out);
-               
-    }else{
-        
-     $lo = logout();       
-} 
+    $user->setUser($row[0]);
+
+    $id = $row[0];
+
+    $query = "SELECT  SUM(b.amount) AS summ_amount,
+                    SUM(a.price*b.amount) AS summ_cost
+                FROM pricelist a, cart b
+                WHERE a.artikul = b.artikul
+                AND a.pricelist = b.price_id
+                AND b.customer=$id";
+
+    $result = mysql_query($query) or die($query);
+
+    $row = mysql_fetch_assoc($result);
     
-  function logout(){
-      
-        unset($_SESSION[id]);
-        unset ($_SESSION[auth]);
-        unset($_COOKIE[di]);
-        setcookie("di", '', time()-(3600));
-        return NULL;   
-  }
+    if(!$row[summ_amount]){
+        $row[summ_amount]=0;
+        $row[summ_cost]=0;
+    }
+
+    $out['user'] = $user->data;
+    $out['cart'] = $row;
+              
+}else{
+    $out['error'] = 1;   
+    $lo = logout();       
+} 
+
+echo json_encode($out);
+
+function logout(){
+
+    unset($_SESSION[id]);
+    unset ($_SESSION[auth]);
+    unset($_COOKIE[di]);
+    setcookie("di", '', time()-(3600));
+    return NULL;   
+}
+
   mysql_close(); 
   ?>

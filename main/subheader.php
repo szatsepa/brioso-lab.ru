@@ -19,11 +19,11 @@ if(!$user->data[name])$user_name = $user->data[email];
         <p>tel. 999-55-22 <br/><small>круглосуточно</small></p>
     </div>
     <div style="display: <?php echo $login;?>;margin-left: -120px;margin-top:72px;position: relative;float: left;width: 120px;">
-        <input style="font-size: 14px;color: black;" type="button" id="entry" value="Войти" name="index"/>
+        <input style="font-size: 14px;color: black;" type="button" id="entry" value="Войти"/>
     </div>
     <div id="customer" style="display: <?php echo $customer;?>;margin-left: -320px;margin-top:48px;position: relative;float: left;width: 420px;">
         <span id="user" style="font-size: 14px;color: black;text-align: center;">
-            <p><a id="a_user" style="color: black;" href='index.php?act=logout' title="Выйти?"><?php echo $user_name;?></a></p>
+            <p><a id="a_user" name='#' title="Выйти?"><?php echo $user_name;?></a></p>
         </span>
     </div>
     <div id="my_cart" style="display: <?php echo $customer;?>;position: relative;float: left;width: 140px;height: 104px;margin-left: 834px;margin-top: -94px">
@@ -86,7 +86,7 @@ if(!$user->data[name])$user_name = $user->data[email];
                 <label for="email">Email:</label> <input id="email" type="text" class='textinput' />
                 <label for="password">Пароль:</label> <input id="password" type="password" class='textinput' />
                 <label for="passwordAgain">Пароль еще раз:</label> <input id="passwordAgain" type="password" class='textinput' />
-                <div id="error0" class="error displaynone">
+                <div id="error0" class="error">
                 </div>
                 <div class='buttonDiv'>
                     <input id="registerButton" type="button" value="Зарегистрироваться" onclick="javascript:SignUp()" /></div>
@@ -99,7 +99,7 @@ if(!$user->data[name])$user_name = $user->data[email];
                 <div class='loginBlock' id="signin">
                 <label for="email">Email:</label> <input id="loginEmail" type="text" class='textinput'/>
                 <label for="password">Пароль:</label> <input id="loginPass" type="password" class='textinput'/>
-                    <div id="error1" class="error displaynone">
+                    <div id="error1" class="error">
                     </div>
                     <div class='buttonDiv'>
                         <input id="loginButton" type="button" value="Войти" onClick="javascript:authUser();"/>
@@ -117,18 +117,16 @@ if(!$user->data[name])$user_name = $user->data[email];
                     Чтобы вспомнить пароль, вспомните для начала хотя бы email.
                 </div>
                 <label for="email">Email:</label> <input id="remindEmail" type="text" class='textinput' />
-                <div id="error2" class="error displaynone">
+                <div id="error2" class="error">
                 </div>
-                <div id="message0" class="message displaynone">
+                <div id="message0" class="message">
                 </div>
                 <div class='buttonDiv'>
-                    <input id="remindButton" type="button" value="Выслать пароль" onclick="RemindPassword();" /></div>
+                    <input id="remindButton" type="button" value="Выслать пароль"/></div>
                 <div class='additional'>
                     <a name="" id="log_rm" style="text-decoration: underline;cursor: pointer;">Войти</a> 
                     <a name="" id="reg_rm" style="text-decoration: underline;cursor: pointer;">Зарегистрироваться</a></div>
             </div>
         </div>
     </div>
-<script type="text/javascript">
-
-</script>
+<script type="text/javascript" src="/js/header.js"></script>

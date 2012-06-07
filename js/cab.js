@@ -16,15 +16,57 @@ $(document).ready(function(){
     });
      $("#to_order").mouseover(function(){
             $("#to_order").css('color', 'blueviolet');
-        });
-        $("#to_order").mouseout(function(){
-            $("#to_order").css('color', 'black');
-        });
-        $("#to_order").mousedown(function(){
-            saveOrder();
+    });
+    $("#to_order").mouseout(function(){
+        $("#to_order").css('color', 'black');
+    });
+    $("#to_order").mousedown(function(){
+        saveOrder();
 
+    });
+    
+    $("#back_to_cart").mousedown(function(){
+        $("#order_form").slideUp(500,function(){
+            $("#content").slideDown(500);
+        });
+    });
+     $("#back_to_cart").mouseover(function(){
+            $("#back_to_cart").css('color', 'blueviolet');
+    });
+    $("#back_to_cart").mouseout(function(){
+        $("#back_to_cart").css('color', 'black');
+    });
+    
+    $("#clear_all").mousedown(function(){
+        var customer = user_id;
+        $.ajax({
+            url: 'http://brioso-lab.ru/action/clear_cart.php',
+            dataType: 'json',
+            type: 'post',
+            data: {customer:customer},
+            success:function(data){
+                alert("Удалено "+data['rows']+" строк");
+                document.location.href="index.php?act=main";
+            }
         });
         
+    });
+    
+    $("#clear_row").mousedown(function(e){
+        var item = this.name;
+        var customer = user_id;
+        $.ajax({
+            url: 'http://brioso-lab.ru/action/clear_row.php',
+            dataType: 'json',
+            type: 'post',
+            data: {customer:customer,item:item},
+            success:function(data){
+                document.location.href="index.php?act=cab";
+            }
+        });
+        
+    });
+    
         function createOrder(){
             $.ajax({
                 url: 'http://brioso-lab.ru/query/num_order.php',
