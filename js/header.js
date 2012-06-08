@@ -7,6 +7,7 @@ $("#signup").hide();
 $("#signin").hide();
 $("#remindPass").hide();
 $("div.error").hide();
+$("div.message").hide();
 
     $('#entry').mousedown(function(e) {
         e.preventDefault();
@@ -50,7 +51,7 @@ $("div.error").hide();
 
     });
     $("#reg_rm").mousedown(function(){
-            $("#signin").hide(300, function(){
+            $("#remindPass").hide(300, function(){
                 $("#signup").show(300);
                 $('#email').focus();
             });
@@ -77,20 +78,24 @@ $("div.error").hide();
             authUser();
         }
     });
-    $("#password").keydown(function(event){
+    $("#passwordAgain").keydown(function(event){
 
         if(event.keyCode==13) {
             SignUp();
         }
     });
-    $("#remindButton").keydown(function(event){
+    $("#remindEmail").keydown(function(event){
 
         if(event.keyCode==13) {
-            RemindPassword();
+            SendRemind();
         }
     });
     $("#remindButton").mousedown(function(event){
-            RemindPassword();
+            SendRemind();
+    });
+    
+    $("#registerButton").mousedown(function(event){
+            SignUp();
     });
     
     var er = [];
@@ -132,22 +137,32 @@ $("div.error").hide();
 
 
     function SignUp() {
-    var  email = $('#email').val();
+   
+    var email = $('#email').val();
     var code = $('#password').val();
     var passAgain = $('#passwordAgain').val();
+    
         if (!ValidEmail(email)) {
             ShowError(0);
         } else {
             if ((code != "") && (code == passAgain)) {
-                ShowIndicator();
-                if (!UserWithEmailExists(email)) { 
-                    HideIndicator();
-                    document.write ('<form action="index.php?act=reg" method="post"><input type="hidden" name="email" value="'+email+'"/><input type="hidden" name="code" value="'+code+'"/></form>');
-                    document.forms[0].submit();
-                    HideError();
-                }
+                $("#indicator").show();
+                $.ajax({
+                    url: 'http://brioso-lab.ru/action/j_registration.php',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {email:email,code:code},
+                    success:function(data){
+                        var ml = data['mail'];
+                        if(ml == '1'){
+//                            $("#message1").show();
+                            $("#indicator").hide();
+                            $('#message1').html(m[1]).slideDown();
+                        }
+                    }
+                });
             } else {
-                HideIndicator();
+                $("#indicator").hide();
                 ShowError(1);
             }
         }
@@ -188,43 +203,33 @@ $("div.error").hide();
             }
         }
 
-    function RemindPassword() {
-        
+    function SendRemind() {
         var email = $('#remindEmail').val();
-        if (!ValidEmail(email)) {
+          if (!ValidEmail(email)) {
             ShowError(5);
         } else {
             $("#indicator").show();
-            if (SendRemind(email)) {
-                ShowMessage(0);
-                $("#indicator").hide();
-            }
-            else {
-                ShowError(4);
-                $("#indicator").hide();
-            }
+                    
+            $.ajax({
+                url: 'http://brioso-lab.ru/query/reminde_password.php',
+                type:'post',
+                dataType:'json',
+                data: {email:email},
+                success:function(data){
+                    var str = data['query'];
+                    var mail = data['mail'];
+                    if(mail == 1){
+                        ShowMessage(0);
+                        $("#indicator").hide();
+                    }else {
+                        ShowError(4);
+                        $("#indicator").hide();
+                    }
+
+                }
+
+            });            
         }
-    }
-
-//
-//    function UserWithEmailExists(email) {
-//        //check if user with such email exists
-//        //if true, return true, otherwise false
-//
-//        return false;
-//    }
-
-//    function CheckPassword(email, pass) {
-//        //check if email and pass match
-//        return true;
-//    }
-
-    function SendRemind(email) {
-        var eml = email;
-        $.ajax({
-
-            });
-        return true;
     }
     
     // ----------
@@ -233,6 +238,7 @@ $("div.error").hide();
 
     var m = [];
     m[0] = "Письмо с напоминанием пароля выслано вам на email";
+    m[1] = "Вы зарегистрированы. Инструкции в письме."
 
     function ShowMessage(code) {
         HideError();

@@ -88,8 +88,10 @@ if(!$user->data[name])$user_name = $user->data[email];
                 <label for="passwordAgain">Пароль еще раз:</label> <input id="passwordAgain" type="password" class='textinput' />
                 <div id="error0" class="error">
                 </div>
+                <div id="message1" class="message">
+                </div>
                 <div class='buttonDiv'>
-                    <input id="registerButton" type="button" value="Зарегистрироваться" onclick="javascript:SignUp()" /></div>
+                    <input id="registerButton" type="button" value="Зарегистрироваться"/></div>
                     
                 <div class='additional'>
                     <a name="" id="rem_r" style="text-decoration: underline;cursor: pointer;">Вспомнить пароль</a> 
