@@ -224,3 +224,47 @@ div.wrapper {
 	opacity:0.7;
 	filter: alpha(opacity = 70);
 }
+
+.slider {
+    border-radius: 5px;
+    background: #E0E0E0;
+    margin: 5px;
+}
+.slider_1 {
+    border-radius: 5px;
+    background-image: url('../images/hsb.png');
+    margin: 5px;
+}
+.slider_2 {
+    border-radius: 5px;
+/*    background-image: url('../images/str.png');*/
+
+    background-image: -o-linear-gradient(left, rgb(235,235,235) 12%, rgb(219,174,243) 99%);
+    background-image: -moz-linear-gradient(left , rgb(235,235,235) 12%, rgb(219,174,243) 99%);
+    background-image: -webkit-linear-gradient(left , rgb(235,235,235) 12%, rgb(219,174,243) 99%);
+    background-image: -ms-linear-gradient(left , rgb(235,235,235) 12%, rgb(219,174,243) 99%);
+
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            color-stop(0.12, rgb(235,235,235)),
+            color-stop(0.99, rgb(219,174,243))
+    );
+
+
+    margin: 5px;
+}
+.slider_3 {
+    border-radius: 5px;
+    background-image: url('../images/brn.png');
+    margin: 5px;
+}
+.knob {
+    border-radius: 3px;
+    position: relative;
+    left: 10px;
+    top: -5px;
+    background: url('../images/knob.png');
+    cursor: pointer;
+}

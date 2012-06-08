@@ -2,9 +2,9 @@
  * three sliders 30/5/2012
  */
 function slider(elemId, sliderWidth, range1, range2, step, cl_name) {
-	var knobWidth = 9;				// ширина и высота бегунка
-	var knobHeight = 24;			// изменяются в зависимости от используемых изображений
-	var sliderHeight = 13;			// высота slider'а
+	var knobWidth = 9;	// ширина и высота бегунка
+	var knobHeight = 24;	// изменяются в зависимости от используемых изображений
+	var sliderHeight = 13;	// высота slider'а
         var sl_array;
         var interv = 0;
 	
@@ -69,7 +69,7 @@ function slider(elemId, sliderWidth, range1, range2, step, cl_name) {
                 
                 out += 'hsl('+sl_array[0].getValue()+","+sl_array[1].getValue()+"%,"+sl_array[2].getValue()+"%)";
                 
-//                d.getElementById('_info').value = out;
+                
                 
 		d.getElementById('_colorfield').style.backgroundColor = out;	// это вывод значения для примера                    
                 
@@ -78,7 +78,24 @@ function slider(elemId, sliderWidth, range1, range2, step, cl_name) {
                 d.getElementById('saturation').value = sl_array[1].getValue();
                 
                 d.getElementById('brightness').value = sl_array[2].getValue();
-
+                
+                var color = $("#_colorfield").css('background-color');
+                
+                var browser = browserDetectJS();
+                   
+                $("#sl1_slider").css('background','-o-linear-gradient(left, rgb(235,235,235) 12%, '+color+' 99%)');
+                
+                $("#sl1_slider").css('background','-moz-linear-gradient(left, rgb(235,235,235) 12%, '+color+' 99%)');
+                   
+                $("#sl1_slider").css('background','-webkit-linear-gradient(left , rgb(235,235,235) 12%, '+color+' 99%)');
+                
+                $("#sl1_slider").css('background','-ms-linear-gradient(left , rgb(235,235,235) 12%, '+color+' 99%)');
+               
+                $("#sl1_slider").css('background','-webkit-gradient(linear,left top,right top,color-stop(0.12, rgb(235,235,235)),color-stop(0.99, '+color+')');
+ 
+                
+                
+                alert(bg);
 	}
 	function setValue2(x)	// установка по значению
 	{

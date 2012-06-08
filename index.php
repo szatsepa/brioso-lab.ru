@@ -35,6 +35,8 @@ if(isset ($_SESSION[id])) {
 
 $title = "brioso-lab.ru";
 
+//if(!isset($_SESSION[auth]))header ("location:index.php");
+
 switch ($attributes[act]) {
     
     case 'main':
@@ -66,6 +68,7 @@ switch ($attributes[act]) {
         
    case 'cab':
        $title .= "-мой кабинет!";
+       if(!isset($_SESSION[auth]))header ("location:index.php"); 
        include 'query/cart.php';
        include 'query/my_orders.php';
        include 'query/my_cart.php';
@@ -149,6 +152,12 @@ switch ($attributes[act]) {
         include 'main/header.php';
         include 'main/selector.php';
         include 'main/result_search_w.php';
+        break;
+    
+    case 'gradient':
+        include 'main/header.php';
+        include 'main/subheader.php';
+        include 'action/grd_exp.php';
         break;
     
     case 'auth':

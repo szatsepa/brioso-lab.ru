@@ -22,11 +22,12 @@ header('Content-Type: text/html; charset=utf-8');
         <script type="text/javascript" src="/js/jquery.easing.min.1.3.js"></script>
         <script type="text/javascript" src="/js/jquery-1.4.4.min.js"></script>
         <script type="text/javascript" src="/js/jquery-ui-1.8.6.custom.min.js"></script>
+        <script type="text/javascript" src="/js/bdetect-1.1.js"></script>
         <script type="text/javascript" src="/js/color_select.js"></script>
         <script type="text/javascript" src="/js/scripts.js"></script>
         <script type="text/javascript" src="/js/my_request.js"></script>
+        <script type="text/javascript" src="/js/<?php echo $attributes[act];?>.js"></script> 
         
-        <script type="text/javascript" src="/js/<?php echo $attributes[act];?>.js"></script>
 </head>
     <body onload="">
        <div class="main"> 

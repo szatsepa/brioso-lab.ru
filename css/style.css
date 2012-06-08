@@ -116,34 +116,6 @@ span.parmeters{
     color: black;
 }
 
-.slider {
-    border-radius: 5px;
-    background: #E0E0E0;
-    margin: 5px;
-}
-.slider_1 {
-    border-radius: 5px;
-    background-image: url('../images/hsb.png');
-    margin: 5px;
-}
-.slider_2 {
-    border-radius: 5px;
-    background-image: url('../images/str.png');
-    margin: 5px;
-}
-.slider_3 {
-    border-radius: 5px;
-    background-image: url('../images/brn.png');
-    margin: 5px;
-}
-.knob {
-    border-radius: 3px;
-    position: relative;
-    left: 10px;
-    top: -5px;
-    background: blue;
-    cursor: pointer;
-}
 input.search{
     font-size: 16px;
     font-weight: bold;

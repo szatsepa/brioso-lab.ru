@@ -42,10 +42,10 @@ if(!$user->data[name])$user_name = $user->data[email];
 <div style="position: relative;width: 96%;height: 56px;margin: 0 auto;padding-left: 42px;padding-top: 16px;">
     <table>
         <tr>
-            <td>
+<!--            <td>
                 <a class="subhead" href="index.php?act=groups">Группы</a>
             </td>
-            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;</td>-->
             <td>
                 <a class="subhead"  href="index.php?act=main">Создай цвет</a>
             </td>
