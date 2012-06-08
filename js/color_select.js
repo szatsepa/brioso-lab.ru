@@ -81,7 +81,7 @@ function slider(elemId, sliderWidth, range1, range2, step, cl_name) {
                 
                 var color = $("#_colorfield").css('background-color');
                 
-                var browser = browserDetectJS();
+//                var browser = browserDetectJS();
                    
                 $("#sl1_slider").css('background','-o-linear-gradient(left, rgb(235,235,235) 12%, '+color+' 99%)');
                 
@@ -93,9 +93,13 @@ function slider(elemId, sliderWidth, range1, range2, step, cl_name) {
                
                 $("#sl1_slider").css('background','-webkit-gradient(linear,left top,right top,color-stop(0.12, rgb(235,235,235)),color-stop(0.99, '+color+')');
  
+                var bg = $("#sl1_slider").css('background-image');
                 
+                if(bg == 'none'){
+                    $("#sl1_slider").css('background','url("../images/str.png")');
+                }
                 
-                alert(bg);
+//                alert(bg);
 	}
 	function setValue2(x)	// установка по значению
 	{
