@@ -12,9 +12,9 @@
 <table>
 <tr>
     
-	<td>Создать прайс для компании</td>
+	<td>Создать прайс;</td>
 	<td>
-            &nbsp;&nbsp;&nbsp;
+            <input id="p_name" type="text" value="">
         </td>
 	<td><input id="new_price" type="button" value="Ok"></td>
    
@@ -23,9 +23,9 @@
 <br />
 <br />
 <table class="dat">
-<th class="dat">Компания</th>
-<th class="dat">Дата загрузки</th>
 <th class="dat">Наименование</th>
+<th class="dat">Дата загрузки</th>
+<th class="dat">Описание</th>
 <th class="dat">Мин. заказ</th>
 <th class="dat"></th>
 <?php 
@@ -113,35 +113,38 @@ foreach ($prices as $value) {
             <tr>
                     <td colspan="2">&nbsp;</td>
             </tr>
-            <form action="index.php?act=price_info_update&price_id=<?php echo $price_id; ?>" method="post" name="price_info_update" id="price_info_update">
-            <tr>
-                    <form action="index.php?act=price_delete&price_id=<?php echo $price_id; ?>" method="post" name="price_delete" id="price_delete">
+<!--            <form action="index.php?act=price_info_update&price_id=<?php echo $price_id; ?>" method="post" name="price_info_update" id="price_info_update">
+           </form>-->
+                <tr>
+<!--                    <form action="index.php?act=price_delete&price_id=<?php echo $price_id; ?>" method="post" name="price_delete" id="price_delete">-->
                     <td>Описание:</td>
-                    <td><input type="text" name="comment" maxlength="255" size="92" value="<?php echo  str_replace ('"','&quot;',$comment); ?>"></td>
+                    <td>
+                        <input id="dscr" type="text" name="comment" maxlength="255" size="92" value="">
+                    </td>
             </tr>
             <tr>
                     <td>Теги:</td>
-                    <td><input type="text" name="tags" maxlength="255" size="92" value="<?php echo $tags; ?>"></td>
+                    <td>
+                        <input id="tags" type="text" name="tags" maxlength="255" size="92" value="">
+                    </td>
             </tr>
+           
             <tr>
-                    <td>Рубрика:</td>
-                    <td><br /><?php include("dsp_selectrubrika.php"); ?></td>
-            </tr>
-            <tr>
-                    <td>Минимальный заказ:</td>
-                    <td><input type="text" name="zakaz_limit" maxlength="5" size="5" value="<?php echo $zakaz_limit; ?>"></td>
-            </tr>
-            <tr>
-                    <td colspan="2"><div align="center"><input type="submit" value="Сохранить изменения"></a></td>
+                <td colspan="2">
+                    <div style="text-align: right;">
+                        <input id="save_chng" type="button" value="Сохранить изменения">
+                    </div>
+                </td>
             </tr>   
-            </form>
+            
 
             <tr>
-                    <td colspan="2">&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
             </tr>
 
             </table>
-
+<br/>
+<br/>
         </div>
 </div>
 <div class="any_f"></div>

@@ -41,6 +41,8 @@ $(document).ready(function () {
                         $("#creation").css('color','black').text(data['creation']);                        
                     }
                     $("#price_id").val(data['id']);
+                    $("#tegs").val(data['tags']);
+                    $("#dscr").val(data['comment']);
                 },
                 error:function(data){
                    document.write(data['response']); 
@@ -49,12 +51,12 @@ $(document).ready(function () {
             });
         });
         $("#new_price").mousedown(function(){
-            
+            var p_name = $("#p_name").val();
             $.ajax({
                 url: 'http://brioso-lab.ru/action/as_new_price.php',
                 type: 'post',
                 dataType: 'json',
-                data:{activ:0},
+                data:{activ:0,name:p_name},
                 success:function(data){
                     var price = data['new'];
                     
@@ -84,6 +86,27 @@ $(document).ready(function () {
                         document.location.reload();
                     }                  
                },
+               error:function(data){
+                   document.write(data['response']);
+               }
+            });
+        });
+        $("#save_chng").mousedown(function(){
+            var tags = $("#tags").val();
+            var comm = $("#dscr").val();
+            var pid = price['id'];
+            alert("O");
+            $.ajax({
+                url:'http://brioso-lab.ru/action/as_change_price.php',
+                type:'post',
+                dataType:'json',
+                data:{tags:tags,comment:comm,pid:pid},
+                success:function(data){
+                    var re = data['ok'];
+                    if(re == 1){
+                       document.location.reload(); 
+                    }
+                },
                error:function(data){
                    document.write(data['response']);
                }

@@ -6,9 +6,13 @@
  */
 include '../query/connect.php';
 
+include 'quotesmart.php';
+
 $active = intval($_POST[activ]);
 
-$query = "INSERT INTO price (activ) VALUES ($active)";
+$name = quote_smart($_POST[name]);
+
+$query = "INSERT INTO price (name,activ) VALUES ($name,$active)";
 
 $result = mysql_query($query) or die($query);
 
