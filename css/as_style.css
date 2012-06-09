@@ -1,0 +1,60 @@
+/* 
+    Document   : as_style
+    Created on : 09.06.2012, 15:00:06
+    Author     : serjoga
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+
+}
+div{
+/*    color: black;*/
+    font-family: Arial;
+    font-size: 12px; 
+}
+a.header2{
+	background: #002778;
+	color:White;
+	font-size:9pt;
+	padding: 3px 6px;	
+	font-weight:bold;
+	text-decoration:none;	
+	margin:0;
+}
+
+a:hover.header2 {
+	background: #000000;
+	color: Yellow;
+	font-size:10pt;
+	padding: 3px 10px;
+	font-weight:bold;
+	text-decoration:none;
+	margin:0;
+}
+table.dat {
+	display: block;
+	border: solid 1px gray;	
+	font-size:10pt;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+th.dat{
+		background: #002778;
+		color:White;
+		font-size:9pt;
+		padding: 3px 15px;
+		
+}
+td.dat {
+		padding: 1px 1px ;
+		font-size:9pt;
+		
+	    border-bottom : thin solid;
+}
+tr.dat {
+	border: solid 1px gray;
+	
+}

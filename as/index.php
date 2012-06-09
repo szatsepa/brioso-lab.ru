@@ -38,7 +38,7 @@ switch ($attributes[act]) {
 	break;
     
     case 'main':
-        include("header.php");
+        include("../main/as_header.php");
         break;
     
     case 'statistics':
@@ -179,14 +179,11 @@ switch ($attributes[act]) {
 //	
 //    // Управление прайс-листами
 //    
-//    case "prices":
-//    include("qry_companies.php");
-//    include("qry_rubrikator.php");
-//    include("qry_prices.php");
-//    include("dsp_header.php");
-//    include("dsp_newprice.php");
-//    include("dsp_pricetable.php"); 
-//    break;
+    case "prices":
+        include '../query/as_prices.php';
+        include("../main/as_header.php");
+        include '../main/as_main.php'; 
+    break;
 //	
 //	case "price":
 //    include("qry_companies.php");
@@ -196,12 +193,7 @@ switch ($attributes[act]) {
 //    //include("dsp_price.php");
 //    include("dsp_pricelist.php"); 
 //    break;
-//    
-//    case "new_price":
-//    include("qry_priceadd.php");
-//    include("act_to.php");    
-//	break;
-//    
+    
 //	/*
 //    case "comment_add":
 //    include("qry_commentadd.php");
@@ -225,10 +217,11 @@ switch ($attributes[act]) {
 //    include("act_to.php");    
 //	break;
 //    
-//    case "upload_price":
-//    include("act_uploadprice.php");
-//    include("act_toprices.php");    
-//	break;
+    case "upload_price":
+        
+    include '../action/as_upload_price.php';
+  
+	break;
 //    
 //    // Управление сообщениями
 //    case "messages":  

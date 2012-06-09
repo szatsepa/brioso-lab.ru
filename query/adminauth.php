@@ -13,7 +13,7 @@ if(isset ($attributes[ismail]) && $attributes[ismail] == 1){
     
 $code = quote_smart($attributes[code]);
 
-        $query = "SELECT id FROM users WHERE key_code = $code AND activ = 1";
+        $query = "SELECT id FROM users WHERE code = $code AND activ = 1";
         
         $result = mysql_query($query) or die($query);
         
@@ -35,9 +35,7 @@ $code = quote_smart($attributes[code]);
 
 
     <script language="javascript">
-//        alert(<?php echo $query;?>);
-    document.write ('<form action="index.php?act=main" method="post"><input type="hidden" name="id" value="<?php echo $row[0];?>"/></form>');
-    document.forms[0].submit();
+    document.location.href = "?act=main";
     </script>
     
     <?php 
@@ -46,7 +44,7 @@ $code = quote_smart($attributes[code]);
      $lo = logout();   
     ?>
 <script language="javascript">   
-    document.location.href = "http://altforex.ru/index.php?act=main";
+    document.location.href = "http://brioso-lab.ru/index.php";
 </script>    
     <?php } 
     

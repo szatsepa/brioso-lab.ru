@@ -8,43 +8,22 @@ header('Content-Type: text/html; charset=utf-8');
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="Last-Modified" value="<?php echo date("r",(time() - 60));?>">
+        <meta http-equiv="Last-Modified" value="<?php echo date("r",(time() - 60));?>">
 	<title>Административная область</title> 
-	<link rel="STYLESHEET" type="text/css" href="../css/style1.css">
-        <link rel="STYLESHEET" type="text/css" href="../css/style.css">
-	<link rel="stylesheet" media="screen,projection" type="text/css" href="../css/slimbox2.css" />	
-    <script type="text/javascript" src="../js/jquery.js"></script>
-	<script type="text/javascript" src="../js/jquery.slimbox2.js"></script>
-	<script type="text/javascript" src="../js/jquery.switcher.js"></script>
-    <script type="text/javascript" src="../js/jquery.validate.js"></script>
-	<script type="text/javascript" src="../js/toggle.js"></script>
-	<script type="text/javascript" src="../js/ui.core.js"></script>
-	<script type="text/javascript" src="../js/ui.tabs.js"></script>
-</head>
-<?php 
-// to do вынести модуль обработки ошибок отдельно
-if (isset($attributes[error])) {
-	switch ($attributes[error]) {
-	    
-	    case "img_del_ok":
-		$javascript = "javascript:alert('Изображение удалено');";
-		break;
+	<link rel="STYLESHEET" type="text/css" href="../css/style.css">
+        <link rel="STYLESHEET" type="text/css" href="../css/as_style.css">
+        <script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.validate.js"></script>
+        <script type="text/javascript" src="../js/as_main.js"></script>
+        <script type="text/javascript" src="../js/my_request.js"></script>
 	
-		case "img_no_del":
-		$javascript = "javascript:alert('Удаление невозможно. Изображение отсутствует.');";
-		break;
-        
-        case "ok":
-		$javascript = "javascript:alert('Изменения успешно произведены.');";
-		break;
-	}
-}
-?>
+</head>
 <!--  -->
 <body onload="<?php if (isset($javascript)) echo $javascript; ?>">
     <div class="main"> 
         <div class="main_0">
-            
+              
 <h3>&nbsp;Административная область</h3>
 
 <div class="selector"><table border="0" width="100%"><tr>
@@ -95,3 +74,4 @@ if (isset($attributes[error])) {
 </div>
 <br /> 
 <h3><?php echo $title; ?></h3>
+            
