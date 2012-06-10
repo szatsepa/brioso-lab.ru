@@ -31,4 +31,5 @@ if (isset($_SESSION[auth])) {
         setcookie("who", '', time()-(3600));
     }
 }
+
 ?>

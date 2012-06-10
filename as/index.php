@@ -19,8 +19,9 @@ if(!isset($_SESSION)){
 
 //session_destroy();
 //
-//print_r($_SESSION);
-//echo "<br>";
+//print_r($attributes);
+//$str = $_SERVER [REQUEST_URI];
+//echo substr($str, 0,3)."<br>";
 //print_r($attributes); 
 if(isset ($_SESSION[id])) {
     include '../query/checkauth.php';
@@ -30,6 +31,8 @@ if ($_SESSION[auth] == "no" and $attributes[act] != "auth") $attributes[act] = '
 
 //// Здесь устанавливаются алерты
 //include("act_checkerror.php");
+
+//$title = 'Административная область';
 
 switch ($attributes[act]) {
     
@@ -41,13 +44,13 @@ switch ($attributes[act]) {
         include("../main/as_header.php");
         break;
     
-    case 'statistics':
-        include '../action/statistics.php';
-        break;
+//    case 'statistics':
+//        include '../action/statistics.php';
+//        break;
      
-    default :
-        include '../action/redirect.php';
-        break;
+//    default :
+//        include '../action/redirect.php';
+//        break;
     
 //    case "setdomen":
 // 
@@ -180,11 +183,26 @@ switch ($attributes[act]) {
 //    // Управление прайс-листами
 //    
     case "prices":
+        $title = 'Создание, редактирование прайсов';
         include '../query/as_prices.php';
         include("../main/as_header.php");
         include '../main/as_main.php'; 
-    break;
-//	
+        break;
+    
+    case "imges":
+        $title = 'Операции с изображениями.(прошу нічього не тикать - отак от!)';
+        include '../query/as_prices.php';
+        include("../main/as_header.php");
+        include '../main/as_imgmenu.php';
+	break;
+    
+    case "upload_zipimg":
+//        include '../query/as_prices.php';
+        include '../action/as_uploadzip.php';
+//        include "../main/as_header.php";
+//	include '../main/as_imgmenu.php';
+	break;
+	
 //	case "price":
 //    include("qry_companies.php");
 //    include("qry_rubrikator.php");
@@ -529,19 +547,19 @@ switch ($attributes[act]) {
 //        
 //        break;
 //    
-//    case "logout":
-//    include("../main/act_logout.php");
-//	break;
-//    
-//	default:
-//	$title = "";	
-//	
-//    include("dsp_header.php");
-//    break; 
+        case "logout": 
+            include '../action/logout.php';
+            break;
+    
+	default:
+            $title = "";	
+	    include '../main/as_header.php';
+            break; 
+   
     
 	}
 	
-        include '../main/footer.php';
+include '../main/footer.php';
     // Disconnect from db
     mysql_close();
 

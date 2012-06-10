@@ -3,6 +3,10 @@
 /*
  * created by arcady.1254@gmail.com 2/2/2012
  */
+$admin = $_SERVER [REQUEST_URI];
+
+$admin =  substr($admin, 0,3);
+
 if(isset ($attributes[ismail]) && $attributes[ismail] == 1){
     
     $email = $_SESSION[email];
@@ -49,6 +53,10 @@ $query = "SELECT id FROM customers WHERE code = $code AND email = $email AND act
                      
                      setcookie("di", $_SESSION['id'], time()+(3600*12));
                      setcookie("who", $_SESSION['auth'], time()+(3600*12));
+                     
+if($admin == '/as' && $_SESSION['auth'] == 2){
+    header("location:index.php?act=logout");
+}                    
                
 //  echo $query;  
                      

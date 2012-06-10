@@ -2,6 +2,8 @@
 header('Content-Type: text/html; charset=utf-8');  
 //header("Cache-Control: no-store"); 
 //header("Expires: " . date("r")); 
+
+//if(isset($attributes[jsc]))$javascript = $attributes[jsc];
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
@@ -9,18 +11,18 @@ header('Content-Type: text/html; charset=utf-8');
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="Last-Modified" value="<?php echo date("r",(time() - 60));?>">
-	<title>Административная область</title> 
+	<title><?php echo $title;?></title> 
 	<link rel="STYLESHEET" type="text/css" href="../css/style.css">
         <link rel="STYLESHEET" type="text/css" href="../css/as_style.css">
         <script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
         <script type="text/javascript" src="../js/jquery.validate.js"></script>
-        <script type="text/javascript" src="../js/as_main.js"></script>
+        <script type="text/javascript" src="../js/as_<?php echo $attributes[act];?>.js"></script>
         <script type="text/javascript" src="../js/my_request.js"></script>
 	
 </head>
 <!--  -->
-<body onload="<?php if (isset($javascript)) echo $javascript; ?>">
+<body onload="<?php if (isset($attributes[jsc])) echo "javascript:alert('".$attributes[jsc]."')"; ?>">
     <div class="main"> 
         <div class="main_0">
               
@@ -29,7 +31,7 @@ header('Content-Type: text/html; charset=utf-8');
 <div class="selector"><table border="0" width="100%"><tr>
 <?php if ($_SESSION[auth] == 0) {?>
 <form action="index.php?act=auth" method="post">
-    <input type="hidden" name="query_str" value="<? echo $_SERVER["QUERY_STRING"]; ?>"/>
+<!--    <input type="hidden" name="query_str" value="<? echo $_SERVER["QUERY_STRING"]; ?>"/>-->
     <td width='*' align='right'>
         <input type="password" name="code" size="10"/>
         <input type="submit" value="&gt;&gt;" />
@@ -74,4 +76,4 @@ header('Content-Type: text/html; charset=utf-8');
 </div>
 <br /> 
 <h3><?php echo $title; ?></h3>
-            
+

@@ -113,10 +113,7 @@ foreach ($prices as $value) {
             <tr>
                     <td colspan="2">&nbsp;</td>
             </tr>
-<!--            <form action="index.php?act=price_info_update&price_id=<?php echo $price_id; ?>" method="post" name="price_info_update" id="price_info_update">
-           </form>-->
-                <tr>
-<!--                    <form action="index.php?act=price_delete&price_id=<?php echo $price_id; ?>" method="post" name="price_delete" id="price_delete">-->
+            <tr>
                     <td>Описание:</td>
                     <td>
                         <input id="dscr" type="text" name="comment" maxlength="255" size="92" value="">
@@ -125,7 +122,7 @@ foreach ($prices as $value) {
             <tr>
                     <td>Теги:</td>
                     <td>
-                        <input id="tags" type="text" name="tags" maxlength="255" size="92" value="">
+                        <input id="tg" type="text" name="tags" maxlength="255" size="92" value="">
                     </td>
             </tr>
            

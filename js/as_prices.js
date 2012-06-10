@@ -41,7 +41,7 @@ $(document).ready(function () {
                         $("#creation").css('color','black').text(data['creation']);                        
                     }
                     $("#price_id").val(data['id']);
-                    $("#tegs").val(data['tags']);
+                    $("#tg").val(data['tags']);
                     $("#dscr").val(data['comment']);
                 },
                 error:function(data){
@@ -92,7 +92,7 @@ $(document).ready(function () {
             });
         });
         $("#save_chng").mousedown(function(){
-            var tags = $("#tags").val();
+            var tags = $("#tg").val();
             var comm = $("#dscr").val();
             var pid = price['id'];
             alert("O");
