@@ -42,7 +42,7 @@ header('Content-Type: text/html; charset=utf-8');
 
     <a href="index.php?act=prices" class="header2">Прайсы</a>
     <a href="index.php?act=imges" class="header2">Изображения</a>
-    <a href="index.php?act=goods" class="header2">Товары</a>
+    <a href="index.php?act=items" class="header2">Товары</a>
     <a href="index.php?act=orders" class="header2">Заказы</a>
     <a href="index.php?act=reports" class="header2">Отчеты</a>
     <a href="index.php?act=stat" class="header2">Статистика</a> 

@@ -190,17 +190,26 @@ switch ($attributes[act]) {
         break;
     
     case "imges":
-        $title = 'Операции с изображениями.(прошу нічього не тикать - отак от!)';
+        $title = 'Операции с изображениями.';
         include '../query/as_prices.php';
         include("../main/as_header.php");
         include '../main/as_imgmenu.php';
 	break;
     
     case "upload_zipimg":
-//        include '../query/as_prices.php';
         include '../action/as_uploadzip.php';
-//        include "../main/as_header.php";
-//	include '../main/as_imgmenu.php';
+        break;
+    
+	// Товары (штрих-коды)
+    case "items":
+        $title = 'Операции с товарами.(прошу нічього не тикать - отак от!)';
+        include '../query/as_items.php';        
+        include '../main/as_header.php';
+        include '../main/as_item.php';
+        
+       
+//        include("dsp_tovar.php");
+//        include("dsp_tovarlist.php");    
 	break;
 	
 //	case "price":
