@@ -202,15 +202,16 @@ switch ($attributes[act]) {
     
 	// Товары (штрих-коды)
     case "items":
-        $title = 'Операции с товарами.(прошу нічього не тикать - отак от!)';
+        $title = 'Операции с товарами.';
         include '../query/as_items.php';        
         include '../main/as_header.php';
         include '../main/as_item.php';
-        
-       
-//        include("dsp_tovar.php");
-//        include("dsp_tovarlist.php");    
+        include '../main/as_items_table.php';    
 	break;
+    
+    case 'uploaditems':
+        include '../action/as_upload_items.php';
+        break;
 	
 //	case "price":
 //    include("qry_companies.php");

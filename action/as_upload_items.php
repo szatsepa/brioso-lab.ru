@@ -4,7 +4,7 @@ $user_id = intval($_SESSION[id]);
 
 if (move_uploaded_file($_FILES['userfile']['tmp_name'], $_FILES['userfile']['name']))
 {
-  // print "Файл успешно загружен.\n";    
+      $jscr =  "Файл успешно загружен.\n";    
 } 
 	else 
 {
@@ -37,7 +37,7 @@ while ($data = fgetcsv ($handle, 65636,";")) {
         $description            = iconv("WINDOWS-1251", "UTF-8", $data[2]);
         $ingridients		= iconv("WINDOWS-1251", "UTF-8", $data[3]);
 	$specification		= iconv("WINDOWS-1251", "UTF-8", $data[4]);
-	$gost	      		= iconv("WINDOWS-1251", "UTF-8", $data[5]);
+	$nds	      		= iconv("WINDOWS-1251", "UTF-8", $data[5]);
                 
                 
 	$query = "INSERT INTO goods
@@ -46,16 +46,18 @@ while ($data = fgetcsv ($handle, 65636,";")) {
                                     description,
                                     ingridients, 
                                     specification, 
-                                    gost) 
+                                    nds) 
                               VALUES 
-                                    ($barcode, 
-                                    $name, 
-                                    $description,
-                                    $ingridients, 
-                                    $specification, 
-                                    $gost)";
+                                    ('$barcode', 
+                                    '$name', 
+                                    '$description',
+                                    '$ingridients', 
+                                    '$specification', 
+                                    '$nds')";
 	
 	$result = mysql_query($query);
+        
+//        echo "$query</br>";
         
         $aff = mysql_affected_rows();
 				  
@@ -76,6 +78,6 @@ $jscr = "Добавлено $sucs строк.";
 
 ?>
 <script language="javascript">
-    document.write ('<form action="index.php?act=goods" method="post"><input type="hidden" name="jsc" value="<?php echo $jscr;?>"/></form>');
+    document.write ('<form action="index.php?act=items" method="post"><input type="hidden" name="jsc" value="<?php echo $jscr;?>"/></form>');
     document.forms[0].submit();
 </script>

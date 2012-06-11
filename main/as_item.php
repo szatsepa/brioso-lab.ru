@@ -14,7 +14,7 @@
  
 <br />
 <br />
-
+<input id="page" type="hidden" value=""/>
 <table border="0" cellpadding="0" cellspaciing="15">
         <tr>
             <td>
