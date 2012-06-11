@@ -22,6 +22,17 @@ $item = array();
 
 $item = mysql_fetch_assoc($result);
 
+// Какие картинки есть для товара?
+$query = "SELECT name
+            FROM image_items
+            WHERE barcode = '$barcode'";
+
+$result = mysql_query($query) or die($query);
+
+$row = mysql_fetch_assoc($result);
+
+$item['image'] = $row[name];
+
 $item['page'] = $page;
 //
 //while ($var = mysql_fetch_assoc($result)){

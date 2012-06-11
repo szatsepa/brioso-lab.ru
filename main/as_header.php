@@ -17,9 +17,9 @@ header('Content-Type: text/html; charset=utf-8');
         <script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
         <script type="text/javascript" src="../js/jquery.validate.js"></script>
-        <script type="text/javascript" src="../js/as_<?php echo $attributes[act];?>.js"></script>
         <script type="text/javascript" src="../js/my_request.js"></script>
-	
+        <script type="text/javascript" src="../js/as_<?php echo $attributes[act];?>.js"></script>
+
 </head>
 <!--  -->
 <body onload="<?php if (isset($attributes[jsc])) echo "javascript:alert('".$attributes[jsc]."')"; ?>">

@@ -3,7 +3,6 @@
 
 // TO DO сделать проверку на удаление предыдущего логотипа!!!
 
-///html/brioso-lab.ru/images/logo
 
 $uploadfile_zip   = $document_root . '/images/items/' . basename($_FILES['userfile']['name']);
 $uploadfile_logos = $document_root . '/images/logo/' . basename($_FILES['userfile']['name']);
@@ -219,4 +218,3 @@ if ($_FILES['userfile']['type'] == 'image/jpeg' and $_FILES['userfile']['size'] 
     document.write("<form action='index.php?act=imges' method='post'><input type='hidden' name='jsc' value='<?php echo $javascript;?>'/></form> ");
     document.forms[0].submit();
 </script>
-<!--<input type='hidden' name='jsc' value='<?php echo $javascript;?>'/>-->

@@ -206,11 +206,20 @@ switch ($attributes[act]) {
         include '../query/as_items.php';        
         include '../main/as_header.php';
         include '../main/as_item.php';
+        include '../main/as_attach_image.php';
         include '../main/as_items_table.php';    
 	break;
     
     case 'uploaditems':
         include '../action/as_upload_items.php';
+        break;
+    
+    case "upload_price":
+        include '../action/as_upload_price.php';  
+	break;
+    
+    case 'update_img':
+        include '../action/as_update_image.php'; 
         break;
 	
 //	case "price":
@@ -245,11 +254,7 @@ switch ($attributes[act]) {
 //    include("act_to.php");    
 //	break;
 //    
-    case "upload_price":
-        
-    include '../action/as_upload_price.php';
-  
-	break;
+
 //    
 //    // Управление сообщениями
 //    case "messages":  

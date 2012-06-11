@@ -8,7 +8,7 @@ $query = "SELECT barcode,
                 ingridients, 
                 specification, 
                 nds
-            FROM goods 
+            FROM goods
             ORDER BY barcode";
 
 $result = mysql_query($query) or die($query);

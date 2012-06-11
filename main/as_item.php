@@ -61,7 +61,7 @@
             </td>
     </tr>
     <tr>
-            <input type="hidden" name="page" value=""/>
+            <input type="hidden" name="page" value="0"/>
             <td>
                 НДС %
             </td>
@@ -83,7 +83,7 @@
                     </td>
                     <td align="right"><br />
                         <span id="del_item">
-                            <input type="submit" value="Удалить" />
+                            <input id="it_del" type="submit" value="Удалить" />
                         </span>
                     </td>
                </tr>
@@ -95,11 +95,3 @@
 
 <br />
 
-<?php
-if ($attributes[act] == 'tovar_edit') {
-
-	tovar_pic($barcode,'edit');
-
-}
-
-?>
