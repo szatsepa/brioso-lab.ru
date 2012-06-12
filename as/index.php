@@ -27,7 +27,7 @@ if(isset ($_SESSION[id])) {
     include '../query/checkauth.php';
 }
 
-if ($_SESSION[auth] == "no" and $attributes[act] != "auth") $attributes[act] = '';
+if ($_SESSION[auth] != 1 and $attributes[act] != "auth") $attributes[act] = '';
 
 //// Здесь устанавливаются алерты
 //include("act_checkerror.php");
@@ -220,6 +220,14 @@ switch ($attributes[act]) {
     
     case 'update_img':
         include '../action/as_update_image.php'; 
+        break;
+    
+    case 'orders':
+        $title = 'Заказы.(Пака ничьо не тикать. Идьот работа наприжоннайа.)';
+        include '../query/as_orders.php';
+//        include '../query/as_items.php';        
+        include '../main/as_header.php'; 
+        include '../main/as_orders.php';
         break;
 	
 //	case "price":

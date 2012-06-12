@@ -121,7 +121,7 @@ div.calk{
 }
 #c_order{
     text-align: center;
-    cursor: pointer;
+/*    cursor: pointer;*/
     font-size: 16px;
     font-weight: bold;
     color: black;

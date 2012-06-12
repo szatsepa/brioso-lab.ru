@@ -54,7 +54,7 @@ $(document).ready(function () {
                 dataType:'json',
                 data:{barcode:barcode,page:pg},
                 success:function(data){
-                   $("#bcode").val(barcode);
+                   $("#bcode").val(barcode).select();
                    $("#att_img").val(barcode);
                    $("#att_pg").val(pg);
                    $("#name_item").val(data['name']);
@@ -72,7 +72,7 @@ $(document).ready(function () {
                        $("#s_img").hide();
                    }
                    
-//                       
+// bcode                      
                 },
                 error:function(data){
                     document.write(data['response']);

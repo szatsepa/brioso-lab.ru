@@ -176,12 +176,15 @@ $("div.message").hide();
 
 //            ShowIndicator();
             if ((email != "") && ValidEmail(email)) {
+                var uid = 0;
                 $.ajax({
                     url: 'http://brioso-lab.ru/query/jauth.php',
                     type: 'post',
                     dataType: 'json',
                     data: '&code='+code+'&email='+email,
                     success:function(data){
+                        auth = data['auth'];
+                        user_id = data['user']['id'];
                         if(!data['error']){
                             $("#vrWrapper").hide(200);
                             $("#indicator").hide();
@@ -191,6 +194,8 @@ $("div.message").hide();
                             $("#a_user").text(data['user']['email']);
                             $("#amount").text('Товаров - '+data['cart']['summ_amount']);
                             $("#summ").text('На сумму - '+data['cart']['summ_cost']+' p.');
+                            $("#c_order").css('cursor','pointer');
+//                            $("#c_order").removeAttr('disabled');
                         }else{
                              $('#error1').html(er[3]).slideDown();
                         }                      

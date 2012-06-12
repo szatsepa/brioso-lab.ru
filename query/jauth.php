@@ -81,6 +81,8 @@ if($num_rows != 0){
 
     $out['user'] = $user->data;
     $out['cart'] = $row;
+    $out['auth']=$_SESSION['auth'];
+    
               
 }else{
     $out['error'] = 1;   
