@@ -19,7 +19,7 @@ if(!isset($_SESSION)){
 
 //session_destroy();
 //
-//print_r($attributes);
+//print_r($_SESSION);
 //$str = $_SERVER [REQUEST_URI];
 //echo substr($str, 0,3)."<br>";
 //print_r($attributes); 
@@ -27,7 +27,11 @@ if(isset ($_SESSION[id])) {
     include '../query/checkauth.php';
 }
 
-if ($_SESSION[auth] != 1 and $attributes[act] != "auth") $attributes[act] = '';
+if ($_SESSION[auth] != 1 and $attributes[act] != "auth"){
+    $attributes[act] = '';
+    unset($_SESSION[auth]);
+    unset($_SESSION[id]);
+}
 
 //// Здесь устанавливаются алерты
 //include("act_checkerror.php");

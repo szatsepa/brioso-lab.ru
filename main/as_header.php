@@ -29,7 +29,7 @@ header('Content-Type: text/html; charset=utf-8');
 <h3>&nbsp;Административная область</h3>
 
 <div class="selector"><table border="0" width="100%"><tr>
-<?php if ($_SESSION[auth] == 0) {?>
+<?php if ($_SESSION[auth] == 0 or !isset($_SESSION[auth])) {?>
 <form action="index.php?act=auth" method="post">
 <!--    <input type="hidden" name="query_str" value="<? echo $_SERVER["QUERY_STRING"]; ?>"/>-->
     <td width='*' align='right'>
