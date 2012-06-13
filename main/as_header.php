@@ -26,12 +26,11 @@ header('Content-Type: text/html; charset=utf-8');
     <div class="main"> 
         <div class="main_0">
               
-<h3>&nbsp;Административная область</h3>
+            <h3>&nbsp;Административная область</h3>
 
 <div class="selector"><table border="0" width="100%"><tr>
 <?php if ($_SESSION[auth] == 0 or !isset($_SESSION[auth])) {?>
 <form action="index.php?act=auth" method="post">
-<!--    <input type="hidden" name="query_str" value="<? echo $_SERVER["QUERY_STRING"]; ?>"/>-->
     <td width='*' align='right'>
         <input type="password" name="code" size="10"/>
         <input type="submit" value="&gt;&gt;" />
@@ -75,5 +74,6 @@ header('Content-Type: text/html; charset=utf-8');
     </table>
 </div>
 <br /> 
-<h3><?php echo $title; ?></h3>
+<!--<p></p>-->
+<h2 style="text-align: center;"><?php echo $title; ?></h2>
 

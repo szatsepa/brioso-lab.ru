@@ -227,9 +227,8 @@ switch ($attributes[act]) {
         break;
     
     case 'orders':
-        $title = 'Заказы.(Пака ничьо не тикать. Идьот работа наприжоннайа.)';
-        include '../query/as_orders.php';
-//        include '../query/as_items.php';        
+        $title = 'Заказы.';
+        include '../query/as_orders.php';        
         include '../main/as_header.php'; 
         include '../main/as_orders.php';
         break;

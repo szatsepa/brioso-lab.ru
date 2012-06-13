@@ -12,9 +12,14 @@ $(document).ready(function () {
         
         var new_order_color = $("a.new_order").css('color');
         
+        
+        var label_array = new Array('"Принять в обработку"','"Заказ отгружен"','"Заказ доставлен"','"Отменить заказ"','"Х"');
+        
         $("#order_on_table").hide();
         
         $("#exp").hide();
+        
+        $('#status_btn').hide();
         
         $("a.new_order").mouseover(function(e){
             var id = this.id;
@@ -32,6 +37,7 @@ $(document).ready(function () {
                 dataType:'json',
                 data:{oid:order_id},
                 success:function(data){
+                    var status = parseInt(data['order']['status']);
                     $("#exps").remove();
                     $("#exp").show();
                     $("#exp").append('<span id="exps"></span>');
@@ -49,7 +55,34 @@ $(document).ready(function () {
 //                        $(eval("#cell_"+i)).css('background-color','hsl('+data['items'][i]['hsb']+')');
                     }
                     $("#exp").append('<br/><br/>');
-                    $("#exp").append('<p style="text-align:center;"><input id="stat" type="button" value="Принять в обработку"/>');
+//                    $("#exp").append('<p style="text-align:center;"><input id="stat" name="" type="button" value="" onClick="javascript:setStatus();"/>');
+                    $('#status_btn').attr('name', order_id);
+                    $('#status_btn').show();
+                    
+                    switch (status) {
+                            case 1:
+                                $("#stat").text(label_array[0]);
+                                $("#stat").attr('name', 2);
+                                break;
+                            case 2:
+                                $("#stat").text(label_array[1]);
+                                $("#stat").attr('name', 3);
+                                break;
+                            case 3:
+                                $("#stat").text(label_array[2]);
+                                $("#stat").attr('name', 4);
+                                break;
+                            case 4:
+                                $("#stat").text(label_array[3]);
+                                $("#stat").attr('name', 5);
+                                break;
+                            case 5:
+                                $("#stat").text(label_array[4]);
+                                $("#stat").attr('name',6);
+                                break;
+                        
+                    }
+                   
                 },
                 error:function(data){
                     document.write(data['response']);
@@ -58,4 +91,33 @@ $(document).ready(function () {
             
             
         });
+        $("#stat").mousedown(function(e){
+            var status = $("#stat").attr('name');
+            var order = $('#status_btn').attr('name');
+            alert("M "+status+" "+order);
+            $.ajax({
+                url: 'http://brioso-lab.ru/action/as_change_status.php',
+                type:'post',
+                dataType:'json',
+                data:{status:status,order:order},
+                success:function(data){
+                    var re = data['ok'];
+                    alert("OK "+re);
+                    if(re == 1){
+                        document.location.href = "?act=orders";
+                    }                    
+                },
+                error:function(data){
+                    document.write(data['response']);
+                }
+            });
+            
+        });
+        $("#stat").mouseover(function(){
+            $("#stat").css('color','blueviolet');
+        });
+        $("#stat").mouseout(function(){
+            $("#stat").css('color',new_order_color);
+        });
+       
 });

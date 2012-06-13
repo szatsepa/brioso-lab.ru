@@ -15,7 +15,8 @@ $query = "SELECT c.name,
                  o.exe_time,
                  o.phone, 
                  o.shipment, 
-                 o.comments
+                 o.comments,
+                 o.status
             FROM orders AS o, 
                  customers AS c 
            WHERE o.id  = $oid AND 
