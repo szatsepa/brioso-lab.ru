@@ -12,11 +12,11 @@
 <table>
 <tr>
     
-	<td>Создать прайс;</td>
+	<td>Создать прайс:</td>
 	<td>
-            <input id="p_name" type="text" value="">
+            <input id="p_name" type="text" value="" required/>
         </td>
-	<td><input id="new_price" type="button" value="Ok"></td>
+	<td><input id="new_price" type="button" value="Ok"/></td>
    
 </tr>
 </table>

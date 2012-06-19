@@ -148,7 +148,7 @@ $("div.message").hide();
             if ((code != "") && (code == passAgain)) {
                 $("#indicator").show();
                 $.ajax({
-                    url: 'http://brioso-lab.ru/action/j_registration.php',
+                    url: '../action/j_registration.php',
                     type: 'post',
                     dataType: 'json',
                     data: {email:email,code:code},
@@ -178,12 +178,13 @@ $("div.message").hide();
             if ((email != "") && ValidEmail(email)) {
                 var uid = 0;
                 $.ajax({
-                    url: 'http://brioso-lab.ru/query/jauth.php',
+                    url: '../query/jauth.php',
                     type: 'post',
                     dataType: 'json',
                     data: '&code='+code+'&email='+email,
                     success:function(data){
-                        auth = data['auth'];
+//                        alert(data['cart']['summ_amount']);
+                        auth = 2;
                         user_id = data['user']['id'];
                         if(!data['error']){
                             $("#vrWrapper").hide(200);
@@ -195,7 +196,6 @@ $("div.message").hide();
                             $("#amount").text('Товаров - '+data['cart']['summ_amount']);
                             $("#summ").text('На сумму - '+data['cart']['summ_cost']+' p.');
                             $("#c_order").css('cursor','pointer');
-//                            $("#c_order").removeAttr('disabled');
                         }else{
                              $('#error1').html(er[3]).slideDown();
                         }                      
@@ -216,7 +216,7 @@ $("div.message").hide();
             $("#indicator").show();
                     
             $.ajax({
-                url: 'http://brioso-lab.ru/query/reminde_password.php',
+                url: '../query/reminde_password.php',
                 type:'post',
                 dataType:'json',
                 data: {email:email},

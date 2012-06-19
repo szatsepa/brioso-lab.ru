@@ -24,12 +24,12 @@ html, body {
 }
 div.main{ 
     width: 100%;
+    position: relative;
 }
 div.main_0{
+    position: relative;
     width: 1004px;
-/*    height: 768px;*/
     margin: 0 auto;
-/*    outline: 1px solid red;*/
 }
 div.selector {
 	background-color:#cccccc;
@@ -38,7 +38,6 @@ div.selector {
 	font-size:4ex;
 	padding: 0 0 0 0;
         padding-left: 22px;
-/*	margin-top:7px;*/
 	width:98%;
         height: 32px;
 } 
@@ -49,22 +48,19 @@ span.selector3 {
 	margin:auto 27px auto auto;
 	padding-top: 2px;
 	font-size: 1ex;
-/*        outline: 1px solid red;*/
+
 }
 div.main_menu{
     position: relative;
     width: 1008px;
     height: 104px;
     color: black;
-/*    float: left;*/
-/*    outline: 1px solid red;*/
 }
 span.menu_select{
     position: relative;
     color: black;
     font-size: 14px;
     font-weight: bold;
-/*    outline: 1px solid blue;*/
     bottom: 4px;
 }
 a.subhead{
@@ -103,7 +99,7 @@ div.downloader{
     font-size: 16px;
     font-weight: bold;
     color: black;
-/*    outline: 1px solid red;*/
+
 }
 span.download{
     font-size: 16px;

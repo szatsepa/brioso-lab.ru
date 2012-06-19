@@ -234,9 +234,9 @@ if ($mobile != 'true') {?>
                 <label>Адрес доставки:&nbsp;&nbsp;&nbsp;&nbsp;</label><input id="shipment" type="text" value="" size="72"/>
             </p>
         </div>
-        <div id="o_email">
+<!--        <div id="o_email">
             <p><label>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input id="act_email" type="text" value="" size="72"/></p>
-        </div>
+        </div>-->
         <div id="o_phone">
             <p>
                 <label>Телефон:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input id="phone" type="text" value="" size="72"/>

@@ -40,7 +40,7 @@ $(document).ready(function(){
     $("#clear_all").mousedown(function(){
         var customer = user_id;
         $.ajax({
-            url: 'http://brioso-lab.ru/action/clear_cart.php',
+            url: '../action/clear_cart.php',
             dataType: 'json',
             type: 'post',
             data: {customer:customer},
@@ -56,7 +56,7 @@ $(document).ready(function(){
         var item = this.name;
         var customer = user_id;
         $.ajax({
-            url: 'http://brioso-lab.ru/action/clear_row.php',
+            url: '../action/clear_row.php',
             dataType: 'json',
             type: 'post',
             data: {customer:customer,item:item},
@@ -69,7 +69,7 @@ $(document).ready(function(){
     
         function createOrder(){
             $.ajax({
-                url: 'http://brioso-lab.ru/query/num_order.php',
+                url: '../query/num_order.php',
                 type: 'post',
                 dataType: 'json',
                 success:function(data){
@@ -86,7 +86,7 @@ $(document).ready(function(){
         function saveOrder(){
             var customer = user_id;
             $.ajax({
-                url: 'http://brioso-lab.ru/action/j_add_order.php',
+                url: '../action/j_add_order.php',
                 type: 'post',
                 dataType:'json',
                 data:{customer:customer,email:$("#act_email").val(),shipment:$("#shipment").val(),phone:$("#phone").val(),comment:document.getElementById('act_comment').value},
@@ -101,13 +101,12 @@ $(document).ready(function(){
             var ord = order;
             var customer = user_id;
             $.ajax({
-               url: 'http://brioso-lab.ru/action/j_add_orders_item.php',
+               url: '../action/j_add_orders_item.php',
                 type: 'post',
                 dataType:'json', 
                 data:{cart:cart,order:ord,customer:customer},
                 success:function(data){
-//                    alert(data['str']); 
-                    if(data['out']!=0)document.location.href='http://brioso-lab.ru/index.php?act=main';
+                    if(data['out']!=0)document.location.href='../index.php?act=main';
                 }
             });
         }

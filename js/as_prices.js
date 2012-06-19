@@ -25,7 +25,7 @@ $(document).ready(function () {
             $("#pricelist").hide();
 //            $("#upl_price").show();
             $.ajax({
-                url: 'http://brioso-lab.ru/query/as_price.php',
+                url: '../query/as_price.php',
                 type: 'post',
                 dataType: 'json',
                 data: {pid:pid},
@@ -52,31 +52,36 @@ $(document).ready(function () {
         });
         $("#new_price").mousedown(function(){
             var p_name = $("#p_name").val();
-            $.ajax({
-                url: 'http://brioso-lab.ru/action/as_new_price.php',
-                type: 'post',
-                dataType: 'json',
-                data:{activ:0,name:p_name},
-                success:function(data){
-                    var price = data['new'];
-                    
-                    if(price == 1){
-                        document.location.reload();
-                    }else{
-                        alert("ERROR SERVER IS BAD");
+            if(p_name || p_name.length > 0){
+                    $.ajax({
+                    url: '../action/as_new_price.php',
+                    type: 'post',
+                    dataType: 'json',
+                    data:{activ:0,name:p_name},
+                    success:function(data){
+                        var price = data['new'];
+
+                        if(price == 1){
+                            document.location.reload();
+                        }else{
+                            alert("ERROR MYSQL_SERVER");
+                        }
+                    },
+                    error:function(data){
+                        document.write(data['response']);
                     }
-                },
-                error:function(data){
-                    document.write(data['response']);
-                }
-                
-            });
+
+                });
+            }else{
+                alert("Укажите название прайслиста!");
+            }
+            
         });
         $("#price_delete").mousedown(function(){
             var pid = price['id'];
             
             $.ajax({
-               url: 'http://brioso-lab.ru/action/as_price_delete.php',
+               url: '../action/as_price_delete.php',
                type:'post',
                dataType:'json',
                data:{pid:pid},
@@ -97,7 +102,7 @@ $(document).ready(function () {
             var pid = price['id'];
             alert("O");
             $.ajax({
-                url:'http://brioso-lab.ru/action/as_change_price.php',
+                url:'../action/as_change_price.php',
                 type:'post',
                 dataType:'json',
                 data:{tags:tags,comment:comm,pid:pid},

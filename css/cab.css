@@ -120,7 +120,7 @@ input.submit2 {
 /*    display: none;*/
     position: relative;
     width: 860px;
-/*    height: 430px;*/
+    height: 555px; 
     font-size: 16px;
     font-weight: bold;
     color: black;

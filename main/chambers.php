@@ -4,6 +4,7 @@
  * 1/6/2012
  */
 $summ_list = 0.00;
+//print_r($cart_array);
 ?>
 <script type="text/javascript">
     var user_id = <?php echo $_SESSION[id];?>;
@@ -21,7 +22,7 @@ $summ_list = 0.00;
     <div class="cart">
        <form id="<?php echo "form_$n";?>">
             <div class="cart_img">
-                <img id="<?php echo $value[artikul];?>" src="http://brioso-lab.ru/images/items/<?php echo $value[img];?>" alt="<?php echo $value[id];?>"/>
+                <img id="<?php echo $value[artikul];?>" src="../images/items/<?php echo $value[img];?>" alt="<?php echo $value[id];?>"/>
             </div>
             <div class="c_name">
                 <p class="c_name"><?php echo $value[name];?></p>
@@ -52,11 +53,15 @@ $summ_list = 0.00;
         <?php
         $n++;
     }
+    if($cart_array){
     ?>
     <div id="itogo">
         <p id="in_itogo">Итого:&nbsp;&nbsp;<?php $str_out = intval("$summ_list"); echo $str_out.".00 p.";?></p>
         <p><a name="" id="order">Оформить заказ</a></p>
     </div>
+    <?php
+    }
+    ?>
 </div>
 <div id="order_form">
     <div style="position:relative; width: 600px;height:27px;">
@@ -104,15 +109,15 @@ $summ_list = 0.00;
         }
         ?>
     </div>
-    <div class="order_footer"  style="font-weight:normal;position:relative; width: 720px;height:270px;margin: 0 auto;text-align:left;">
+    <div class="order_footer"  style="font-weight:normal;position:relative; width: 720px;height:355px;margin: 0 auto;text-align:left;">
         <div id="address">
             <p>
                 <label>Адрес доставки:&nbsp;&nbsp;&nbsp;&nbsp;</label><input id="shipment" type="text" value="" size="72"/>
             </p>
         </div>
-        <div id="o_email">
+<!--        <div id="o_email">
             <p><label>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input id="act_email" type="text" value="" size="72"/></p>
-        </div>
+        </div>-->
         <div id="o_phone">
             <p>
                 <label>Телефон:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input id="phone" type="text" value="" size="72"/>
@@ -123,7 +128,7 @@ $summ_list = 0.00;
                 <label>Пожелания:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><textarea id="act_comment" cols="72" rows="6"></textarea>
             </p>
         </div>
-        <div id="o_order" style="width:520px;margin-top: 12px;">
+        <div id="o_order" style="width:520px;height:52px;margin-top: 12px;">
             <p id="to_order" style="text-align: right;font-size: 18px;font-weght:bold;color: black;text-decoration:underline;cursor:pointer;">
                 Заказать
             </p>

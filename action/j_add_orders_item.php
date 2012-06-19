@@ -41,6 +41,28 @@ foreach ($cart as $value) {
 }
 
 $response = array('out'=>$n,'str'=>$query);
+    
+$query = "SELECT name, surname, email FROM customers WHERE id = $customer";
+
+$result = mysql_query($query);
+
+$row = mysql_fetch_assoc($result);
+
+$message ="Здравствуйте ".$row[name]." ".$row[surname]."! Ваш закаказ №$order рассматривается\r\n C уважением. Администрация. ";              
+
+$headers = 'From: administrator@brioso-lab.ru\r\n';
+
+$headers  .= 'MIME-Version: 1.0' . "\r\n";
+
+$headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
+
+$to= "<arcady.1254@gmail.com>" . ", " ; //обратите внимание на запятую
+
+$to .= "<7905415@mail.ru>";
+
+$to .= "<".$row[email].">";
+
+mail($to, 'Заказ', $message, $headers);
 
 echo json_encode($response);
 

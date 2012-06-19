@@ -75,13 +75,13 @@ if($num_rows != 0){
     $row = mysql_fetch_assoc($result);
     
     if(!$row[summ_amount]){
-        $row[summ_amount]=0;
-        $row[summ_cost]=0;
+        $row[summ_amount] = 0;
+        $row[summ_cost] = 0;
     }
 
     $out['user'] = $user->data;
     $out['cart'] = $row;
-    $out['auth']=$_SESSION['auth'];
+    $out['auth']=1;
     
               
 }else{
