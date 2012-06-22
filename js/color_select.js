@@ -80,8 +80,6 @@ function slider(elemId, sliderWidth, range1, range2, step, cl_name) {
                 d.getElementById('brightness').value = sl_array[2].getValue();
                 
                 var color = $("#_colorfield").css('background-color');
-                
-//                var browser = browserDetectJS();
                    
                 $("#sl1_slider").css('background','-o-linear-gradient(left, rgb(235,235,235) 12%, '+color+' 99%)');
                 

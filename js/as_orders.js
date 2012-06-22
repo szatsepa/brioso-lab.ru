@@ -94,7 +94,7 @@ $(document).ready(function () {
         $("#stat").mousedown(function(e){
             var status = $("#stat").attr('name');
             var order = $('#status_btn').attr('name');
-            alert("M "+status+" "+order);
+            //alert("M "+status+" "+order);
             $.ajax({
                 url: 'http://brioso-lab.ru/action/as_change_status.php',
                 type:'post',
@@ -102,7 +102,7 @@ $(document).ready(function () {
                 data:{status:status,order:order},
                 success:function(data){
                     var re = data['ok'];
-                    alert("OK "+re);
+                    //alert("OK "+re);
                     if(re == 1){
                         document.location.href = "?act=orders";
                     }                    

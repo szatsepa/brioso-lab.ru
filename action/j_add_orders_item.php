@@ -46,7 +46,7 @@ $query = "SELECT name, surname, email FROM customers WHERE id = $customer";
 
 $result = mysql_query($query);
 
-$row = mysql_fetch_assoc($result);
+$row = mysql_fetch_assoc($result); 
 
 $message ="Здравствуйте ".$row[name]." ".$row[surname]."! Ваш закаказ №$order рассматривается\r\n C уважением. Администрация. ";              
 
@@ -56,11 +56,7 @@ $headers  .= 'MIME-Version: 1.0' . "\r\n";
 
 $headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
 
-$to= "<arcady.1254@gmail.com>" . ", " ; //обратите внимание на запятую
-
-$to .= "<7905415@mail.ru>";
-
-$to .= "<".$row[email].">";
+$to= "Serg <arcady.1254@gmail.com>, <7905415@mail.ru>, <".$row[email].">" ; //обратите внимание на запятую
 
 mail($to, 'Заказ', $message, $headers);
 

@@ -4,7 +4,7 @@
 
 $(document).ready(function(){
     
-    var month = new Array('- 01 -','- 02 -','- 03 -','- 04 -','- 05 -','- 06 -','- 07 -','- 08 -','- 09 -','- 10 -','- 11 -','- 12 -')
+    var month = new Array('- 01 -','- 02 -','- 03 -','- 04 -','- 05 -','- 06 -','- 07 -','- 08 -','- 09 -','- 10 -','- 11 -','- 12 -');
     
         if (document.readyState != "complete"){
 		setTimeout( arguments.callee, 200 );
@@ -67,14 +67,14 @@ $(document).ready(function(){
             var cart = my_cart;
             var ord = order;
             var customer = user_id;
-            alert(ord);
+            //alert(ord);
             $.ajax({
                url: '../action/j_add_orders_item.php',
                 type: 'post',
                 dataType:'json', 
                 data:{cart:cart,order:ord,customer:customer},
                 success:function(data){
-                    alert(data['str']);
+                    //alert(data['str']);
                     if(data['out']!=0)document.location.href='../index.php?act=main';
                 }
             });

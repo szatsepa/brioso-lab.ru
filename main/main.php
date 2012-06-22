@@ -33,14 +33,14 @@
                 <script type="text/javascript"> 
                 var mysl0 = new slider('sl0', 360, 0, 360, 10, 'slider_1');
 //                исходные установки цвета здесь и далее
-                mysl0.setValue(275);
+                mysl0.setValue(0);
                 </script>
         </div>
         <div class="scroll_c" style="top: 68px;">
                 <div id="sl1" style=""></div>
                 <script type="text/javascript"> 
                     var mysl1 = new slider('sl1', 360, 0, 100, 1, 'slider_2');
-                    mysl1.setValue(75);
+                    mysl1.setValue(100);
                 </script>
         </div>
         <div class="scroll_c" style="top: 88px;">
@@ -54,7 +54,7 @@
                         eval(elem_array[i]).setArray(elem_array);
                     }
 
-                    mysl2.setValue(82);
+                    mysl2.setValue(50);
                 </script>
         </div>
 <!--    right pahel ====================================-->
