@@ -101,15 +101,13 @@ switch ($attributes[act]) {
 //    include("act_tocompanies.php");
 //	break;
 //
-//    // Пользователи
-//    case "users":
-//    include("qry_users.php");
-//    include("qry_roles.php");
-//    include("qry_companies.php");
-//    include("dsp_header.php");
-//    include("dsp_userlist.php");
-//    include("dsp_user.php");    
-//	break;
+    // Пользователи
+    case "users":
+    include("../query/as_users.php");
+    include("../main/as_header.php");
+    include("../main/as_userlist.php");
+        
+	break;
 //    
 //    case "user_add":
 //    include("qry_useradd.php");

@@ -49,10 +49,10 @@ th.dat{
 		
 }
 td.dat {
-		padding: 1px 1px ;
-		font-size:9pt;
-		
-	    border-bottom : thin solid;
+        padding: 1px;
+        font-size:9pt;
+        color: black;
+        border-bottom : thin solid;
 }
 tr.dat {
 	border: solid 1px gray;
@@ -74,5 +74,8 @@ td.kab {
 }
 a.new_order{
     text-decoration: underline;
+    cursor: pointer;
+}
+input.bt{
     cursor: pointer;
 }
