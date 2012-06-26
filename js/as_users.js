@@ -15,24 +15,20 @@ $(document).ready(function () {
         
         var uid = null;
         
+        var row_id = null;
+        
         $(".my_link").mouseover(function(){
             var id = this.id;
             $(eval(id)).css({'color': 'blueviolet','cursor':'pointer','font-weight':'bold'});
         });
         $(".my_link").mouseout(function(){
             var id = this.id;
-//            var index = $(eval(id)).parent('td').parent('tr');
-//            var bindex = index.index('#customers_table');
-//            var str='';
-//            for(var i in bindex){
-//                str += i+" -> "+bindex[i]+"\n";
-//            }
-//            alert(str);
-
             $(eval(id)).css({'color': 'black','cursor':'default','font-weight':'normal'});
         });
+
         $(".my_link").mousedown(function(){
-            
+            var id = this.id;
+            row_id = $(eval(id)).parent().parent().attr('id');
             var persone_id = this.name;
             var action = persone_id.substr(0,1);
             var wh = persone_id.substr(1,1);
@@ -72,15 +68,12 @@ $(document).ready(function () {
                 addPersone('../action/as_add_user.php',who);
             }
             if(act == 'Сохранить'){
-                changePersone('../action/as_change_user.php');
+                
+                changePersone('../action/as_edit_customer.php');
             }
             
         });
-        
-//        $('#customers_table > td').click(function(){
-//                var n = $(this).closest('tr').prevAll().length;
-//                alert(n);
-//            });
+
         
         function delPersone(url,uid,w){
             
@@ -90,7 +83,11 @@ $(document).ready(function () {
                 dataType:'json',
                 data:{uid:uid,who:w},
                 success:function(data){
-                   document.location.reload(); 
+                    if(w == 'customer'){
+                        $(eval(row)).remove();
+                    }else{
+                        $(eval(row)).remove();
+                    }
                 },
                 error:function(data){
                     document.write(data['response']);
@@ -100,18 +97,29 @@ $(document).ready(function () {
         }
         
         function changePersone(url){
-            var surname = $("#s_name").val();
+
+             var surname = $("#s_name").val();
              var name = $("#u_name").val();
              var email = $("#u_email").val();
-             var phone = $("#u_phone").val();
+             var phone = $("#u_phone").val(); 
              var code = $("#u_code").val();
+//             alert("ROW "+row_id); 
              $.ajax({
                 url:url,
                 type:'post',
                 dataType:'json',
                 data:{uid:uid,surname:surname,name:name,email:email,phone:phone,code:code,who:who},
                 success:function(data){
-                    document.location.reload();
+//                    var str = data['ok']+" "+row_id;
+                    alert(str);
+                     if(who == 'customer'){
+                        $(eval(row_id)).remove();
+                        $("#customers_table > tbody:last").append("<tr><td class='dat'>"+uid+"</td><td class='dat'>"+surname+" "+name+"</td><td class='dat'>"+email+"</td><td class='dat'>"+phone+"</td><td class='dat'><a class='my_link' id='r_user_"+uid+"' name='ru"+uid+"'>Редакт.</a></td><td class='dat'><a class='my_link' id='d_user_"+uid+"' name='du"+uid+"'>Удалить.</a></td></tr>");
+                    }else{
+                        $(eval(row_id)).remove();
+                        $("#user_table > tbody:last").append("<tr><td class='dat'>"+uid+"</td><td class='dat'>"+surname+" "+name+"</td><td class='dat'>"+email+"</td><td class='dat'>"+phone+"</td><td class='dat'><a class='my_link' id='r_user_"+uid+"' name='ru"+uid+"'>Редакт.</a></td><td class='dat'><a class='my_link' id='d_user_"+uid+"' name='du"+uid+"'>Удалить.</a></td></tr>");
+                    }
+                     $("#add_user").hide();
                 },
                 error:function(data){
                     document.write(data['response']);
@@ -133,7 +141,7 @@ $(document).ready(function () {
                 dataType:'json',
                 data:{surname:surname,name:name,email:email,phone:phone,code:code,who:w},
                 success:function(data){
-                    alert(data['user']);
+//                    alert(data['user']);
                     if(data['ok']){
                         $("#user_table > tbody:last").append("<tr><td class='dat'>"+data['ok']+"</td><td class='dat'>"+data['user']['surname']+" "+data['user']['name']+"</td><td class='dat'>"+data['user']['email']+"</td><td class='dat'>"+data['user']['phone']+"</td><td class='dat'><a class='my_link' id='r_user_"+data['ok']+"' name='ru"+data['ok']+"'>Редакт.</a></td><td class='dat'><a class='my_link' id='d_user_"+data['ok']+"' name='du"+data['ok']+"'>Удалить.</a></td></tr>");
                     }

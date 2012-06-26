@@ -34,8 +34,10 @@ $out = array();
 
 $out['ok'] = NULL;
 
-if(mysql_affected_rows()){
-    $out['ok'] = mysql_affected_rows();
+$aff = mysql_affected_rows();
+if($aff != 0){
+    
+    $out['ok'] = 1;
 }
 
 echo json_encode($out);

@@ -11,7 +11,7 @@
 
 <?php 
 foreach ($users_array as $value) {
-    echo "<tr>";
+    echo "<tr  id='tr_'".$value["id"].">";
     echo "<td class='dat'>".$value["id"]."</td>";
     echo "<td class='dat'>".$value["surname"]." ".$value["name"]."</td>";
     echo "<td class='dat'>".$value["email"]."</td>";
@@ -79,11 +79,7 @@ foreach ($customers_array as $value) {
     echo "<td class='dat'>".$value["email"]."</td>";
     echo "<td class='dat'>".$value["phone"]."</td>";
     echo "<td class='dat'><a class='my_link' id='r_customer_".$value["id"]."' name='rc".$value["id"]."'>Редакт.</a></td>";
-    echo "<td class='dat'><a  class='my_link' id='d_customer_".$value["id"]."' name='dc".$value["id"]."'>Удалить</a></td>";
-//    echo "<td class='dat'><a  class='my_link' id='psw_customer_".$value["id"]."' name='pc".$value["id"]."'>Пароль</a></td>";
-?>
-        
-<?php        
+    echo "<td class='dat'><a  class='my_link' id='d_customer_".$value["id"]."' name='dc".$value["id"]."'>Удалить</a></td>";    
     echo "</tr>";
     $row++;
 }
