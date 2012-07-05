@@ -163,15 +163,15 @@ foreach ($pricelist[0] as $key => $value) {
 			
 			} else {
 			// Здесь выводятся иконки действий
-            	               $td =  "<button class='cart' id='e".$id."'>Ред.</button><button class='cart2' id='s".$id."' style='display:none;'>Сохранить</button>&nbsp;<a href='#' class='cloud' id='d".$id."' title='Удалить'>x</a>";
+            	               $td =  "<button class='cart' id='e".$id."'>Ред.</button><button class='cart2' id='s".$id."' name='row_".$row_count."' style='display:none;'>Сохранить</button>&nbsp;<button class='cloud' id='".$artikul."' name='row_".$row_count."' title='Удалить'>X</button>";
 			}
-        
-        echo "<tr align='center'><td>$artikul</td><td>$barcode</td><td>$code2</td><td align='left'>$name</td><td>$state</td><td>$volume</td><td>$price</td><td>$amount</td><td>$td</td></tr>";
+                        
+        echo "<tr align='center' id='row_".$row_count."'><td>$artikul</td><td>$barcode</td><td>$code2</td><td align='left'>$name</td><td>$state</td><td>$volume</td><td>$price</td><td>$amount</td><td>$td</td></tr>";
 
     }
 		
     
-    if ($num_rows == 0) echo "<tr><td colspan='9'>&nbsp;</td></tr><tr><td colspan='12'><strong id='no_goods'>Нет товаров для отображения</strong></td></tr><tr><td colspan='12'>&nbsp;</td></tr>";    
+    if ($num_rows == 0) echo "<tr><td colspan='10'>&nbsp;</td></tr><tr><td colspan='12'><strong id='no_goods'>Нет товаров для отображения</strong></td></tr><tr><td colspan='12'>&nbsp;</td></tr>";    
     echo "</tbody>"; 
     echo "</table><br/><br/>";
     

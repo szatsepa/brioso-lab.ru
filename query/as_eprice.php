@@ -6,10 +6,9 @@
  */
 $pid = $attributes[pid];
 
-$query = "SELECT p.id, p.artikul, p.barcode, p.code2, p.name, p.state, p.volume, p.price, p.amount, p.pricelist, i.name AS img
-FROM pricelist AS p, image_items AS i
+$query = "SELECT p.id, p.artikul, p.barcode, p.code2, p.name, p.state, p.volume, p.price, p.amount, p.pricelist
+FROM pricelist AS p
 WHERE p.pricelist =$pid
-AND i.barcode = p.barcode
 AND p.code2 <> 'X'
 ORDER BY p.id";
 
