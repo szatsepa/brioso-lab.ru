@@ -23,22 +23,19 @@ $(document).ready(function () {
         $(".red").mousedown(function(e){
             var pid = this.name;
             $("#pricelist").hide();
-//            $("#upl_price").show();
             $.ajax({
                 url: '../query/as_price.php',
                 type: 'post',
                 dataType: 'json',
                 data: {pid:pid},
                 success:function(data){
-//                    alert(data['creation']);
                     price = data;
                     $("#pricelist").show();
                     $("#price_name").css('font-weight','bold').css('font-size','16px').text(data['name']);
                     if(data['creation']==null){
-                        $("#creation").text('загрузите прайс-лист');                        
-                    }else{
-//                        $("#upl_price").hide();
-                        $("#creation").css('color','black').text(data['creation']);                        
+                            $("#creation").text('загрузите прайс-лист');                        
+                        }else{
+                            $("#creation").css('color','black').text(data['creation']);                        
                     }
                     $("#price_id").val(data['id']);
                     $("#tg").val(data['tags']);
@@ -116,6 +113,10 @@ $(document).ready(function () {
                    document.write(data['response']);
                }
             });
+        });
+        $("#edit_rows").mousedown(function(){
+            var pid = price['id'];
+            document.location.href = "?act=eprice&pid="+pid;
         });
        
 });

@@ -130,8 +130,14 @@ foreach ($prices as $value) {
                 <td colspan="2">
                     <div style="text-align: right;">
                         <input id="save_chng" type="button" value="Сохранить изменения">
+                        <input id="edit_rows" type="button" value="Редактировать построчно">
                     </div>
                 </td>
+<!--                <td>
+                    <div style="text-align: right;">
+                        <input id="edit_rows" type="button" value="Редактировать построчно">
+                    </div>
+                </td>-->
             </tr>   
             
 

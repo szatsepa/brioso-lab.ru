@@ -111,7 +111,7 @@ $(document).ready(function () {
                 data:{uid:uid,surname:surname,name:name,email:email,phone:phone,code:code,who:who},
                 success:function(data){
 //                    var str = data['ok']+" "+row_id;
-                    alert(str);
+//                    alert(str);
                      if(who == 'customer'){
                         $(eval(row_id)).remove();
                         $("#customers_table > tbody:last").append("<tr><td class='dat'>"+uid+"</td><td class='dat'>"+surname+" "+name+"</td><td class='dat'>"+email+"</td><td class='dat'>"+phone+"</td><td class='dat'><a class='my_link' id='r_user_"+uid+"' name='ru"+uid+"'>Редакт.</a></td><td class='dat'><a class='my_link' id='d_user_"+uid+"' name='du"+uid+"'>Удалить.</a></td></tr>");

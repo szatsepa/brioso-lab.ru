@@ -27,7 +27,7 @@ $cart_summ = 0;
 while ($row = mysql_fetch_assoc($result)){
     
     $cart_summ += intval($row[cost]);
-    $pos += intval($row[amount]);
+    $pos++;
 }
 
 ?>

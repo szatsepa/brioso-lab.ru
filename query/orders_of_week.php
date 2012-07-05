@@ -14,7 +14,7 @@ $query = "SELECT DISTINCT a.id,
                           p.name price_name, 
                           a.status
                     FROM orders AS a, orders_items AS g, price AS p
-                    WHERE a.customer =1
+                    WHERE a.customer =$customer
                     AND a.id = g.order
                     AND p.id = g.price_id
                     AND TO_DAYS( NOW( ) ) - TO_DAYS( a.time ) <=54

@@ -34,13 +34,13 @@ $order_count = array(0,0,0,0,0,0,0);
         $status = "<span class='edit'>Рассмотрен</span>";
         $dsp    = "&amp;dsp=decline";
     }
-    if($value["status"] == 3) $status = "<span class='edit4'>Отменен</span>";
+    if($value["status"] == 3) $status = "<span class='edit4'>Отгружен</span>";
     
     if($value["status"] == 4) {
-        $status = "<span class='edit3'>Отгружен</span>";
+        $status = "<span class='edit3'>Выполнен</span>";
         $dsp    = "&amp;dsp=fin";
     }
-    if($value["status"] == 5) $status = "<span class='edit5'>Выполнен</span>";
+    if($value["status"] == 5) $status = "<span class='edit5'>Отменен</span>";
     if($value["status"] == 6) $status = "<span class='edit2'>Демо</span>";
     $dat = $zakaz[$value["weekday"]]."<p style='margin-left:5px;margin-top:5px;margin-bottom:10px;margin-right:3px;'><a href='index.php?act=view_order'>N".$value["id"]."&nbsp;".$value["zakaz_date"]."<br />".$value["price_name"]."</a><br />".$status."</p>";
 
