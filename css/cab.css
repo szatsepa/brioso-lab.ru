@@ -17,7 +17,7 @@ th.cart {
         font: 12pt Arial;
         color: #330000;
         font-weight: bold;
-        text-align: left;
+        text-align: center;
 }
 
 td.cart {
@@ -102,19 +102,26 @@ tr.btp{
    font: 8px Arial;
     color: #330000; 
 }
+.footer_table{
+    text-align:left;
+    font-size:18px;
+    color: #330000;
+    font-weight:bold;
+}
 td.btp{
    font: 8px Arial;
     color: #330000; 
 }
-input.submit2 {
+.submit2 {
     font-family: Arial;
-    color: #000; 
-	font-size: 12pt;
-        font-style: italic;
-	width:180px; 
-	position:relative;
-        background-color: #ccc;
-        border: 2px solid #aaa;
+    color: #000;
+    cursor: pointer;
+    font-size: 12pt;
+    font-style: italic;
+    width:180px; 
+    position:relative;
+    background-color: #ccc;
+    border: 2px solid #aaa;
 }
 #order_form{
 /*    display: none;*/
@@ -137,3 +144,9 @@ input.submit3 {
 	position:relative;
         cursor: pointer;
 }
+#any_order{
+    position: relative;
+    width: 100%;
+    display: none;
+}
+

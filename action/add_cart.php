@@ -33,7 +33,7 @@ $query   = "UPDATE cart
 
 
 
-$query_try = mysql_query($query) or die($query);
+mysql_query($query) or die($query);
 
 
 	

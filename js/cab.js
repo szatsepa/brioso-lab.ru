@@ -110,9 +110,84 @@ $(document).ready(function(){
                 }
             });
         }
-            
+        $(".order_lnk").mousedown(function(){
+            var order_id = this.name;
+            $.ajax({
+                url:'../query/order.php',
+                type:'post',
+                dataType:'json',
+                data:{order:order_id},
+                success:function(data){
+                    $("#delivered, #similar").attr('name',order_id);
+                    var summ_cost = 0;
+                    $("#any_order").css({'display':'block'});
+                    $("#order_h").text('Заказ №'+data[0]['id']+' от '+data[0]['time']);
+                    $("#order_table > tbody").empty();
+                    for(var i in data){
+                        var price = parseInt(data[i]['price']);
+                        var amount = parseInt(data[i]['amount']);
+                        summ_cost += (price*amount);
+                        $("#order_table > tbody:last").append("<tr align='center'><td  class='cart'>"+data[i]['artikul']+"</td><td align='left'  class='cart'>"+data[i]['name']+"</td><td  class='cart'>"+data[i]['price']+"</td><td  class='cart'>"+data[i]['amount']+"</td><td  class='cart'></td><td  class='cart' style='background-color:hsl"+data[0]['hsb']+";color:#fff;'>"+data[0]['hsb']+"</td></tr>");
+                    }
+                    $("#order_table > tbody:last").append("<tr class='footer_table'><td  class='cart' style='text-align:right;font-size:16px;font-weight:bold;' colspan='3'></td><td colspan='2' class='footer_table'>Итого:"+summ_cost+".00 р.</td></tr>");
+                },
+                error:function(data){
+                    document.write(data['response']);
+                }
+            });
+        });    
+    $("#close_table").mousedown(function(){
+        $("#any_order").css({'display':'none'});
+    });
     
-//    
+    $("#delivered").mousedown(function(){
+        
+    });
+    
+    $(".submit2").mouseout(function(){
+        var id = this.id;
+        
+        $("#"+id+"").css('color','#000');
+    });
+    $(".submit2").mouseover(function(){
+        var id = this.id;
+        $("#"+id+"").css({'color':'#fff'});
+    });
+    $("#delivered").mousedown(function(){
+        var order = this.name;
+        $.ajax({
+            url:'../action/order_delivered.php',
+            type:'post',
+            dataType:'json',
+            data:{order:order},
+            success:function(data){
+                if(data['ok'] == 1){
+                    document.location.reload();
+                }
+            },
+            erroe:function(data){
+                document.write(data['response']);
+            }
+            
+        });
+    });
+    $("#similar").mousedown(function(){
+        var order = this.name;
+        $.ajax({
+            url:'../action/similar_order.php',
+            type:'post',
+            dataType:'json',
+            data:{order:order},
+            success:function(data){
+                if(data['ok']==1){
+                    document.location.reload();
+                }
+            },
+            error:function(data){
+                document.write(data['response']);
+            }
+        });
+    });    
     
 });
 
