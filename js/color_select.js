@@ -71,13 +71,13 @@ function slider(elemId, sliderWidth, range1, range2, step, cl_name) {
                 
                 
                 
-		d.getElementById('_colorfield').style.backgroundColor = out;	// это вывод значения для примера                    
+  		   d.getElementById('_colorfield').style.backgroundColor = out;	// это вывод значения для примера                    
                 
-                d.getElementById('hue').value = sl_array[0].getValue();
+                   d.getElementById('hue').value = sl_array[0].getValue(); 
                 
-                d.getElementById('saturation').value = sl_array[1].getValue();
+                   d.getElementById('saturation').value = sl_array[1].getValue(); 
                 
-                d.getElementById('brightness').value = sl_array[2].getValue();
+                   d.getElementById('brightness').value = sl_array[2].getValue(); 
                 
                 var color = $("#_colorfield").css('background-color');
                    

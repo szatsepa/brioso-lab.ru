@@ -49,7 +49,7 @@
                     var mysl2 = new slider('sl2', 360, 0, 100, 1, 'slider_3');
 
                     var elem_array = new Array(mysl0,mysl1,mysl2);
-
+                    
                     for(var i in elem_array){
                         eval(elem_array[i]).setArray(elem_array);
                     }
