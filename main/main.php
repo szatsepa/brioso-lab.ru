@@ -96,7 +96,13 @@
             <div class="select">
                 <div id="litres">
                     <p id="vol">
-                        <input  id="volume" type="number" size="12" min="0" max="10000" step="1" value="1" price="<?php echo $items_array[0][price];?>"/>&nbsp;л
+                        <select id="volume" price="<?php echo $items_array[0][price];?>">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                        </select>&nbsp;л
+<!--                        <input  id="volume" type="number" size="12" min="1" max="10000" step="1" value="1" price="<?php echo $items_array[0][price];?>"/>&nbsp;л-->
                     </p>
                 </div>
                 <div class="calk"> 

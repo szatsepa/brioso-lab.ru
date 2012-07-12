@@ -81,19 +81,26 @@ if (isset($parent_order) and $parent_order > 0) {
 
 mysql_query("DELETE FROM cart WHERE amount = 0");
 
-$query = "SELECT  SUM(b.amount) AS summ_amount,
-                   SUM(a.price*b.amount) AS summ_cost
-             FROM pricelist a, cart b
-             WHERE a.artikul = b.artikul
-               AND b.customer=$id";
+$query = "SELECT ((c.amount)*(pl.price)) AS cost 
+         FROM cart AS c, pricelist AS pl  
+         WHERE c.customer = $id 
+         AND c.artikul = pl.artikul";
 
-$result = mysql_query($query) or die($query);
+$result = mysql_query($query);
 
-$row = mysql_fetch_assoc($result);
+$summ_price = 0;
 
-$row[pid] = $price_id; 
+$num_rows = mysql_num_rows($result);
 
-echo json_encode($row);
+while ($row = mysql_fetch_assoc($result)){
+    $summ_price += $row[cost];
+}
+
+$out = array('summ_amount'=>$num_rows,'summ_cost'=>$summ_price,'pid'=>$price_id);
+
+//$row[pid] = $price_id; 
+
+echo json_encode($out);
 
 mysql_close(); 
 ?>

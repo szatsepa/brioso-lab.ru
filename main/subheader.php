@@ -31,7 +31,7 @@ if(!$user->data[name])$user_name = $user->data[email];
             <a href="index.php?act=cart" style="font-size: 16px;color: black;font-weight: bold;">Корзина</a>
          </p>
          <p id="amount">
-             Товаров - <?php echo $pos;?>
+             Товаров - <?php echo $items_in_cart;?>
          </p>
          <p id="summ">
              На сумму - <?php echo $cart_summ;?> р.
@@ -42,10 +42,6 @@ if(!$user->data[name])$user_name = $user->data[email];
 <div style="position: relative;width: 96%;height: 56px;margin: 0 auto;padding-left: 42px;padding-top: 16px;">
     <table>
         <tr>
-<!--            <td>
-                <a class="subhead" href="index.php?act=groups">Группы</a>
-            </td>
-            <td>&nbsp;&nbsp;&nbsp;</td>-->
             <td>
                 <a class="subhead"  href="index.php?act=main">Создай цвет</a>
             </td>

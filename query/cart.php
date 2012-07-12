@@ -24,6 +24,8 @@ $pos =0;
 
 $cart_summ = 0;
 
+$items_in_cart = mysql_num_rows($result);
+
 while ($row = mysql_fetch_assoc($result)){
     
     $cart_summ += intval($row[cost]);
